@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="anchorPane" prefHeight="328.0" prefWidth="503.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.lanen.view.test.HistopathCheckContent_Name">
+  <!-- TODO Add Nodes -->
+  <children>
+    <AnchorPane prefHeight="50.0" prefWidth="773.0" styleClass="border" AnchorPane.leftAnchor="13.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+      <children>
+        <Button id="dataCollectBtn" focusTraversable="false" mnemonicParsing="false" onAction="#onBtn0Action" prefHeight="26.0" prefWidth="72.0" text="确定" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="11.0" />
+        <Button id="button1" focusTraversable="false" mnemonicParsing="false" onAction="#onBtn1Action" prefHeight="26.0" prefWidth="72.0" text="取消" AnchorPane.leftAnchor="98.0" AnchorPane.topAnchor="11.0" />
+      </children>
+    </AnchorPane>
+    <AnchorPane prefHeight="508.0" prefWidth="772.0" styleClass="border" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="78.0">
+      <children>
+        <Label layoutX="29.0" layoutY="35.0" prefWidth="166.0" text="请填写镜检内容组合名称：" />
+        <TextField id="reasonText" fx:id="text" layoutX="61.0" layoutY="69.0" onAction="#onBtn0Action" prefWidth="343.0" />
+      </children>
+    </AnchorPane>
+  </children>
+  <stylesheets>
+    <URL value="@../../../../image/centerPane.css" />
+  </stylesheets>
+</AnchorPane>

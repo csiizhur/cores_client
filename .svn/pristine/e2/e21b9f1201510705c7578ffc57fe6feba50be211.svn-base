@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="anchorPane" minWidth="1064.999977929685" prefHeight="500.0" prefWidth="1064.999977929685" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.lanen.view.test.HistopathReview">
+  <!-- TODO Add Nodes -->
+  <children>
+    <HBox prefHeight="415.0" prefWidth="772.0" styleClass="border" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="71.0">
+      <children>
+        <AnchorPane maxWidth="403.0" minWidth="403.0" prefHeight="200.0" prefWidth="403.0" styleClass="border-right" HBox.hgrow="ALWAYS">
+          <children>
+            <HBox prefHeight="434.0" prefWidth="532.0" spacing="10.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0">
+              <children>
+                <VBox maxWidth="170.0" minWidth="170.0" prefHeight="200.0" prefWidth="170.0" spacing="5.0" HBox.hgrow="ALWAYS">
+                  <children>
+                    <AnchorPane maxHeight="30.0" maxWidth="-1.0" minHeight="30.0" minWidth="-1.0" prefHeight="30.0" prefWidth="311.0" VBox.vgrow="ALWAYS">
+                      <children>
+                        <Label layoutX="2.0" layoutY="12.0" prefWidth="85.0" text="动物列表" />
+                      </children>
+                    </AnchorPane>
+                    <TableView fx:id="histopathAnimalTable" prefHeight="366.0" prefWidth="246.0" VBox.vgrow="ALWAYS">
+                      <columns>
+                        <TableColumn maxWidth="200.0" minWidth="10.0" prefWidth="100.0" sortable="false" text="动物编号" fx:id="animalCodeCol" />
+                        <TableColumn maxWidth="150.0" prefWidth="60.0" sortable="false" text="有无异常" fx:id="hasAbnormalCol" />
+                      </columns>
+                    </TableView>
+                  </children>
+                </VBox>
+                <VBox maxWidth="200.0" minWidth="200.0" prefHeight="200.0" prefWidth="200.0" spacing="5.0" HBox.hgrow="ALWAYS">
+                  <children>
+                    <HBox maxHeight="30.0" maxWidth="-1.0" minHeight="30.0" minWidth="-1.0" prefHeight="30.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+                      <children>
+                        <Label prefWidth="60.0" text="脏器或组织" HBox.hgrow="NEVER">
+                          <HBox.margin>
+                            <Insets top="3.0" />
+                          </HBox.margin>
+                        </Label>
+                      </children>
+                      <padding>
+                        <Insets right="5.0" top="10.0" />
+                      </padding>
+                      <VBox.margin>
+                        <Insets />
+                      </VBox.margin>
+                    </HBox>
+                    <ListView fx:id="visceraOrTissueNameListView" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+                  </children>
+                </VBox>
+              </children>
+              <padding>
+                <Insets top="2.0" />
+              </padding>
+            </HBox>
+          </children>
+        </AnchorPane>
+        <AnchorPane maxWidth="2000.0" minWidth="300.0" prefHeight="200.0" prefWidth="300.0" HBox.hgrow="ALWAYS">
+          <children>
+            <Label layoutX="14.0" layoutY="12.0" prefWidth="71.0" text="显示内容：" />
+            <ComboBox fx:id="contentComboBox" layoutX="71.0" layoutY="9.0" prefHeight="19.0" prefWidth="148.0">
+              <items>
+                <FXCollections fx:factory="observableArrayList">
+                  <String fx:value="项 1" />
+                  <String fx:value="项 2" />
+                  <String fx:value="项 3" />
+                </FXCollections>
+              </items>
+            </ComboBox>
+            <Label layoutX="232.0" layoutY="12.0" prefWidth="71.0" text="排序方式：" />
+            <ComboBox fx:id="sortMethodComboBox" layoutX="288.0" layoutY="9.0" prefHeight="19.0" prefWidth="97.0">
+              <items>
+                <FXCollections fx:factory="observableArrayList">
+                  <String fx:value="项 1" />
+                  <String fx:value="项 2" />
+                  <String fx:value="项 3" />
+                </FXCollections>
+              </items>
+            </ComboBox>
+            <TableView fx:id="histopathCheckTable" prefHeight="385.0" prefWidth="405.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="37.0">
+              <columns>
+                <TableColumn maxWidth="90.0" minWidth="55.0" prefWidth="55.0" sortable="false" text="动物编号" fx:id="animalCodeCol_1" />
+                <TableColumn maxWidth="140.0" minWidth="70.0" prefWidth="90.0" sortable="false" text="脏器或组织" fx:id="visceraOrTissueNameCol" />
+                <TableColumn maxWidth="70.0" minWidth="50.0" prefWidth="60.0" sortable="false" text="性质" fx:id="tumorFlagCol" />
+                <TableColumn maxWidth="70.0" minWidth="50.0" prefWidth="60.0" sortable="false" text="是否转移" fx:id="metastasisFlagCol" />
+                <TableColumn maxWidth="270.0" minWidth="150.0" prefWidth="150.0" sortable="false" text="检查结果" fx:id="checkResultCol" />
+                <TableColumn maxWidth="250.0" minWidth="80.0" prefWidth="100.0" sortable="false" text="原发脏器/肿瘤" fx:id="primaryVisceraTumorCol" />
+                <TableColumn maxWidth="84.0" minWidth="84.0" prefWidth="84.0" sortable="false" text="检查日期" fx:id="checkTimeCol" />
+                <TableColumn maxWidth="400.0" minWidth="75.0" prefWidth="60.0" sortable="false" text="复查意见" fx:id="opinionCol" />
+                <TableColumn maxWidth="50.0" minWidth="45.0" prefWidth="45.0" resizable="true" sortable="false" text="状态" fx:id="stateCol" />
+                <TableColumn maxWidth="54.0" minWidth="54.0" prefWidth="54.0" sortable="false" text="病变程度" fx:id="levelCol" />
+                <TableColumn maxWidth="54.0" minWidth="54.0" prefWidth="54.0" sortable="false" text="肿瘤数量" fx:id="tumorNumCol" />
+                <TableColumn maxWidth="54.0" minWidth="54.0" prefWidth="54.0" sortable="false" text="肿瘤位置" fx:id="tumorPosCol" />
+                <TableColumn maxWidth="84.0" minWidth="84.0" prefWidth="84.0" sortable="false" text="肿瘤发生日期" fx:id="tumorOccurDateCol" />
+                <TableColumn maxWidth="54.0" minWidth="54.0" prefWidth="54.0" sortable="false" text="肿瘤特性" fx:id="tumorCharacterCol" />
+                <TableColumn maxWidth="100.0" minWidth="54.0" prefWidth="54.0" sortable="false" text="备注" fx:id="remarkCol" />
+              </columns>
+            </TableView>
+            <CheckBox fx:id="onlyShowReviewDataCheckBox" layoutX="402.0" layoutY="13.0" mnemonicParsing="false" onAction="#onOnlyShowReviewDataCheckBoxAction" text="仅显示复核数据" />
+            <Hyperlink layoutX="514.0" layoutY="10.0" onAction="#onIndividualDataHyperlink" text="个体数据" />
+          </children>
+        </AnchorPane>
+      </children>
+    </HBox>
+    <AnchorPane prefHeight="51.0" prefWidth="996.0" styleClass="border" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="9.0">
+      <children>
+        <Button fx:id="checkFinishBtn" layoutX="12.0" layoutY="12.0" mnemonicParsing="false" onAction="#onCheckFinishBtnAction" prefHeight="26.0" prefWidth="72.0" text="提交复核" />
+        <Button fx:id="dataEditBtn" layoutX="99.0" layoutY="12.0" mnemonicParsing="false" onAction="#onDataEditBtnAction" prefHeight="26.0" prefWidth="72.0" text="数据修改" />
+        <Button fx:id="signConfirmBtn" layoutX="182.0" layoutY="12.0" mnemonicParsing="false" onAction="#onSignConfrimBtnAction" prefHeight="26.0" prefWidth="72.0" text="签字确认" />
+        <Button fx:id="writeReviewMsgBtn" layoutX="418.0" layoutY="12.0" mnemonicParsing="false" onAction="#onWriteReviewMsgBtnAction" prefHeight="26.0" prefWidth="97.0" text="填写复核意见" />
+        <Button fx:id="reviewFinishBtn" layoutX="526.0" layoutY="12.0" mnemonicParsing="false" onAction="#onReviewFinishBtnAction" prefHeight="26.0" prefWidth="72.0" text="复核完成" />
+        <Button fx:id="printBtn" layoutX="943.0" layoutY="11.0" mnemonicParsing="false" onAction="#onPrintBtnAction" prefHeight="26.0" prefWidth="100.0" text="打印最终结果" />
+        <Button id="printBtn" fx:id="printHistopathCheckBtn" layoutX="613.0" layoutY="12.0" mnemonicParsing="false" onAction="#onPrintHistopathCheckBtnAction" prefHeight="26.0" prefWidth="100.0" text="打印镜检结果" />
+        <Button id="printBtn" fx:id="printReviewOpinionBtn" layoutX="723.0" layoutY="12.0" mnemonicParsing="false" onAction="#onPrintReviewOpinionBtnAction" prefHeight="26.0" prefWidth="100.0" text="打印复核意见" />
+        <Button id="printBtn" fx:id="printEditRecordBtn" layoutX="833.0" layoutY="12.0" mnemonicParsing="false" onAction="#onPrintEditRecordBtnAction" prefHeight="26.0" prefWidth="100.0" text="打印修改记录" />
+      </children>
+    </AnchorPane>
+    <CheckBox fx:id="printOrderByVisceraCheckBox" layoutX="1063.0" layoutY="28.0" mnemonicParsing="false" text="打印数据按脏器排序" />
+  </children>
+  <stylesheets>
+    <URL value="@../../../../image/centerPane.css" />
+  </stylesheets>
+</AnchorPane>

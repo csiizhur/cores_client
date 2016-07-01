@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="650.0" prefWidth="1100.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.lanen.view.main.MainPageController">
+  <!-- TODO Add Nodes -->
+  <children>
+    <AnchorPane id="anchorPane1" fx:id="titlepane" prefHeight="74.0" prefWidth="1100.0" styleClass="titlePane" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <children>
+        <ImageView fitHeight="66.10416523185937" fitWidth="167.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="3.0">
+          <image>
+            <Image url="@../../../../image/logo.png" />
+          </image>
+        </ImageView>
+        <Label contentDisplay="RIGHT" prefHeight="20.0" prefWidth="67.0" text="当前用户：" AnchorPane.rightAnchor="127.0" AnchorPane.topAnchor="27.0">
+          <font>
+            <Font size="12.0" />
+          </font>
+        </Label>
+        <Label fx:id="userNameLable" prefHeight="19.0" prefWidth="95.0" text="" AnchorPane.rightAnchor="32.0" AnchorPane.topAnchor="27.0" />
+      </children>
+      <effect>
+        <DropShadow height="5.0" radius="2.0" width="5.0" />
+      </effect>
+    </AnchorPane>
+    <AnchorPane id="anchorPane2" fx:id="menupane" opacity="1.0" pickOnBounds="true" prefHeight="576.0" prefWidth="170.0" styleClass="menuPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="74.0">
+      <children>
+        <VBox prefHeight="576.0" prefWidth="170.0" spacing="10.0" styleClass="centerPanel" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+          <children>
+            <VBox prefHeight="90.0" prefWidth="152.0">
+              <children>
+                <Hyperlink id="a" fx:id="hyperlinkA" onAction="#onLinkButtonActionA" prefHeight="83.0" prefWidth="128.0" styleClass="menu1" text="" visited="false" />
+              </children>
+              <padding>
+                <Insets left="15.0" right="15.0" fx:id="x1" />
+              </padding>
+              <VBox.margin>
+                <Insets />
+              </VBox.margin>
+            </VBox>
+            <VBox padding="$x1" prefHeight="90.0" prefWidth="152.0">
+              <children>
+                <Hyperlink id="a" fx:id="hyperlinkB" onAction="#onLinkButtonActionB" prefHeight="83.0" prefWidth="128.0" styleClass="menu2" text="" />
+              </children>
+            </VBox>
+            <VBox padding="$x1" prefHeight="90.0" prefWidth="152.0">
+              <children>
+                <Hyperlink id="a" fx:id="hyperlinkC" onAction="#onLinkButtonActionC" prefHeight="83.0" prefWidth="128.0" styleClass="menu3" text="" />
+              </children>
+            </VBox>
+            <VBox padding="$x1" prefHeight="90.0" prefWidth="152.0">
+              <children>
+                <Hyperlink id="a" fx:id="hyperlinkD" onAction="#onLinkButtonActionD" prefHeight="83.0" prefWidth="128.0" styleClass="menu4" text="" visited="true" />
+              </children>
+            </VBox>
+            <VBox padding="$x1" prefHeight="90.0" prefWidth="152.0">
+              <children>
+                <Hyperlink id="a" fx:id="hyperlinkE" onAction="#onLinkButtonActionE" prefHeight="83.0" prefWidth="128.0" styleClass="menu5" text="" />
+              </children>
+            </VBox>
+            <VBox padding="$x1" prefHeight="90.0" prefWidth="152.0">
+              <children>
+                <Hyperlink id="a" fx:id="hyperlinkF" onAction="#onLinkButtonActionF" prefHeight="83.0" prefWidth="128.0" styleClass="menu6" text="" />
+              </children>
+            </VBox>
+          </children>
+          <padding>
+            <Insets top="10.0" />
+          </padding>
+        </VBox>
+      </children>
+      <effect>
+        <DropShadow height="5.0" radius="2.0" width="5.0" />
+      </effect>
+    </AnchorPane>
+    <AnchorPane id="anchorPane3" fx:id="central_panel" prefHeight="576.0" prefWidth="930.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="170.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="74.0" />
+  </children>
+  <stylesheets>
+    <URL value="@../../../../image/MainPage.css" />
+  </stylesheets>
+</AnchorPane>

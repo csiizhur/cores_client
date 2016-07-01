@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="455.0" prefWidth="763.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.lanen.view.clinicaltest.TblSpecimenNumberFrameController">
+  <!-- TODO Add Nodes -->
+  <children>
+    <TableView fx:id="table" focusTraversable="false" prefHeight="394.0" prefWidth="731.0" AnchorPane.bottomAnchor="47.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="14.0">
+      <columns>
+        <TableColumn maxWidth="300.0" minWidth="141.0" prefWidth="141.0" resizable="false" sortable="false" text="专题编号" fx:id="studyPlanNoCol" />
+        <TableColumn maxWidth="120.0" minWidth="53.0" prefWidth="53.0" sortable="false" text="申请编号" fx:id="reqNoCol" />
+        <TableColumn maxWidth="190.0" minWidth="95.0" prefWidth="95.0" sortable="true" style="" text="检验项目" fx:id="testItemCol" />
+        <TableColumn maxWidth="220.0" minWidth="110.0" prefWidth="110.0" sortable="false" style="" text="检验编号" fx:id="specimenCodeCol" />
+        <TableColumn maxWidth="160.0" minWidth="80.0" sortable="false" text="动物ID" fx:id="animalIdCol" />
+        <TableColumn maxWidth="120.0" minWidth="53.0" prefWidth="53.0" sortable="false" text="动物编号" fx:id="animalCodeCol" />
+        <TableColumn maxWidth="180.0" minWidth="80.0" prefWidth="80.0" sortable="false" text="接收日期" fx:id="recDateCol" />
+        <TableColumn maxWidth="170.0" minWidth="53.0" prefWidth="53.0" sortable="false" text="接收时间" fx:id="recTimeCol" />
+        <TableColumn maxWidth="100.0" minWidth="50.0" prefWidth="60.0" resizable="true" sortable="false" text="标本类型" fx:id="specimenKindCol" />
+      </columns>
+    </TableView>
+    <Label layoutX="18.0" layoutY="14.0" prefWidth="592.0" text="注：检验编号已经自动产生，请检查信息的准确信，若无误请点击‘确定’后签字，若有误请点击‘返回’修改。" visible="false" />
+    <Button fx:id="confirmBtn" mnemonicParsing="false" onAction="#onConfirmBtnAction" prefWidth="72.0" text="确定" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="101.0" />
+    <Button mnemonicParsing="false" onAction="#onExitBtnAction" prefWidth="72.0" text="返回" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="16.0" />
+    <Label text="送检人：" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="33.0" />
+    <Label text="接收人：" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="175.0" />
+    <Label fx:id="senderLabel" prefWidth="82.0" text="张三" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="81.0" />
+    <Label fx:id="receiverLabel" prefWidth="82.0" text="李四" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="223.0" />
+  </children>
+  <stylesheets>
+    <URL value="@../../../../image/clinicaltest/style.css" />
+  </stylesheets>
+</AnchorPane>

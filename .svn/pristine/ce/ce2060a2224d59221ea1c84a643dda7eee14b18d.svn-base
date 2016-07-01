@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" onKeyPressed="#OnKeyPressed" onKeyReleased="#OnKeyReleased" prefHeight="650.0" prefWidth="1100.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.lanen.view.main.MainPageController">
+  <!-- TODO Add Nodes -->
+  <children>
+    <AnchorPane id="anchorPane1" fx:id="titlepane" minHeight="24.0" prefHeight="24.0" prefWidth="1100.0" styleClass="titlePane" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <children>
+        <MenuBar blendMode="EXCLUSION" minHeight="20.0" prefHeight="23.0" prefWidth="1100.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+          <menus>
+            <Menu mnemonicParsing="false" text="系统">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#onMI_userManageAction" text="用户管理" fx:id="mi_userManage">
+                  <graphic>
+                    <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                      <image>
+                        <Image url="@../../../../image/mi_usermanage.png" />
+                      </image>
+                    </ImageView>
+                  </graphic>
+                </MenuItem>
+                <MenuItem mnemonicParsing="false" onAction="#onMI_changePasswordAction" text="修改密码" fx:id="mi_changePassword">
+                  <graphic>
+                    <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                      <image>
+                        <Image url="@../../../../image/mi_changepassword.png" />
+                      </image>
+                    </ImageView>
+                  </graphic>
+                </MenuItem>
+                <MenuItem mnemonicParsing="false" onAction="#onMI_changeUserAction" text="切换用户" fx:id="mi_changeUser">
+                  <graphic>
+                    <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                      <image>
+                        <Image url="@../../../../image/mi_changeuser.png" />
+                      </image>
+                    </ImageView>
+                  </graphic>
+                </MenuItem>
+                <MenuItem mnemonicParsing="false" text="系统日志" fx:id="mi_log">
+                  <graphic>
+                    <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                      <image>
+                        <Image url="@../../../../image/mi_log.png" />
+                      </image>
+                    </ImageView>
+                  </graphic>
+                </MenuItem>
+                <SeparatorMenuItem mnemonicParsing="false" />
+                <MenuItem mnemonicParsing="false" onAction="#onMI_exitAction" text="退出" fx:id="mi_exit">
+                  <graphic>
+                    <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                      <image>
+                        <Image url="@../../../../image/mi_exit.png" />
+                      </image>
+                    </ImageView>
+                  </graphic>
+                </MenuItem>
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="试验">
+              <items>
+                <MenuItem disable="true" mnemonicParsing="false" onAction="#onMI_tissueSliceBatch" text="组织取材" fx:id="tissueSliceBatchMenuItem" />
+                <SeparatorMenuItem mnemonicParsing="false" />
+                <MenuItem mnemonicParsing="false" onAction="#onNewTaskButton" text="新建任务" fx:id="mi_onNewTaskButton" />
+                <MenuItem mnemonicParsing="false" onAction="#onMi_toBalCalibration" text="天平校准" fx:id="mi_balCalibration" />
+                <MenuItem mnemonicParsing="false" onAction="#onCreateSessionButton" text="新建会话" fx:id="createSessionMenuItem" />
+                <MenuItem mnemonicParsing="false" onAction="#onOpenSessionButton" text="打开会话" fx:id="openSessionMenuItem" />
+                <MenuItem disable="true" mnemonicParsing="false" onAction="#onTissueSliceButton" text="组织取材编号" fx:id="tissueSliceMenuItem" />
+                <MenuItem disable="true" mnemonicParsing="false" onAction="#onHistopathCheckButton" text="组织学检查" fx:id="histopathCheckMenuItem" />
+                <MenuItem mnemonicParsing="false" onAction="#onAdditionalDataButton" text="补录解剖数据" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="原始数据">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#onMi_toBalCalibationIndex" text="天平校准记录" />
+                <MenuItem disable="false" mnemonicParsing="false" onAction="#onTaskDetailInfoButton" text="解剖所见" />
+                <MenuItem disable="false" mnemonicParsing="false" onAction="#onTaskDetailInfoButton" text="脏器称重" />
+                <MenuItem disable="false" mnemonicParsing="false" onAction="#onTaskDetailInfoButton" text="脏器固定" />
+                <SeparatorMenuItem mnemonicParsing="false" />
+                <MenuItem mnemonicParsing="false" onAction="#onDataEditButton" text="数据修改" visible="true" fx:id="mi_dataEdit" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="查询与统计" visible="false">
+              <items>
+                <MenuItem mnemonicParsing="false" text="综合查询" />
+                <SeparatorMenuItem mnemonicParsing="false" />
+                <MenuItem mnemonicParsing="false" text="肿瘤个数" />
+                <MenuItem mnemonicParsing="false" text="病变发生率" />
+                <MenuItem mnemonicParsing="false" text="脏器重量" />
+                <MenuItem mnemonicParsing="false" text="临检数据" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="工具">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#onTL_BalanceRrgeAction" text="天平登记" fx:id="tl_BalanceRrg" />
+                <MenuItem mnemonicParsing="false" onAction="#onToBalConnectButton" text="天平接入信息" />
+                <MenuItem mnemonicParsing="false" onAction="#parameterSetting" text="校准标准" />
+                <MenuItem mnemonicParsing="false" onAction="#onTL_ChipReaderControllerAction" text="芯片阅读器" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="帮助">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#onMI_about" text="关于" />
+              </items>
+            </Menu>
+          </menus>
+        </MenuBar>
+      </children>
+      <effect>
+        <DropShadow height="5.0" radius="2.0" width="5.0" />
+      </effect>
+    </AnchorPane>
+    <AnchorPane prefHeight="625.0" prefWidth="374.0" styleClass="menuPane, statePanel" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="24.0">
+      <children>
+        <TabPane fx:id="tabPane" prefHeight="522.0" prefWidth="372.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="70.0">
+          <tabs>
+            <Tab text="按专题">
+              <content>
+                <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                  <children>
+                    <TreeView fx:id="taskTree" focusTraversable="false" prefHeight="410.0" prefWidth="343.0" showRoot="false" AnchorPane.bottomAnchor="96.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="14.0" />
+                    <AnchorPane prefHeight="75.0" prefWidth="343.0" styleClass="border" AnchorPane.bottomAnchor="13.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="13.0">
+                      <children>
+                        <Label id="msg1Label" fx:id="msg11Label" layoutX="10.0" layoutY="10.0" prefWidth="180.0" text="" />
+                        <Label id="msg2Label" fx:id="msg21Label" layoutX="10.0" layoutY="30.0" prefWidth="180.0" text="" />
+                        <Label id="msg3Label" fx:id="msg31Label" layoutX="10.0" layoutY="50.0" prefWidth="180.0" text="" />
+                        <Label id="msg1Label" fx:id="msg12Label" layoutX="192.0" layoutY="10.0" prefWidth="140.0" text="" />
+                        <Label id="msg2Label" fx:id="msg22Label" layoutX="192.0" layoutY="30.0" prefWidth="140.0" text="" />
+                        <Label id="msg3Label" fx:id="msg32Label" layoutX="192.0" layoutY="50.0" prefWidth="140.0" text="" />
+                      </children>
+                    </AnchorPane>
+                  </children>
+                </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="按任务">
+              <content>
+                <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="495.0" prefWidth="214.0">
+                  <children>
+                    <TableView fx:id="anatomyTaskTable" focusTraversable="false" prefHeight="492.0" prefWidth="344.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="14.0">
+                      <columns>
+                        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="120.0" sortable="false" text="专题编号" fx:id="studyNoCol" />
+                        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="55.0" sortable="false" text="任务序号" fx:id="anatomyNumCol" />
+                        <TableColumn prefWidth="86.0" text="计划解剖日期" fx:id="planBeginDateCol" />
+                        <TableColumn prefWidth="75.0" sortable="false" text="任务创建者" fx:id="taskCreaterCol" />
+                        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="86.0" sortable="false" text="任务创建日期" fx:id="taskCreateDateCol" />
+                      </columns>
+                    </TableView>
+                  </children>
+                </AnchorPane>
+              </content>
+            </Tab>
+          </tabs>
+        </TabPane>
+        <Button fx:id="newTaskButton" focusTraversable="false" layoutY="6.0" mnemonicParsing="false" onAction="#onNewTaskButton" prefHeight="26.0" prefWidth="72.0" text="新建任务" textAlignment="LEFT" AnchorPane.leftAnchor="11.0" />
+        <Button fx:id="taskInfoButton" disable="true" focusTraversable="false" layoutY="6.0" mnemonicParsing="false" onAction="#onTaskInfoButton" prefHeight="26.0" prefWidth="72.0" text="任务信息" AnchorPane.leftAnchor="93.0" />
+        <Button fx:id="tissueSliceButton" disable="true" focusTraversable="false" layoutY="6.0" mnemonicParsing="false" onAction="#onTissueSliceButton" prefHeight="26.0" text="组织取材编号" AnchorPane.leftAnchor="175.0" />
+        <Button fx:id="histopathCheckButton" disable="true" focusTraversable="false" layoutY="6.0" mnemonicParsing="false" onAction="#onHistopathCheckButton" prefHeight="26.0" text="组织学检查" AnchorPane.leftAnchor="277.0" />
+        <Pane layoutX="0.0" layoutY="38.0" prefHeight="9.0" prefWidth="374.0" styleClass="border-top" />
+        <HBox fx:id="beginHbox" layoutX="69.0" layoutY="45.0" prefHeight="23.0" prefWidth="100.0" />
+        <Label layoutX="172.0" layoutY="47.0" minHeight="9.000091552734375" prefHeight="9.000091552734375" prefWidth="31.0" text="--" />
+        <HBox fx:id="endHbox" layoutX="189.0" layoutY="45.0" prefHeight="23.0" prefWidth="100.0" />
+        <Label layoutX="14.0" layoutY="49.0" prefWidth="67.0" text="任务日期" />
+        <Label layoutX="113.0" layoutY="81.0" text="专题编号：" />
+        <Button fx:id="searchBtn" layoutX="318.0" layoutY="79.0" mnemonicParsing="false" onAction="#onSearchBtn" text="搜索" />
+        <TextField fx:id="searchText" layoutX="172.0" layoutY="78.0" onAction="#onSearchText" prefWidth="140.0" />
+      </children>
+    </AnchorPane>
+    <TableView fx:id="sessionTable" focusTraversable="false" prefHeight="571.0" prefWidth="699.0" AnchorPane.bottomAnchor="17.0" AnchorPane.leftAnchor="387.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="62.0">
+      <columns>
+        <TableColumn maxWidth="150.0" minWidth="100.0" prefWidth="129.0" sortable="false" text="专题编号" fx:id="studyNoCol2" />
+        <TableColumn maxWidth="250.0" minWidth="130.0" prefWidth="207.0" sortable="false" text="会话类型" fx:id="sessionTypeCol" />
+        <TableColumn maxWidth="90.0" minWidth="50.0" prefWidth="70.0" sortable="false" text="创建者" fx:id="sessionCreatorCol" />
+        <TableColumn maxWidth="160.0" minWidth="80.0" prefWidth="100.0" sortable="false" text="创建时间" fx:id="createTimeCol" />
+        <TableColumn maxWidth="90.0" minWidth="50.0" prefWidth="70.0" sortable="false" text="签字者" fx:id="finishSignerCol" />
+        <TableColumn maxWidth="120.0" minWidth="80.0" prefWidth="100.0" sortable="false" text="签字日期" fx:id="finishSignDateCol" />
+      </columns>
+    </TableView>
+    <ComboBox fx:id="sessionTypeComboBox" prefHeight="20.0" prefWidth="130.0" AnchorPane.leftAnchor="387.0" AnchorPane.topAnchor="35.0">
+      <items>
+        <FXCollections fx:factory="observableArrayList">
+          <String fx:value="全部会话" />
+          <String fx:value="动物解剖" />
+          <String fx:value="脏器称重" />
+          <String fx:value="脏器固定" />
+          <String fx:value="固定后称重" />
+        </FXCollections>
+      </items>
+    </ComboBox>
+    <Button fx:id="createSessionButton" disable="true" mnemonicParsing="false" onAction="#onCreateSessionButton" prefHeight="26.0" prefWidth="72.0" text="新建会话" AnchorPane.leftAnchor="528.0" AnchorPane.topAnchor="30.0" />
+    <Button fx:id="openSessionButton" disable="true" mnemonicParsing="false" onAction="#onOpenSessionButton" prefHeight="26.0" prefWidth="72.0" text="打开会话" AnchorPane.leftAnchor="610.0" AnchorPane.topAnchor="30.0" />
+    <Button mnemonicParsing="false" onAction="#onMi_toBalCalibration" prefHeight="26.0" prefWidth="72.0" text="天平校准" AnchorPane.rightAnchor="218.0" AnchorPane.topAnchor="30.0" />
+    <Button disable="true" mnemonicParsing="false" prefHeight="26.0" prefWidth="72.0" text="综合查询" AnchorPane.rightAnchor="136.0" AnchorPane.topAnchor="30.0" />
+    <Label prefHeight="20.0" prefWidth="60.0" text="当前用户：" AnchorPane.rightAnchor="59.0" AnchorPane.topAnchor="33.0" />
+    <Label fx:id="userNameLable" opacity="1.0" prefHeight="20.0" prefWidth="55.0" text="张三丰分" textAlignment="LEFT" AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="33.0" />
+    <Button mnemonicParsing="false" onAction="#onAnimalChipReaderAction" prefHeight="26.0" text="动物芯片查询" AnchorPane.rightAnchor="301.0" AnchorPane.topAnchor="30.0" />
+  </children>
+  <stylesheets>
+    <URL value="@../../../../image/MainPage.css" />
+  </stylesheets>
+</AnchorPane>

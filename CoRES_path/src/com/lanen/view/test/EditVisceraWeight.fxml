@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="anchorPane" prefHeight="429.0" prefWidth="601.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.lanen.view.test.EditVisceraWeight">
+  <!-- TODO Add Nodes -->
+  <children>
+    <AnchorPane layoutX="13.0" layoutY="14.0" prefHeight="50.0" prefWidth="575.0" styleClass="border">
+      <children>
+        <Button id="dataCollectBtn" focusTraversable="false" layoutX="14.0" layoutY="16.0" mnemonicParsing="false" onAction="#onConfirmBtnAction" prefHeight="26.0" prefWidth="72.0" text="确定" />
+        <Button focusTraversable="false" layoutX="101.0" layoutY="16.0" mnemonicParsing="false" onAction="#onExitBtnAction" prefHeight="26.0" prefWidth="72.0" text="取消" />
+      </children>
+    </AnchorPane>
+    <AnchorPane layoutX="14.0" layoutY="78.0" prefHeight="337.0" prefWidth="574.0" styleClass="border">
+      <children>
+        <Label layoutX="73.0" layoutY="40.0" prefWidth="72.0" text="专题编号：" />
+        <Label layoutX="73.0" layoutY="75.0" text="动物编号：" />
+        <Label layoutX="73.0" layoutY="111.0" text="脏器名称：" />
+        <Label layoutX="73.0" layoutY="191.0" prefWidth="85.0" text="脏器重量：" />
+        <TextField fx:id="weightTextField" layoutX="133.0" layoutY="188.0" prefWidth="120.0" />
+        <Label layoutX="36.0" layoutY="150.0" text="是否固定后称重：" />
+        <Label fx:id="studyNoLabel" layoutX="133.0" layoutY="40.0" prefWidth="127.0" text="2015-003" />
+        <Label fx:id="animalCodeLabel" layoutX="133.0" layoutY="75.0" prefWidth="127.0" text="1101" />
+        <Label fx:id="visceraNameLabel" layoutX="132.0" layoutY="111.0" prefWidth="127.0" text="脑" />
+        <Label fx:id="isFixedLabel" layoutX="133.0" layoutY="150.0" prefWidth="127.0" text="否" />
+        <Label fx:id="weightUnitLabel" layoutX="260.0" layoutY="194.0" prefWidth="48.0" text="g" />
+        <Button fx:id="balWeight" layoutX="55.0" layoutY="226.0" mnemonicParsing="false" onAction="#onBalWeight" prefHeight="26.0" prefWidth="72.0" text="天平称量" />
+      </children>
+    </AnchorPane>
+  </children>
+  <stylesheets>
+    <URL value="@../../../../image/centerPane.css" />
+  </stylesheets>
+</AnchorPane>

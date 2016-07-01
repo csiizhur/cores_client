@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<BorderPane prefHeight="506.0" prefWidth="788.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.lanen.view.UserRoleLogFrameController">
+  <bottom>
+    <BorderPane prefHeight="62.0" prefWidth="788.0">
+      <center>
+        <AnchorPane prefHeight="84.0" prefWidth="644.0" />
+      </center>
+      <right>
+        <AnchorPane minWidth="134.0" prefHeight="84.0" prefWidth="136.0">
+          <children>
+            <Button layoutX="50.0" layoutY="23.0" mnemonicParsing="false" onAction="#onExitBtnAction" prefWidth="72.0" text="关闭" />
+          </children>
+        </AnchorPane>
+      </right>
+    </BorderPane>
+  </bottom>
+  <center>
+    <TableView fx:id="table" prefHeight="328.0" prefWidth="674.0">
+      <columns>
+        <TableColumn editable="false" prefWidth="75.0" sortable="false" text="ID" fx:id="idCol" />
+        <TableColumn editable="false" prefWidth="75.0" sortable="false" text="用户名" fx:id="userNameCol" />
+        <TableColumn editable="false" prefWidth="75.0" sortable="false" text="系统编号" fx:id="systemIdCol" />
+        <TableColumn editable="false" prefWidth="75.0" sortable="false" text="角色编号" fx:id="roleIdCol" />
+        <TableColumn editable="false" prefWidth="75.0" sortable="false" text="动作" fx:id="typeCol" />
+        <TableColumn editable="false" prefWidth="75.0" sortable="false" text="操作时间" fx:id="createTimeCol" />
+        <TableColumn editable="false" prefWidth="75.0" sortable="false" text="操作人" fx:id="createUserCol" />
+        <TableColumn editable="false" prefWidth="300.0" sortable="false" text="权限列表" fx:id="privilegeListCol" />
+        <TableColumn editable="false" prefWidth="250.0" sortable="false" text="MD5" fx:id="md5Col" />
+      </columns>
+    </TableView>
+  </center>
+  <left>
+    <AnchorPane prefHeight="184.0" prefWidth="15.0" />
+  </left>
+  <right>
+    <AnchorPane prefHeight="184.0" prefWidth="15.0" />
+  </right>
+  <stylesheets>
+    <URL value="@../../../image/style.css" />
+  </stylesheets>
+  <top>
+    <AnchorPane prefHeight="15.0" prefWidth="788.0" />
+  </top>
+</BorderPane>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+
+<AnchorPane depthTest="DISABLE" prefHeight="475.0" prefWidth="593.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.lanen.view.UserFrameController">
+  <!-- TODO Add Nodes -->
+  <children>
+    <TreeView id="departmetTree" fx:id="departmentTree" focusTraversable="false" layoutX="14.0" layoutY="15.0" prefHeight="363.0" prefWidth="192.99990000000253" showRoot="false" />
+    <CheckBox fx:id="editCheckBox" layoutX="15.0" layoutY="392.0" mnemonicParsing="false" onAction="#onEditCheckBoxAction" text="编辑选中项" />
+    <CheckBox fx:id="showCheckBox" layoutX="106.0" layoutY="392.0" mnemonicParsing="false" onAction="#onShowCheckBoxAciton" text="显示停用账户" />
+    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="GREY" height="395.0" layoutX="222.0" layoutY="14.0" stroke="#9f9f9f" strokeType="INSIDE" width="358.0" />
+    <TabPane cache="true" depthTest="DISABLE" layoutX="223.0" layoutY="15.0" prefHeight="393.0" prefWidth="356.0" tabClosingPolicy="UNAVAILABLE">
+      <tabs>
+        <Tab text="用户信息">
+          <content>
+            <AnchorPane id="Content" cache="true" cacheHint="SCALE_AND_ROTATE" minHeight="0.0" minWidth="0.0" prefHeight="368.9998779296875" prefWidth="356.0">
+              <children>
+                <Label layoutX="27.0" layoutY="39.0" text="部门：" />
+                <ComboBox fx:id="departmentComboBox" layoutX="69.0" layoutY="36.0" prefWidth="160.0">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList">
+                      <String fx:value="项 1" />
+                      <String fx:value="项 2" />
+                      <String fx:value="项 3" />
+                    </FXCollections>
+                  </items>
+                </ComboBox>
+                <Button fx:id="newBtn" layoutX="270.0" layoutY="36.0" mnemonicParsing="false" onAction="#onNewDepartmentAction" text="新建" />
+                <Label layoutX="14.0" layoutY="89.0" text="用户名：" />
+                <Label layoutX="194.0" layoutY="89.0" text="编号：" visible="false" />
+                <TextField fx:id="userNameText" layoutX="69.0" layoutY="86.0" prefWidth="160.0" promptText="必填" />
+                <TextField id="idText" layoutX="230.0" layoutY="86.0" prefWidth="114.0" promptText="" visible="false" />
+                <Label layoutX="26.0" layoutY="142.0" text="姓名：" />
+                <Label layoutX="193.0" layoutY="139.0" text="卡号：" />
+                <TextField fx:id="realNameText" layoutX="69.0" layoutY="136.0" prefWidth="114.0" promptText="必填" />
+                <TextField fx:id="userNumberText" layoutX="230.0" layoutY="136.0" prefWidth="114.0" />
+                <Label layoutX="26.0" layoutY="188.0" text="电话：" />
+                <Label layoutX="193.0" layoutY="188.0" text="邮箱：" />
+                <TextField fx:id="phoneText" layoutX="69.0" layoutY="185.0" prefWidth="114.0" />
+                <TextField fx:id="emailText" layoutX="231.0" layoutY="182.0" prefWidth="114.0" />
+                <TextArea fx:id="flagRemarkText" editable="false" layoutX="65.0" layoutY="273.0" prefHeight="59.0" prefWidth="289.0" visible="false" wrapText="true" />
+                <Label id="label" fx:id="label2" layoutX="3.0" layoutY="273.0" text="停用说明：" visible="false" />
+                <Label layoutX="14.0" layoutY="244.0" text="创建人：" />
+                <TextField fx:id="createUserText" editable="false" layoutX="69.0" layoutY="238.0" prefWidth="91.0" />
+                <Label cache="true" layoutX="170.0" layoutY="241.0" pickOnBounds="true" text="创建时间：" />
+                <TextField fx:id="createTimeText" editable="false" layoutX="229.0" layoutY="238.0" prefWidth="114.0" />
+                <Button fx:id="addBtn" layoutX="270.0" layoutY="328.0" mnemonicParsing="false" onAction="#onAddBtnAction" prefWidth="72.0" text="增加" />
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+        <Tab text="用户权限">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <children>
+                <Label layoutX="14.0" layoutY="38.0" text="系统：" />
+                <ComboBox fx:id="systemComboBox" layoutX="50.0" layoutY="35.0" prefWidth="249.0">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList">
+                      <String fx:value="项 1" />
+                      <String fx:value="项 2" />
+                      <String fx:value="项 3" />
+                    </FXCollections>
+                  </items>
+                </ComboBox>
+                <TreeView fx:id="roleTree" layoutX="14.0" layoutY="76.0" prefHeight="234.0" prefWidth="328.0" />
+                <Button id="confirmBtn2" fx:id="confirmBtn" layoutX="270.0" layoutY="328.0" mnemonicParsing="false" onAction="#OnConfirmBtnAction" prefWidth="72.0" text="应用" />
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+      </tabs>
+    </TabPane>
+    <Button fx:id="resetPasswordBtn" layoutX="14.0" layoutY="441.0" mnemonicParsing="false" onAction="#onResetpasswordBtnAction" prefWidth="72.0" text="密码重置" />
+    <Button fx:id="noUseBtn" layoutX="101.0" layoutY="441.0" mnemonicParsing="false" onAction="#onNoUseBtnAction" prefWidth="72.0" text="账户停用" />
+    <Button layoutX="508.0" layoutY="441.0" mnemonicParsing="false" onAction="#onExitBtnAction" prefWidth="72.0" text="关闭" />
+    <Separator layoutY="423.0" prefWidth="593.0" />
+  </children>
+  <stylesheets>
+    <URL value="@../../../image/style.css" />
+  </stylesheets>
+</AnchorPane>

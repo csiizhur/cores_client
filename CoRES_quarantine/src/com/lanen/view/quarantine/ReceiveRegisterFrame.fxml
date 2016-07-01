@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="614.0" prefWidth="643.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.lanen.view.quarantine.ReceiveRegisterFrame">
+  <!-- TODO Add Nodes -->
+  <children>
+    <HBox layoutX="15.0" layoutY="11.0" prefHeight="33.0" prefWidth="621.0" styleClass="underLinePanel">
+      <children>
+        <Button fx:id="saveButton" mnemonicParsing="false" onAction="#onSaveButton" prefWidth="72.0" text="保存">
+          <HBox.margin>
+            <Insets left="10.0" fx:id="x1" />
+          </HBox.margin>
+        </Button>
+        <Button fx:id="signButton" mnemonicParsing="false" onAction="#onSignButton" prefWidth="72.0" text="签字" HBox.margin="$x1" />
+        <Button fx:id="checkButton" mnemonicParsing="false" onAction="#onCheckButton" prefWidth="72.0" text="复核" HBox.margin="$x1" />
+        <Button fx:id="animalRegisterButton" mnemonicParsing="false" onAction="#onAnimalRegisterButton" prefWidth="72.0" text="登记动物" HBox.margin="$x1" />
+        <Button fx:id="printButton" mnemonicParsing="false" onAction="#onPrintAnimalRecIndexButton" prefWidth="162.0" text="打印试验动物接收登记表">
+          <HBox.margin>
+            <Insets left="120.0" right="15.0" />
+          </HBox.margin>
+        </Button>
+      </children>
+    </HBox>
+    <TabPane layoutX="16.0" layoutY="54.0" prefHeight="550.9999000000025" prefWidth="619.0" tabClosingPolicy="UNAVAILABLE">
+      <tabs>
+        <Tab text="接收信息">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="statePanel">
+              <children>
+                <Label layoutX="33.0" layoutY="17.0" prefWidth="94.0" text="试验动物生产单" />
+                <TextField id="iacucCodeText" fx:id="producerText" layoutX="126.0" layoutY="14.0" prefWidth="121.0" />
+                <Label layoutX="331.0" layoutY="17.0" prefWidth="82.0" text="动物合格证号" />
+                <TextField id="iacucCodeText" fx:id="certificateText" layoutX="420.0" layoutY="14.0" prefWidth="121.0" />
+                <Label layoutX="35.0" layoutY="41.0" prefWidth="82.0" text="动物级别" />
+                <Label layoutX="331.0" layoutY="42.0" prefWidth="82.0" text="接收日期" />
+                <TextField id="iacucCodeText" layoutX="420.0" layoutY="39.0" prefWidth="121.0" />
+                <Label layoutX="35.0" layoutY="68.0" prefWidth="82.0" text="动物种属" />
+                <Label layoutX="331.0" layoutY="68.0" prefWidth="82.0" text="安置房间号码" />
+                <TextField id="iacucCodeText" layoutX="420.0" layoutY="65.0" prefHeight="20.0" prefWidth="121.0" />
+                <HBox fx:id="roomHBox" layoutX="420.0" layoutY="65.0" prefHeight="20.0" prefWidth="121.0" style="" />
+                <Label layoutX="33.0" layoutY="95.0" prefWidth="82.0" text="动物品系" />
+                <Label layoutX="331.0" layoutY="95.0" prefWidth="82.0" text="运输车辆" />
+                <ComboBox fx:id="animalTypeComboBox" layoutX="126.0" layoutY="65.0" prefHeight="19.0" prefWidth="121.0">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList" />
+                  </items>
+                </ComboBox>
+                <ComboBox id="animalTypeComboBox" fx:id="animalStrainComboBox" layoutX="126.0" layoutY="92.0" prefHeight="19.0" prefWidth="121.0">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList" />
+                  </items>
+                </ComboBox>
+                <RadioButton fx:id="hasAirConditionerA" layoutX="420.0" layoutY="96.0" mnemonicParsing="false" text="有空调" />
+                <RadioButton fx:id="hasAirConditionerB" layoutX="504.0" layoutY="95.0" mnemonicParsing="false" text="无空调" />
+                <Label layoutX="33.0" layoutY="126.0" prefWidth="82.0" text="动物数量" />
+                <Label layoutX="122.0" layoutY="126.0" prefWidth="19.0" text="雄" />
+                <Label layoutX="208.0" layoutY="126.0" prefWidth="19.0" text="雌" />
+                <TextField fx:id="numMaleText" layoutX="139.0" layoutY="123.0" prefWidth="55.0" />
+                <TextField fx:id="numFemaleText" layoutX="227.0" layoutY="123.0" prefWidth="55.0" />
+                <ComboBox fx:id="ageUnitComboBox" layoutX="271.0" layoutY="153.0" minWidth="43.0" prefHeight="19.0" prefWidth="43.0">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList">
+                      <String fx:value="天" />
+                      <String fx:value="周" />
+                      <String fx:value="月" />
+                      <String fx:value="年" />
+                    </FXCollections>
+                  </items>
+                </ComboBox>
+                <Label layoutX="122.0" layoutY="153.0" prefWidth="20.0" text="雄" />
+                <TextField fx:id="ageMaleUText" layoutX="139.0" layoutY="153.0" prefWidth="55.0" />
+                <TextField fx:id="ageFemaleUText" layoutX="139.0" layoutY="176.0" prefWidth="55.0" />
+                <Label layoutX="196.0" layoutY="156.0" prefWidth="20.0" text="-" />
+                <Label layoutX="122.0" layoutY="176.0" prefWidth="20.0" text="雌" />
+                <TextField fx:id="ageMaleLText" layoutX="207.0" layoutY="153.0" prefWidth="55.0" />
+                <TextField fx:id="ageFemaleLText" layoutX="207.0" layoutY="177.0" prefWidth="55.0" />
+                <Label layoutX="196.0" layoutY="179.0" prefWidth="14.0" text="-" />
+                <Label layoutX="32.0" layoutY="157.0" prefWidth="82.0" text="动物年龄范围" />
+                <Label layoutX="32.0" layoutY="290.0" prefWidth="122.0" text="与需求单要求的偏差" />
+                <TextArea fx:id="reqDeviationText" layoutX="155.0" layoutY="290.0" prefHeight="45.0" prefWidth="404.0" wrapText="true" />
+                <Label layoutX="32.0" layoutY="342.0" prefWidth="122.0" text="运输动物箱的破损情况" />
+                <TextArea id="abnormalInfoText" fx:id="packDamagedText" layoutX="155.0" layoutY="342.0" prefHeight="45.0" prefWidth="404.0" wrapText="true" />
+                <Label layoutX="32.0" layoutY="393.0" prefWidth="122.0" text="运输异常情况" />
+                <TextArea fx:id="abnormalInfoText" layoutX="155.0" layoutY="393.0" prefHeight="45.0" prefWidth="404.0" wrapText="true" />
+                <Label layoutX="33.0" layoutY="445.0" prefWidth="267.0" text="消毒动物运输外包装及动物接收区域所用消毒液" />
+                <Label layoutX="33.0" layoutY="468.0" prefWidth="122.0" text="备注" />
+                <TextArea fx:id="remarkText" layoutX="156.0" layoutY="468.0" prefHeight="45.0" prefWidth="404.0" wrapText="true" />
+                <Label layoutX="32.0" layoutY="207.0" prefWidth="138.0" text="试验动物的相关证明文件" />
+                <CheckBox fx:id="cerHealthRptCheckBox" layoutX="189.0" layoutY="208.0" mnemonicParsing="false" text="试验动物近期健康监测报告" />
+                <CheckBox fx:id="cerBackInfoCheckBox" layoutX="189.0" layoutY="228.0" mnemonicParsing="false" text="动物个体背景资料" />
+                <CheckBox fx:id="cerReceiptCheckBox" layoutX="189.0" layoutY="248.0" mnemonicParsing="false" text="发票" />
+                <CheckBox id="cerOhterCheckBox" fx:id="cerOtherCheckBox" layoutX="189.0" layoutY="269.0" mnemonicParsing="false" onAction="#onRecOtherCheckBox" text="其他" />
+                <TextField id="cerOhterText" fx:id="cerOtherText" disable="true" layoutX="248.0" layoutY="266.0" prefWidth="267.0" visible="true" />
+                <ComboBox id="animalTypeComboBox" fx:id="animalLevelComboBox" layoutX="126.0" layoutY="39.0" prefHeight="19.0" prefWidth="121.0">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList">
+                      <String fx:value="普通级" />
+                      <String fx:value="清洁级" />
+                      <String fx:value="SPF级" />
+                      <String fx:value="无菌级" />
+                    </FXCollections>
+                  </items>
+                </ComboBox>
+                <VBox fx:id="recDateVBox" layoutX="420.0" layoutY="39.0" prefHeight="19.0" prefWidth="121.0" />
+                <AnchorPane layoutX="366.0" layoutY="119.0" prefHeight="143.0" prefWidth="200.0" styleClass="statePanel">
+                  <children>
+                    <ListView id="studyNoListView" fx:id="qrrIdListView" focusTraversable="false" layoutX="14.0" layoutY="9.0" prefHeight="127.0" prefWidth="172.0" />
+                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="-7.0" prefWidth="82.0" styleClass="whiteLabel" text="对应以下申请" textAlignment="LEFT" />
+                  </children>
+                </AnchorPane>
+                <ComboBox fx:id="thimerosalComboBox" editable="true" layoutX="327.0" layoutY="443.0" prefHeight="19.0" prefWidth="121.0">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList">
+                      <String fx:value="84消毒液" />
+                      <String fx:value="百毒杀" />
+                    </FXCollections>
+                  </items>
+                </ComboBox>
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+        <Tab text="动物信息">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="statePanel">
+              <children>
+                <TableView fx:id="animalTable" layoutX="16.0" layoutY="16.0" prefHeight="488.0" prefWidth="587.0">
+                  <columns>
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="39.0" sortable="false" text="序号" fx:id="snCol" />
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="84.0" sortable="false" text="接收单号" fx:id="recIdCol" />
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="55.0" sortable="false" text="动物种类" fx:id="animalTypeCol" />
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="62.0" sortable="false" text="动物品系" fx:id="animalStrainCol" />
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="73.0" sortable="false" text="动物Id号" fx:id="animalIdCol" />
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="38.0" sortable="false" text="性别" fx:id="genderCol" />
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="92.0" sortable="false" text="所属课题" fx:id="planStudyNoCol" />
+                    <TableColumn prefWidth="75.0" sortable="false" text="安置房间号" fx:id="roomCol" />
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="51.0" sortable="false" text="状态" fx:id="stateCol" />
+                  </columns>
+                </TableView>
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+      </tabs>
+    </TabPane>
+    <HBox fx:id="editableHBox" layoutX="15.0" layoutY="121.0" prefHeight="107.0" prefWidth="291.0" visible="false" />
+    <HBox fx:id="editableHBox2" layoutX="347.0" layoutY="149.0" prefHeight="20.0" prefWidth="259.0" visible="false" />
+    <HBox fx:id="editableHBox3" layoutX="381.0" layoutY="206.0" prefHeight="143.0" prefWidth="200.0" visible="false" />
+    <HBox fx:id="editableHBox4" layoutX="14.0" layoutY="83.0" prefHeight="520.0" prefWidth="621.0" visible="false" />
+  </children>
+  <stylesheets>
+    <URL value="@../../../../image/centerPane.css" />
+  </stylesheets>
+</AnchorPane>

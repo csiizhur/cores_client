@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="anchorPane" onMouseClicked="#onMouseClicked" prefHeight="429.0" prefWidth="601.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.lanen.view.test.TempReqPage">
+  <!-- TODO Add Nodes -->
+  <children>
+    <AnchorPane layoutX="13.0" layoutY="14.0" prefHeight="50.0" prefWidth="575.0" styleClass="border">
+      <children>
+        <Button focusTraversable="true" layoutX="14.0" layoutY="12.0" mnemonicParsing="false" onAction="#onConfirmBtnAction" prefHeight="26.0" prefWidth="72.0" text="确定" />
+        <Button focusTraversable="true" layoutX="102.0" layoutY="12.0" mnemonicParsing="false" onAction="#onExitBtnAction" prefHeight="26.0" prefWidth="72.0" text="取消" />
+        <Label fx:id="msgLabel" alignment="CENTER_RIGHT" layoutX="237.0" layoutY="19.0" prefWidth="326.0" text="芯片阅读器连接中……" />
+      </children>
+    </AnchorPane>
+    <AnchorPane layoutX="14.0" layoutY="78.0" prefHeight="337.0" prefWidth="574.0" styleClass="border">
+      <children>
+        <Label layoutX="20.0" layoutY="26.0" prefWidth="72.0" text="专题编号：" />
+        <TextField fx:id="studyNoText" layoutX="92.0" layoutY="23.0" onAction="#onStudyNoTextAction" prefWidth="137.0" />
+        <AnchorPane layoutX="13.0" layoutY="50.0" minHeight="2.0" prefHeight="2.0" prefWidth="548.0" styleClass="border-bottom" />
+        <Label layoutX="24.0" layoutY="88.0" prefWidth="72.0" text="申请日期：" />
+        <Label layoutX="25.0" layoutY="172.0" prefWidth="72.0" text="解剖日期：" />
+        <Label layoutX="25.0" layoutY="130.0" prefWidth="72.0" text="动物种类：" />
+        <Label layoutX="25.0" layoutY="214.0" prefWidth="72.0" text="试验阶段：" />
+        <Label layoutX="25.0" layoutY="256.0" prefWidth="72.0" text="解剖原因：" />
+        <Label fx:id="reqDateLabel" layoutX="97.0" layoutY="88.0" prefWidth="92.0" text="2014-12-15" />
+        <Label fx:id="animalTypeLabel" layoutX="97.0" layoutY="130.0" prefWidth="92.0" text="大鼠" />
+        <ComboBox fx:id="testPhaseComboBox" editable="false" focusTraversable="false" layoutX="97.0" layoutY="211.0" prefHeight="20.0" prefWidth="137.0">
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="给药期" />
+              <String fx:value="恢复期" />
+            </FXCollections>
+          </items>
+        </ComboBox>
+        <ComboBox fx:id="anatomyRsnComboBox" editable="false" focusTraversable="false" layoutX="97.0" layoutY="252.0" prefHeight="20.0" prefWidth="137.0">
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="濒死解剖" />
+              <String fx:value="死亡解剖" />
+            </FXCollections>
+          </items>
+        </ComboBox>
+        <HBox fx:id="anatomyDateHBox" layoutX="96.0" layoutY="169.0" prefHeight="25.0" prefWidth="109.0" />
+        <Label layoutX="243.0" layoutY="26.0" prefWidth="47.0" text="SD：" />
+        <Label fx:id="sdLabel" layoutX="271.0" layoutY="26.0" prefWidth="71.9998779296875" text="张三" />
+        <Label fx:id="pathDirectorLabel" layoutX="455.0" layoutY="26.0" prefWidth="92.0" text="李四" />
+        <Label layoutX="357.0" layoutY="26.0" prefWidth="104.0" text="病理专题负责人：" />
+        <AnchorPane layoutX="297.0" layoutY="63.0" prefHeight="264.0" prefWidth="242.0" styleClass="border">
+          <children>
+            <ListView fx:id="animalListView" focusTraversable="false" layoutX="21.0" layoutY="14.0" prefHeight="186.0" prefWidth="157.0" />
+            <TextField fx:id="animalText" focusTraversable="true" layoutX="21.0" layoutY="230.0" onAction="#onAddAction" prefWidth="157.0" />
+            <Button fx:id="delBtn" focusTraversable="true" layoutX="193.0" layoutY="181.0" mnemonicParsing="false" onAction="#onDelAction" prefWidth="30.0" text="-" />
+            <Button fx:id="addBtn" focusTraversable="true" layoutX="193.0" layoutY="230.0" mnemonicParsing="false" onAction="#onAddAction" text="+" />
+            <RadioButton fx:id="animalIdRadioButton" layoutX="21.0" layoutY="207.0" mnemonicParsing="false" selected="true" text="动物ID号">
+              <toggleGroup>
+                <ToggleGroup fx:id="toggleGroup" />
+              </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="animalCodeRadioButton" layoutX="100.0" layoutY="208.0" mnemonicParsing="false" text="动物编号" toggleGroup="$toggleGroup" />
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="12.0" layoutY="-7.0" prefWidth="67.0" styleClass="whiteLabel" text="动物列表" />
+          </children>
+        </AnchorPane>
+      </children>
+    </AnchorPane>
+  </children>
+  <stylesheets>
+    <URL value="@../../../../image/centerPane.css" />
+  </stylesheets>
+</AnchorPane>

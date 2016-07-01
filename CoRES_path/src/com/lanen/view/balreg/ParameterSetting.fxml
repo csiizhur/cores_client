@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="anchorPane" prefHeight="428.999755859375" prefWidth="700.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.lanen.view.balreg.ParameterSetting">
+  <!-- TODO Add Nodes -->
+  <children>
+    <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="382.0" prefWidth="200.0" styleClass="border">
+      <children>
+        <TableView fx:id="counterWeightTable" layoutX="13.0" layoutY="14.0" prefHeight="316.0" prefWidth="173.00009999999747">
+          <columns>
+            <TableColumn prefWidth="75.0" sortable="false" text="砝码编号" fx:id="cPCodeCol" />
+            <TableColumn prefWidth="75.0" sortable="false" text="砝码重量" fx:id="cPWeightCol" />
+            <TableColumn editable="false" prefWidth="75.0" resizable="true" text="id" visible="false" fx:id="widCol" />
+          </columns>
+        </TableView>
+        <Button fx:id="delectWeightBalButton" disable="true" layoutX="126.0" layoutY="344.0" minWidth="60.0" mnemonicParsing="false" onAction="#delectCounterWeight" prefHeight="26.0" text="删除" />
+      </children>
+    </AnchorPane>
+    <AnchorPane layoutX="224.0" layoutY="13.0" minHeight="215.0" prefHeight="382.0" prefWidth="277.0" styleClass="border">
+      <children>
+        <TableView fx:id="counterpoiseTable" layoutX="14.0" layoutY="14.0" prefHeight="316.0" prefWidth="250.0">
+          <columns>
+            <TableColumn prefWidth="75.0" sortable="false" text="天平精度" fx:id="balPrecisionCol" />
+            <TableColumn prefWidth="75.0" sortable="false" text="允差下限" fx:id="toleranceLowerCol" />
+            <TableColumn prefWidth="75.0" sortable="false" text="允差上限" fx:id="toleranceUpperCol" />
+            <TableColumn editable="true" maxWidth="5000.0" minWidth="10.0" prefWidth="32.0" sortable="false" text="id" visible="false" fx:id="idCol" />
+          </columns>
+        </TableView>
+        <Button fx:id="delectBalButton" disable="true" focusTraversable="true" layoutX="203.0" layoutY="345.0" minWidth="60.0" mnemonicParsing="false" onAction="#delectCounterpoise" prefHeight="26.0" text="删除" />
+      </children>
+    </AnchorPane>
+    <AnchorPane layoutX="512.0" layoutY="13.0" prefHeight="382.0" prefWidth="173.0" styleClass="border">
+      <children>
+        <Label layoutX="3.0" layoutY="38.0" text="砝码编号" />
+        <Label layoutX="3.0" layoutY="79.0" text="砝码重量" />
+        <Label layoutX="5.0" layoutY="206.0" text="天平精度" />
+        <Label layoutX="4.0" layoutY="246.0" text="允差下限" />
+        <Label layoutX="4.0" layoutY="286.0" text="允差上限" />
+        <Button fx:id="saveBalButton" disable="false" layoutX="32.0" layoutY="323.0" minWidth="60.0" mnemonicParsing="false" onAction="#saveCounterpoiseBtnAction" prefHeight="26.0" text="添加" />
+        <Button fx:id="updateBalButton" disable="true" layoutX="103.0" layoutY="323.0" minWidth="60.0" mnemonicParsing="false" onAction="#updateCounterpoiseBtnAction" prefHeight="26.0" text="更新" />
+        <TextField id="cPCodePointText" fx:id="cPCodeText" layoutX="56.0" layoutY="35.0" prefWidth="89.0" />
+        <TextField fx:id="cPWeightText" layoutX="56.0" layoutY="79.0" prefWidth="89.0" />
+        <TextField fx:id="balPrecisionText" layoutX="60.0" layoutY="206.0" prefWidth="89.0" />
+        <TextField fx:id="toleranceLowerText" layoutX="59.0" layoutY="246.0" prefWidth="89.0" />
+        <TextField fx:id="toleranceUpperText" layoutX="59.0" layoutY="286.0" prefWidth="88.9998779296875" />
+        <Label layoutX="144.0" layoutY="79.0" prefWidth="12.0" text="g" />
+        <Label layoutX="149.0" layoutY="206.0" prefWidth="12.0" text="g" />
+        <Label layoutX="149.0" layoutY="286.0" prefWidth="12.0" text="g" />
+        <Label layoutX="149.0" layoutY="246.0" prefWidth="12.0" text="g" />
+        <Separator layoutX="1.0" layoutY="154.0" prefHeight="14.0" prefWidth="168.0" />
+        <Button id="saveBalButton" fx:id="savWeighteBalButton" disable="false" layoutX="34.0" layoutY="124.0" minWidth="60.0" mnemonicParsing="false" onAction="#saveCounterWeightBtnAction" prefHeight="26.0" text="添加" />
+        <Button id="updateBalButton" fx:id="updateWeightBalButton" disable="true" layoutX="105.0" layoutY="124.0" minWidth="60.0" mnemonicParsing="false" onAction="#updateCounterWeightBtnAction" prefHeight="26.0" text="更新" />
+        <Label layoutX="3.0" layoutY="8.0" text="砝码信息" />
+        <Label layoutX="3.0" layoutY="175.0" text="校准信息" />
+      </children>
+    </AnchorPane>
+    <Button focusTraversable="false" layoutX="613.0" layoutY="396.0" mnemonicParsing="false" onAction="#onExitBtnAction" prefHeight="26.0" prefWidth="72.0" text="关闭" />
+  </children>
+  <stylesheets>
+    <URL value="@../../../../image/centerPane.css" />
+  </stylesheets>
+</AnchorPane>

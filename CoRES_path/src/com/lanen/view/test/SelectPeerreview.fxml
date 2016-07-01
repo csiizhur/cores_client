@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="anchorPane" prefHeight="328.0" prefWidth="503.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.lanen.view.test.SelectPeerreview">
+  <!-- TODO Add Nodes -->
+  <children>
+    <AnchorPane prefHeight="50.0" prefWidth="575.0" styleClass="border" AnchorPane.leftAnchor="13.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="14.0">
+      <children>
+        <Button id="dataCollectBtn" focusTraversable="false" layoutX="14.0" layoutY="11.0" mnemonicParsing="false" onAction="#onConfirmBtnAction" prefHeight="26.0" prefWidth="72.0" text="确定" />
+        <Button focusTraversable="false" layoutX="101.0" layoutY="11.0" mnemonicParsing="false" onAction="#onExitBtnAction" prefHeight="26.0" prefWidth="72.0" text="取消" />
+      </children>
+    </AnchorPane>
+    <AnchorPane prefHeight="337.0" prefWidth="574.0" styleClass="border" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="78.0">
+      <children>
+        <Label layoutX="81.0" layoutY="66.0" prefWidth="51.0" text="复核者：" />
+        <ComboBox fx:id="histopathReviewerComboBox" layoutX="127.0" layoutY="64.0" prefHeight="19.0" prefWidth="118.0">
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="项 1" />
+              <String fx:value="项 2" />
+              <String fx:value="项 3" />
+            </FXCollections>
+          </items>
+        </ComboBox>
+        <RadioButton fx:id="needReviewRadio" layoutX="46.0" layoutY="40.0" mnemonicParsing="false" text="当前专题镜检需要复核，请指定复核者">
+          <toggleGroup>
+            <ToggleGroup fx:id="tg" />
+          </toggleGroup>
+        </RadioButton>
+        <RadioButton fx:id="noNeedReviewRadio" layoutX="46.0" layoutY="101.0" mnemonicParsing="false" text="当前专题镜检不需要复核，直接提交" toggleGroup="$tg" />
+      </children>
+    </AnchorPane>
+  </children>
+  <stylesheets>
+    <URL value="@../../../../image/centerPane.css" />
+  </stylesheets>
+</AnchorPane>

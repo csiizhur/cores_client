@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.*?>
+
+<StackPane prefHeight="218.0" prefWidth="347.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.lanen.view.sign.SignFrame">
+  <!-- TODO Add Nodes -->
+  <children>
+    <ImageView fitHeight="216.76943969726562" fitWidth="345.0412435690957" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@../../../../image/clinicaltest/login.jpg" preserveRatio="false" smooth="false" />
+      </image>
+    </ImageView>
+    <AnchorPane prefHeight="217.99990000000253" prefWidth="346.9999000000025">
+      <children>
+        <Label layoutX="51.0" layoutY="89.0" text="用户名" />
+        <Label layoutX="51.0" layoutY="131.0" text="密码" />
+        <ComboBox fx:id="userNameComboBox" cacheHint="SCALE" depthTest="DISABLE" editable="true" layoutX="102.0" layoutY="87.0" onKeyPressed="#onKeyAction" onMouseClicked="#onTextAction" prefWidth="203.0">
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="项 1" />
+              <String fx:value="项 2" />
+              <String fx:value="项 3" />
+            </FXCollections>
+          </items>
+        </ComboBox>
+        <PasswordField fx:id="passwordText" layoutX="102.0" layoutY="128.0" onAction="#onOkBtnAction" onKeyPressed="#onKeyAction" onMouseClicked="#onTextAction" prefWidth="203.0" />
+        <Button id="okBtn" layoutX="147.0" layoutY="171.0" mnemonicParsing="false" onAction="#onOkBtnAction" prefWidth="72.0" text="确定" />
+        <Button layoutX="234.0" layoutY="171.0" mnemonicParsing="false" onAction="#onCancelBtnAction" prefWidth="72.0" text="取消" />
+        <Label fx:id="label1" layoutX="103.0" layoutY="47.0" prefWidth="201.0" text="确定要停用该用户吗？" />
+        <Label fx:id="label2" layoutX="103.0" layoutY="73.0" prefWidth="103.0" text="密码错误！" textFill="RED">
+          <font>
+            <Font size="10.0" />
+          </font>
+        </Label>
+      </children>
+    </AnchorPane>
+  </children>
+</StackPane>

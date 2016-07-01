@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="anchorPane" prefHeight="249.0" prefWidth="601.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.lanen.view.balreg.AddBalConnect">
+  <!-- TODO Add Nodes -->
+  <children>
+    <AnchorPane layoutX="13.0" layoutY="14.0" prefHeight="50.0" prefWidth="575.0" styleClass="border">
+      <children>
+        <Button id="dataCollectBtn" focusTraversable="false" layoutX="14.0" layoutY="12.0" mnemonicParsing="false" onAction="#saveAddBalConnect" prefHeight="26.0" prefWidth="72.0" text="确定" />
+        <Button focusTraversable="false" layoutX="101.0" layoutY="12.0" mnemonicParsing="false" onAction="#onExitBtnAction" prefHeight="26.0" prefWidth="72.0" text="取消" />
+      </children>
+    </AnchorPane>
+    <AnchorPane layoutX="14.0" layoutY="78.0" prefHeight="154.0" prefWidth="574.0" styleClass="border">
+      <children>
+        <Label layoutX="25.0" layoutY="40.0" text="天平编号" />
+        <Label layoutX="25.0" layoutY="80.0" text="计算机编号" />
+        <Label layoutX="305.0" layoutY="40.0" text="接入端口" />
+        <Label layoutX="305.0" layoutY="80.0" text="是否启用" />
+        <ComboBox fx:id="balRegComboBox" layoutX="90.0" layoutY="40.0" minHeight="20.0" prefWidth="200.0">
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="项 1" />
+              <String fx:value="项 2" />
+              <String fx:value="项 3" />
+            </FXCollections>
+          </items>
+        </ComboBox>
+        <TextField fx:id="hostnameText" editable="true" layoutX="90.0" layoutY="80.0" prefWidth="200.0" />
+        <ComboBox fx:id="commNameComboBox" editable="false" layoutX="360.0" layoutY="40.0" minHeight="20.0" prefWidth="200.0">
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="项 1" />
+              <String fx:value="项 2" />
+              <String fx:value="项 3" />
+            </FXCollections>
+          </items>
+        </ComboBox>
+        <ComboBox fx:id="enabledComboBox" disable="false" editable="false" layoutX="360.0" layoutY="80.0" minHeight="20.0" prefWidth="200.0">
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="项 1" />
+              <String fx:value="项 2" />
+              <String fx:value="项 3" />
+            </FXCollections>
+          </items>
+        </ComboBox>
+        <TextField fx:id="idText" disable="true" layoutX="90.0" layoutY="111.0" prefWidth="200.0" text="" visible="false" />
+        <TextField fx:id="typeText" disable="true" layoutX="360.0" layoutY="120.0" prefWidth="200.0" visible="false" />
+      </children>
+    </AnchorPane>
+  </children>
+  <stylesheets>
+    <URL value="@../../../../image/centerPane.css" />
+  </stylesheets>
+</AnchorPane>

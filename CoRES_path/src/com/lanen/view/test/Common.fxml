@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="anchorPane" prefHeight="429.0" prefWidth="601.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.lanen.view.test.CommonPage">
+  <!-- TODO Add Nodes -->
+  <children>
+    <AnchorPane layoutX="13.0" layoutY="14.0" prefHeight="50.0" prefWidth="575.0" styleClass="border">
+      <children>
+        <Button id="dataCollectBtn" focusTraversable="false" layoutX="14.0" layoutY="16.0" mnemonicParsing="false" prefWidth="72.0" text="确定" />
+        <Button focusTraversable="false" layoutX="101.0" layoutY="16.0" mnemonicParsing="false" onAction="#onExitBtnAction" prefWidth="72.0" text="取消" />
+      </children>
+    </AnchorPane>
+    <AnchorPane layoutX="14.0" layoutY="78.0" prefHeight="337.0" prefWidth="574.0" styleClass="border">
+      <children>
+        <ListView fx:id="listview" cache="true" cacheHint="DEFAULT" layoutX="294.0" layoutY="61.0" prefHeight="200.0" prefWidth="163.0" />
+        <TextField fx:id="textField" layoutX="37.0" layoutY="82.0" prefWidth="163.0" />
+        <ListView fx:id="pListView" layoutX="37.0" layoutY="123.0" prefHeight="124.0" prefWidth="163.0" />
+      </children>
+    </AnchorPane>
+  </children>
+  <stylesheets>
+    <URL value="@../../../../image/centerPane.css" />
+  </stylesheets>
+</AnchorPane>

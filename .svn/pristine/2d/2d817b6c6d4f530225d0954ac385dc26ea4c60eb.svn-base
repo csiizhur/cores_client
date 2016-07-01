@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+
+<AnchorPane prefHeight="487.0" prefWidth="867.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.lanen.view.RoleFrameController">
+  <!-- TODO Add Nodes -->
+  <children>
+    <Rectangle arcHeight="5.0" arcWidth="5.0" height="410.0" layoutX="279.0" layoutY="19.0" stroke="#9f9f9f" strokeType="INSIDE" width="574.0">
+      <fill>
+        <Color blue="1.000" green="0.565" opacity="0.000" red="0.118" fx:id="x1" />
+      </fill>
+    </Rectangle>
+    <ComboBox fx:id="comboBox" layoutX="15.0" layoutY="15.0" prefWidth="242.0">
+      <items>
+        <FXCollections fx:factory="observableArrayList">
+          <String fx:value="项 1" />
+          <String fx:value="项 2" />
+          <String fx:value="项 3" />
+        </FXCollections>
+      </items>
+    </ComboBox>
+    <CheckBox id="checkBob" fx:id="checkBox" layoutX="14.0" layoutY="415.0" mnemonicParsing="false" onAction="#onCheckBoxAction" text="编辑选中项" />
+    <TableView fx:id="table" layoutX="15.0" layoutY="49.0" prefHeight="357.0" prefWidth="242.0">
+      <columns>
+        <TableColumn prefWidth="240.0" resizable="false" sortable="false" text="角色名称" fx:id="nameCol" />
+        <TableColumn prefWidth="15.0" resizable="false" text="Id" visible="false" fx:id="idCol" />
+        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="235.0" resizable="false" sortable="false" text="说明" visible="false" fx:id="remarkCol" />
+      </columns>
+    </TableView>
+    <Label layoutX="292.0" layoutY="72.0" text="编号：" />
+    <Label layoutX="292.0" layoutY="141.0" text="名称：" />
+    <Label layoutX="291.0" layoutY="200.0" text="说明：" />
+    <TextField fx:id="idText" editable="false" layoutX="335.0" layoutY="71.0" prefWidth="225.0" />
+    <TextField fx:id="nameText" editable="false" layoutX="335.0" layoutY="140.0" prefWidth="225.0" />
+    <TextArea fx:id="remarkText" editable="false" layoutX="334.0" layoutY="200.0" prefHeight="69.0" prefWidth="225.0" wrapText="true" />
+    <TreeView fx:id="tree" layoutX="574.0" layoutY="29.0" prefHeight="386.0" prefWidth="265.0" showRoot="false" />
+    <Button fx:id="delBtn" layoutX="292.0" layoutY="387.0" mnemonicParsing="false" onAction="#onDelBtnAction" prefWidth="72.0" text="删除" />
+    <Button fx:id="addBtn" layoutX="379.0" layoutY="387.0" mnemonicParsing="false" onAction="#onAddBtnAction" prefWidth="72.0" text="新增" />
+    <Button layoutX="767.0" layoutY="454.0" mnemonicParsing="false" onAction="#onExitBtnAction" prefWidth="72.0" text="关闭" />
+    <Separator layoutX="0.0" layoutY="439.0" prefWidth="867.0" />
+  </children>
+  <stylesheets>
+    <URL value="@../../../image/style.css" />
+  </stylesheets>
+</AnchorPane>

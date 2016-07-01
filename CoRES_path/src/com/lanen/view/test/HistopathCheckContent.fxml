@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="anchorPane" prefHeight="608.0" prefWidth="1024.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.lanen.view.test.HistopathCheckContent">
+  <!-- TODO Add Nodes -->
+  <children>
+    <AnchorPane prefHeight="50.0" prefWidth="773.0" styleClass="border" AnchorPane.leftAnchor="13.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+      <children>
+        <Button id="button1" focusTraversable="false" mnemonicParsing="false" onAction="#onConfirmBtnAction" prefHeight="26.0" prefWidth="72.0" text="确定" AnchorPane.leftAnchor="16.0" AnchorPane.topAnchor="11.0" />
+        <Button id="printBtn" focusTraversable="false" mnemonicParsing="false" onAction="#onExitBtnAction" prefHeight="26.0" prefWidth="72.0" text="取消" AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="11.0" />
+        <ComboBox fx:id="comboBox" layoutY="14.0" prefWidth="212.0" AnchorPane.rightAnchor="211.0">
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="项 1" />
+              <String fx:value="项 2" />
+              <String fx:value="项 3" />
+            </FXCollections>
+          </items>
+        </ComboBox>
+        <Button fx:id="saveBtn" layoutY="12.0" mnemonicParsing="false" onAction="#onSaveBtnAction" prefHeight="26.0" prefWidth="96.0" text="保存为新组合" AnchorPane.rightAnchor="99.0" />
+        <Button fx:id="delBtn" layoutY="12.0" mnemonicParsing="false" onAction="#ondelBtnAction" prefHeight="26.0" prefWidth="72.0" text="删除组合" AnchorPane.rightAnchor="14.0" />
+      </children>
+    </AnchorPane>
+    <AnchorPane prefHeight="508.0" prefWidth="772.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="78.0">
+      <children>
+        <HBox prefHeight="388.0" prefWidth="791.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+          <children>
+            <AnchorPane maxWidth="350.0" minWidth="250.0" prefHeight="200.0" prefWidth="300.0" styleClass="border" HBox.hgrow="ALWAYS">
+              <children>
+                <TabPane fx:id="tabPane" prefHeight="428.0" prefWidth="334.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="13.0" AnchorPane.leftAnchor="13.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="75.0">
+                  <tabs>
+                    <Tab text="解剖计划">
+                      <content>
+                        <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="border">
+                          <children>
+                            <TableView id="animalTable_dosage" fx:id="dissectPlanTable" prefHeight="369.0" prefWidth="306.0" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="12.0">
+                              <columns>
+                                <TableColumn maxWidth="78.0" minWidth="50.0" prefWidth="78.0" sortable="false" text="解剖次数" fx:id="dissectNumCol" />
+                                <TableColumn maxWidth="65.0" minWidth="50.0" prefWidth="55.0" sortable="false" text="动物数量" fx:id="animalNumCol_0" />
+                                <TableColumn maxWidth="100.0" minWidth="50.0" prefWidth="86.0" sortable="false" text="开始日期" fx:id="beginDateCol" />
+                                <TableColumn maxWidth="100.0" minWidth="50.0" prefWidth="86.0" text="结束日期" fx:id="endDateCol" />
+                              </columns>
+                            </TableView>
+                          </children>
+                        </AnchorPane>
+                      </content>
+                    </Tab>
+                    <Tab fx:id="taskTab" text="解剖任务">
+                      <content>
+                        <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="364.0" prefWidth="303.0" styleClass="border">
+                          <children>
+                            <TableView fx:id="anatomyTaskTable" prefHeight="420.0" prefWidth="318.0" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="12.0">
+                              <columns>
+                                <TableColumn maxWidth="120.0" minWidth="65.0" prefWidth="86.0" sortable="false" text="计划解剖日期" fx:id="planAnatomyDateCol" />
+                                <TableColumn maxWidth="65.0" minWidth="50.0" prefWidth="65.0" sortable="false" text="动物数量" fx:id="animalNumCol" />
+                                <TableColumn maxWidth="200.0" minWidth="50.0" prefWidth="157.0" text="解剖原因" fx:id="reasonCol" />
+                              </columns>
+                            </TableView>
+                          </children>
+                        </AnchorPane>
+                      </content>
+                    </Tab>
+                    <Tab text="组织取材批次">
+                      <content>
+                        <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="border">
+                          <children>
+                            <TableView id="animalTable_dosage" fx:id="batchTable" prefHeight="336.0" prefWidth="314.0" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="12.0">
+                              <columns>
+                                <TableColumn maxWidth="40.0" minWidth="25.0" prefWidth="35.0" sortable="false" text="批次" fx:id="batchSnCol" />
+                                <TableColumn maxWidth="65.0" minWidth="25.0" prefWidth="65.0" sortable="false" text="动物数量" fx:id="animalNumCol_2" />
+                                <TableColumn maxWidth="100.0" minWidth="50.0" prefWidth="86.0" sortable="false" text="建立日期" fx:id="createTimeCol" />
+                                <TableColumn maxWidth="200.0" minWidth="50.0" prefWidth="117.0" text="类型" fx:id="sliceTypeCol" />
+                              </columns>
+                            </TableView>
+                          </children>
+                        </AnchorPane>
+                      </content>
+                    </Tab>
+                  </tabs>
+                </TabPane>
+                <Label layoutX="14.0" layoutY="14.0" text="专题编号：" />
+                <Label layoutX="14.0" layoutY="48.0" text="动物种类：" />
+                <Label layoutX="234.0" layoutY="14.0" text="SD：" />
+                <Label id="pathSDLabel" layoutX="165.0" layoutY="48.0" text="病理专题负责人：" />
+                <Label fx:id="studyNoLabel" layoutX="74.0" layoutY="14.0" prefWidth="148.0" text="2013-105-01-03（f0）" />
+                <Label fx:id="animalTypeLabel" layoutX="74.0" layoutY="48.0" prefWidth="80.0" text="大鼠" />
+                <Label fx:id="sdLabel" layoutX="261.0" layoutY="14.0" prefWidth="72.0" text="张三丰" />
+                <Label fx:id="pathSDLabel" layoutX="261.0" layoutY="48.0" prefWidth="72.0" text="小张" />
+              </children>
+            </AnchorPane>
+            <AnchorPane maxWidth="640.0" minWidth="157.0" prefHeight="200.0" prefWidth="200.0" styleClass="border" HBox.hgrow="ALWAYS">
+              <children>
+                <Label alignment="CENTER" contentDisplay="LEFT" layoutX="11.0" layoutY="-6.0" prefWidth="72.0" styleClass="whiteLabel" text="选择的动物" />
+                <TableView id="animalTable_select" fx:id="animalTable" prefHeight="200.0" prefWidth="213.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                  <columns>
+                    <TableColumn maxWidth="45.0" minWidth="25.0" prefWidth="25.0" text="  " fx:id="selectCol" />
+                    <TableColumn maxWidth="150.0" minWidth="50.0" prefWidth="55.0" sortable="false" text="动物编号" fx:id="animalCodeCol" />
+                    <TableColumn maxWidth="40.0" minWidth="30.0" prefWidth="30.0" sortable="false" text="性别" fx:id="genderCol" />
+                    <TableColumn maxWidth="200.0" minWidth="50.0" prefWidth="82.0" sortable="false" text="组别" fx:id="dosageDescCol" />
+                    <TableColumn maxWidth="100.0" minWidth="50.0" prefWidth="86.0" sortable="false" text="解剖日期" fx:id="anatomyDateCol" />
+                  </columns>
+                </TableView>
+                <Hyperlink id="selectAll_selectAnimal" onAction="#onSelectAllActionAnimal" text="全选" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="11.0" />
+                <Hyperlink id="unSelectAll_selectAnimal" onAction="#onUnSelectAllActionAnimal" text="全不选" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="50.0" />
+                <Hyperlink id="selectAll_selectAnimal" onAction="#onSelectAllMaleAnimal" text="雄性" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="102.0" />
+                <Hyperlink id="unSelectAll_selectAnimal" onAction="#onSelectAllFemaleAnimal" text="雌性" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="141.0" />
+              </children>
+            </AnchorPane>
+            <AnchorPane maxWidth="720.0" minWidth="175.0" prefHeight="200.0" prefWidth="220.0" styleClass="border" HBox.hgrow="ALWAYS">
+              <children>
+                <Label alignment="CENTER" contentDisplay="LEFT" layoutX="7.0" layoutY="-6.0" prefWidth="80.0" styleClass="whiteLabel" text="选择的切片" />
+                <TableView id="batchExcludedTable" fx:id="sliceTable" prefHeight="200.0" prefWidth="185.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                  <columns>
+                    <TableColumn maxWidth="45.0" minWidth="25.0" prefWidth="25.0" text="  " fx:id="selectCol_slice" />
+                    <TableColumn maxWidth="100.0" minWidth="63.0" prefWidth="63.0" sortable="false" text="取材编号" fx:id="sliceCodeCol" />
+                    <TableColumn maxWidth="405.0" minWidth="50.0" prefWidth="109.0" sortable="false" text="脏器或组织" fx:id="visceraOrTissueNameCol" />
+                    <TableColumn maxWidth="90.0" minWidth="86.0" prefWidth="86.0" sortable="false" text="编号日期" fx:id="codeDateCol" />
+                  </columns>
+                </TableView>
+                <Hyperlink id="selectAll_selectAnimal" onAction="#onSelectAllAction_slice" text="全选" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="11.0" />
+                <Hyperlink id="unSelectAll_selectAnimal" onAction="#onUnSelectAllAction_slice" text="全不选" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="50.0" />
+              </children>
+            </AnchorPane>
+          </children>
+        </HBox>
+      </children>
+    </AnchorPane>
+  </children>
+  <stylesheets>
+    <URL value="@../../../../image/centerPane.css" />
+  </stylesheets>
+</AnchorPane>

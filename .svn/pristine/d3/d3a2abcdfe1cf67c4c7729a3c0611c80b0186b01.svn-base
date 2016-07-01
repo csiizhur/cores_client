@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-2.5.xsd
+           http://www.springframework.org/schema/aop
+           http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+           http://www.springframework.org/schema/tx 
+           http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+           
+     <!-- 加载外部的properties配置文件 -->
+	<context:property-placeholder location="classpath:service.properties"/>
+    <!--试验动物需求单Service--> 
+    <bean id="TblQRRequestService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean"> 
+       <property name="serviceUrl" value="rmi://${quarantineIP}:6688/TblQRRequestService"/> 
+       <property name="serviceInterface">
+          <value>com.lanen.service.quarantine.TblQRRequestService</value>
+       </property>
+   </bean>
+    <bean id="TblQRRequestStudyNoService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean"> 
+       <property name="serviceUrl" value="rmi://${quarantineIP}:6688/TblQRRequestStudyNoService"/> 
+       <property name="serviceInterface">
+          <value>com.lanen.service.quarantine.TblQRRequestStudyNoService</value>
+       </property>
+   </bean>
+    <bean id="TblAnimalRecIndexService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean"> 
+       <property name="serviceUrl" value="rmi://${quarantineIP}:6688/TblAnimalRecIndexService"/> 
+       <property name="serviceInterface">
+          <value>com.lanen.service.quarantine.TblAnimalRecIndexService</value>
+       </property>
+   </bean>
+   <bean id="TblAnimalRecListService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean"> 
+       <property name="serviceUrl" value="rmi://${quarantineIP}:6688/TblAnimalRecListService"/> 
+       <property name="serviceInterface">
+          <value>com.lanen.service.quarantine.TblAnimalRecListService</value>
+       </property>
+   </bean>
+   <bean id="DictGeneralObservationService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean"> 
+       <property name="serviceUrl" value="rmi://${quarantineIP}:6688/DictGeneralObservationService"/> 
+       <property name="serviceInterface">
+          <value>com.lanen.service.quarantine.DictGeneralObservationService</value>
+       </property>
+   </bean>
+   <bean id="DictPhysicalExamItemService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean"> 
+       <property name="serviceUrl" value="rmi://${quarantineIP}:6688/DictPhysicalExamItemService"/> 
+       <property name="serviceInterface">
+          <value>com.lanen.service.quarantine.DictPhysicalExamItemService</value>
+       </property>
+   </bean>
+   <bean id="DictAnimalDeathService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean"> 
+       <property name="serviceUrl" value="rmi://${quarantineIP}:6688/DictAnimalDeathService"/> 
+       <property name="serviceInterface">
+          <value>com.lanen.service.quarantine.DictAnimalDeathService</value>
+       </property>
+   </bean>
+   <bean id="TblAnimalHouseService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean"> 
+       <property name="serviceUrl" value="rmi://${quarantineIP}:6688/TblAnimalHouseService"/> 
+       <property name="serviceInterface">
+          <value>com.lanen.service.quarantine.TblAnimalHouseService</value>
+       </property>
+   </bean>
+   <bean id="TblRoomAndAniTypeService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean"> 
+       <property name="serviceUrl" value="rmi://${quarantineIP}:6688/TblRoomAndAniTypeService"/> 
+       <property name="serviceInterface">
+          <value>com.lanen.service.quarantine.TblRoomAndAniTypeService</value>
+       </property>
+   </bean>
+   <bean id="TblSessionService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean"> 
+       <property name="serviceUrl" value="rmi://${quarantineIP}:6688/TblSessionService"/> 
+       <property name="serviceInterface">
+          <value>com.lanen.service.quarantine.tblsession.TblSessionService</value>
+       </property>
+   </bean>
+   <bean id="TblSessionAnimalsService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean"> 
+       <property name="serviceUrl" value="rmi://${quarantineIP}:6688/TblSessionAnimalsService"/> 
+       <property name="serviceInterface">
+          <value>com.lanen.service.quarantine.tblsession.TblSessionAnimalsService</value>
+       </property>
+   </bean>
+   <bean id="TblBodyWeightService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean"> 
+       <property name="serviceUrl" value="rmi://${quarantineIP}:6688/TblBodyWeightService"/> 
+       <property name="serviceInterface">
+          <value>com.lanen.service.quarantine.tblsession.TblBodyWeightService</value>
+       </property>
+   </bean>
+   <bean id="TblBalService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean"> 
+       <property name="serviceUrl" value="rmi://${quarantineIP}:6688/TblBalService"/> 
+       <property name="serviceInterface">
+          <value>com.lanen.service.quarantine.TblBalService</value>
+       </property>
+   </bean>
+   <bean id="TblHostBalService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean"> 
+       <property name="serviceUrl" value="rmi://${quarantineIP}:6688/TblHostBalService"/> 
+       <property name="serviceInterface">
+          <value>com.lanen.service.quarantine.TblHostBalService</value>
+       </property>
+   </bean>
+   <bean id="DictOutputSettingsService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean"> 
+       <property name="serviceUrl" value="rmi://${quarantineIP}:6688/DictOutputSettingsService"/> 
+       <property name="serviceInterface">
+          <value>com.lanen.service.quarantine.DictOutputSettingsService</value>
+       </property>
+   </bean>
+   <bean id="TblGeneralObservationService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean"> 
+       <property name="serviceUrl" value="rmi://${quarantineIP}:6688/TblGeneralObservationService"/> 
+       <property name="serviceInterface">
+          <value>com.lanen.service.quarantine.tblsession.TblGeneralObservationService</value>
+       </property>
+   </bean>
+   <bean id="TblPhyExamService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean"> 
+       <property name="serviceUrl" value="rmi://${quarantineIP}:6688/TblPhyExamService"/> 
+       <property name="serviceInterface">
+          <value>com.lanen.service.quarantine.tblsession.TblPhyExamService</value>
+       </property>
+   </bean>
+   <bean id="TblAnimalDeathService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean"> 
+       <property name="serviceUrl" value="rmi://${quarantineIP}:6688/TblAnimalDeathService"/> 
+       <property name="serviceInterface">
+          <value>com.lanen.service.quarantine.tblsession.TblAnimalDeathService</value>
+       </property>
+   </bean>
+   <bean id="TblAniResiteService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean"> 
+       <property name="serviceUrl" value="rmi://${quarantineIP}:6688/TblAniResiteService"/> 
+       <property name="serviceInterface">
+          <value>com.lanen.service.quarantine.tblsession.TblAniResiteService</value>
+       </property>
+   </bean>
+   <bean id="TblAniHandoverService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean"> 
+       <property name="serviceUrl" value="rmi://${quarantineIP}:6688/TblAniHandoverService"/> 
+       <property name="serviceInterface">
+          <value>com.lanen.service.quarantine.tblsession.TblAniHandoverService</value>
+       </property>
+   </bean>
+    
+   
+</beans>

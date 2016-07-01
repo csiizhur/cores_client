@@ -1,0 +1,14 @@
+#Fat Jar Configuration File
+#Fri May 22 10:31:05 CST 2015
+onejar.license.required=true
+manifest.classpath=
+manifest.removesigners=true
+onejar.checkbox=false
+jarname=CoRES_path_fat.jar
+manifest.mergeall=true
+manifest.mainclass=com.lanen.view.main.Main
+manifest.file=<createnew>
+jarname.isextern=false
+onejar.expand=
+excludes=
+includes=

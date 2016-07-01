@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.StackPane?>
+
+<StackPane prefHeight="95.0" prefWidth="250.0" xmlns:fx="http://javafx.com/fxml" fx:controller="com.lanen.util.popup.Alert">
+  <!-- TODO Add Nodes -->
+  <children>
+    <ImageView fitHeight="98.03999999999999" fitWidth="258.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@alert.jpg" preserveRatio="false" smooth="false" />
+      </image>
+    </ImageView>
+    <AnchorPane prefHeight="200.0" prefWidth="200.0">
+      <children>
+        <Button layoutX="166.0" layoutY="62.0" mnemonicParsing="false" onAction="#onOkBtnAction" prefHeight="24.0" prefWidth="72.0" text="确定(O)" />
+        <Label fx:id="label1" layoutX="61.0" layoutY="20.0" prefWidth="227.0" text="是否保存" />
+        <ImageView fitHeight="32.75" fitWidth="32.75" layoutX="11.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@accept.jpg" preserveRatio="false" smooth="false" />
+          </image>
+        </ImageView>
+      </children>
+    </AnchorPane>
+  </children>
+</StackPane>

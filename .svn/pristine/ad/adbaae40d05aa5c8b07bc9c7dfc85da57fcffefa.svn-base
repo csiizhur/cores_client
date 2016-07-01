@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.*?>
+
+<AnchorPane prefHeight="363.0" prefWidth="451.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.lanen.view.RegulationFrameController">
+  <!-- TODO Add Nodes -->
+  <children>
+    <TableView fx:id="table" focusTraversable="false" layoutX="15.0" layoutY="15.0" prefHeight="198.0" prefWidth="421.0">
+      <columns>
+        <TableColumn editable="false" prefWidth="150.0" sortable="false" text="规则名称" fx:id="regulationNameCol" />
+        <TableColumn editable="false" prefWidth="120.0" sortable="false" text="类型" fx:id="typeCol" />
+        <TableColumn editable="false" prefWidth="150.0" sortable="false" text="缺省值" fx:id="defaultValueCol" />
+        <TableColumn editable="false" prefWidth="10.0" sortable="false" text="id" visible="false" fx:id="idCol" />
+      </columns>
+    </TableView>
+    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1e90ff00" height="89.0" layoutX="15.0" layoutY="221.0" stroke="#9f9f9f" strokeType="INSIDE" width="422.0" />
+    <Label layoutX="47.0" layoutY="244.0" text="名称：" />
+    <Label layoutX="261.0" layoutY="244.0" text="类型：" />
+    <Label layoutX="35.0" layoutY="279.0" text="缺省值：" />
+    <TextField fx:id="regulationNameText" layoutX="87.0" layoutY="241.0" prefWidth="115.0" />
+    <TextField fx:id="defaultValueText" layoutX="87.0" layoutY="276.0" prefWidth="115.0" />
+    <Button fx:id="addBtn" layoutX="15.0" layoutY="327.0" mnemonicParsing="false" onAction="#onAddBtnAction" prefWidth="72.0" text="添加" />
+    <Button layoutX="102.0" layoutY="327.0" mnemonicParsing="false" onAction="#onDeleteBtnAction" prefWidth="72.0" text="删除" />
+    <Button layoutX="364.0" layoutY="327.0" mnemonicParsing="false" onAction="#onExitBtnAction" prefWidth="72.0" text="关闭" />
+    <ComboBox fx:id="typeComboBox" layoutX="297.0" layoutY="243.0" prefWidth="115.0">
+      <items>
+        <FXCollections fx:factory="observableArrayList">
+          <String fx:value="整数" />
+          <String fx:value="日期" />
+          <String fx:value="浮点数" />
+          <String fx:value="文本" />
+        </FXCollections>
+      </items>
+    </ComboBox>
+  </children>
+  <stylesheets>
+    <URL value="@../../../image/style.css" />
+  </stylesheets>
+</AnchorPane>

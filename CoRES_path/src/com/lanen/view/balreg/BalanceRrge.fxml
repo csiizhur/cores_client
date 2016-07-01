@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="514.0" prefWidth="863.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.lanen.view.balreg.BalanceRge">
+  <!-- TODO Add Nodes -->
+  <children>
+    <AnchorPane prefHeight="43.0" prefWidth="763.0" styleClass="border" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+      <children>
+        <Button fx:id="addBalButton" disable="true" focusTraversable="false" mnemonicParsing="false" onAction="#onAddNewBalRegButton" prefHeight="26.0" prefWidth="95.0" text="添加" AnchorPane.leftAnchor="21.0" AnchorPane.topAnchor="8.0" />
+        <Button id="toBalConnectButton" fx:id="delectBalButton" disable="true" focusTraversable="false" layoutX="123.0" layoutY="9.0" mnemonicParsing="false" onAction="#delectBalRegButton" prefHeight="26.0" prefWidth="95.0" text="删除" />
+        <Button fx:id="editBalButton" disable="true" layoutX="228.0" layoutY="9.0" mnemonicParsing="false" onAction="#onEditBalConnectButton" prefHeight="26.0" prefWidth="95.0" text="编辑" />
+        <Button layoutX="331.0" layoutY="9.0" mnemonicParsing="false" onAction="#onExitBtnAction" prefHeight="26.0" prefWidth="92.0" text="关闭" />
+      </children>
+    </AnchorPane>
+    <TableView fx:id="balRegTable" focusTraversable="false" prefHeight="411.0" prefWidth="763.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="68.0">
+      <columns>
+        <TableColumn maxWidth="130.0" minWidth="80.0" prefWidth="80.0" sortable="false" text="天平编号" fx:id="balCodeCol" />
+        <TableColumn maxWidth="220.0" minWidth="80.0" prefWidth="80.0" sortable="false" style="" text="天平型号" fx:id="balModelCol" />
+        <TableColumn id="balNameCol" maxWidth="110.0" minWidth="50.0" prefWidth="76.0" sortable="false" text="天平名称" fx:id="balNameCol" />
+        <TableColumn maxWidth="130.0" minWidth="60.0" prefWidth="72.0" sortable="false" text="精度（克）" fx:id="precisionCol" />
+        <TableColumn maxWidth="130.0" minWidth="85.0" prefWidth="95.0" sortable="false" text="最大量程（克）" fx:id="rangeCol" />
+        <TableColumn maxWidth="110.0" minWidth="60.0" prefWidth="50.0" sortable="false" text="波特率" fx:id="baudCol" />
+        <TableColumn maxWidth="90.0" minWidth="48.0" prefWidth="48.0" sortable="false" text="数据位" fx:id="dataBitCol" />
+        <TableColumn maxWidth="110.0" minWidth="48.0" prefWidth="48.0" sortable="false" text="停止位" fx:id="stopBitCol" />
+        <TableColumn maxWidth="325.0" minWidth="50.0" prefWidth="63.0" sortable="false" text="校验方式" fx:id="paritCol" />
+        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="84.0" sortable="false" text="检验有效期" fx:id="validDateCol" />
+        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="86.0" sortable="false" text="校准检查点数" fx:id="calCheckPointCol" />
+      </columns>
+    </TableView>
+  </children>
+  <stylesheets>
+    <URL value="@../../../../image/centerPane.css" />
+  </stylesheets>
+</AnchorPane>

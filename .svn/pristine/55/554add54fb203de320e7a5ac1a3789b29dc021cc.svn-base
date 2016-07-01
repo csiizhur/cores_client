@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="650.0" prefWidth="1100.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.lanen.view.test.AnatomyProcessPage">
+  <!-- TODO Add Nodes -->
+  <children>
+    <AnchorPane prefHeight="604.0" prefWidth="247.0" styleClass="border" AnchorPane.bottomAnchor="46.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <children>
+        <Label layoutX="14.0" layoutY="15.0" prefWidth="78.0" text="当前操作者：" />
+        <Label id="handlersText" fx:id="handlersLabel" layoutX="86.0" layoutY="8.0" prefWidth="105.0" text="张三">
+          <font>
+            <Font name="System Bold Italic" size="24.0" fx:id="x5" />
+          </font>
+        </Label>
+        <Pane layoutY="42.0" prefHeight="14.0" prefWidth="360.0" styleClass="border-top" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="6.0" />
+        <TableView fx:id="animalTable" focusTraversable="false" prefHeight="480.0" prefWidth="216.0" AnchorPane.bottomAnchor="66.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="58.0">
+          <columns>
+            <TableColumn prefWidth="75.0" sortable="false" text="动物编号" fx:id="animalCodeCol" />
+            <TableColumn prefWidth="75.0" sortable="false" text="状态" fx:id="stateCol" />
+            <TableColumn prefWidth="75.0" sortable="false" text="解剖者" fx:id="anatomyOperatorCol" />
+            <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="114.0" sortable="false" text="专题编号" fx:id="studyNoCol" />
+          </columns>
+        </TableView>
+        <Button id="select" fx:id="selectAnimalBtn" mnemonicParsing="false" onAction="#onSelectAnimalBtnAction" prefHeight="26.0" prefWidth="72.0" text="选择动物" AnchorPane.bottomAnchor="12.0" AnchorPane.rightAnchor="28.0" />
+        <Button fx:id="autolyzeBtn" disable="true" mnemonicParsing="false" onAction="#onAutolyzeBtnAction" prefHeight="26.0" prefWidth="72.0" text="自溶" AnchorPane.bottomAnchor="12.0" AnchorPane.rightAnchor="115.0" />
+        <CheckBox fx:id="anatomyTimeCheckBox" mnemonicParsing="false" text="按解剖时间排序" AnchorPane.bottomAnchor="47.0" AnchorPane.leftAnchor="16.0" />
+      </children>
+    </AnchorPane>
+    <TabPane fx:id="tabPane" minWidth="500.0" prefHeight="604.0" prefWidth="1019.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="46.0" AnchorPane.leftAnchor="247.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
+      <tabs>
+        <Tab fx:id="anatomyTab" disable="false" text="动物解剖">
+          <content>
+            <AnchorPane id="Content" fx:id="anatomyPane" disable="false" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="border-bottom">
+              <children>
+                <Pane prefHeight="14.0" prefWidth="849.0" styleClass="border-top" AnchorPane.bottomAnchor="208.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="4.0">
+                  <children>
+                    <Label alignment="CENTER" layoutX="14.0" layoutY="-6.0" prefWidth="67.99997792968497" styleClass="whiteLabel" text="其他属性" />
+                  </children>
+                </Pane>
+                <HBox prefHeight="167.0" prefWidth="839.0" spacing="2.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="9.0">
+                  <children>
+                    <ListView fx:id="shapeListView" maxWidth="155.0" minWidth="115.0" prefHeight="176.0" prefWidth="115.0" HBox.hgrow="ALWAYS" />
+                    <ListView fx:id="colorListView" maxWidth="155.0" minWidth="115.0" prefHeight="176.0" prefWidth="115.0" HBox.hgrow="ALWAYS" />
+                    <ListView fx:id="textureListView" maxWidth="155.0" minWidth="115.0" prefHeight="176.0" prefWidth="115.0" HBox.hgrow="ALWAYS" />
+                    <ListView fx:id="numberListView" maxWidth="155.0" minWidth="115.0" prefHeight="176.0" prefWidth="115.0" HBox.hgrow="ALWAYS" />
+                    <ListView fx:id="rangeListView" maxWidth="155.0" minWidth="115.0" prefHeight="176.0" prefWidth="115.0" HBox.hgrow="ALWAYS" />
+                    <ListView fx:id="lesionDegreeListView" maxWidth="155.0" minWidth="115.0" orientation="VERTICAL" prefHeight="176.0" prefWidth="115.0" HBox.hgrow="ALWAYS" />
+                    <VBox maxWidth="155.0" minWidth="115.0" prefHeight="200.0" prefWidth="115.0" HBox.hgrow="ALWAYS">
+                      <children>
+                        <ListView fx:id="sizeListView" maxWidth="155.0" minWidth="115.0" prefHeight="176.0" prefWidth="115.0" />
+                        <TextField fx:id="sizeTextField" maxHeight="20.0" maxWidth="155.0" minHeight="20.0" prefHeight="20.0" prefWidth="115.0">
+                          <VBox.margin>
+                            <Insets top="2.0" />
+                          </VBox.margin>
+                        </TextField>
+                      </children>
+                    </VBox>
+                  </children>
+                </HBox>
+                <HBox prefHeight="20.0" prefWidth="839.0" spacing="2.0" AnchorPane.bottomAnchor="182.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="10.0">
+                  <children>
+                    <Hyperlink maxWidth="155.0" minWidth="115.0" onAction="#onshapeHyperlink" prefWidth="58.0" text="形状" HBox.hgrow="ALWAYS">
+                      <HBox.margin>
+                        <Insets top="-2.0" fx:id="x2" />
+                      </HBox.margin>
+                    </Hyperlink>
+                    <Hyperlink maxWidth="155.0" minWidth="115.0" onAction="#oncolorHyperlink" prefWidth="58.0" text="颜色" HBox.hgrow="ALWAYS" HBox.margin="$x2" />
+                    <Hyperlink maxWidth="155.0" minWidth="115.0" onAction="#ontextureHyperlink" prefWidth="58.0" text="硬度" HBox.hgrow="ALWAYS" HBox.margin="$x2" />
+                    <Hyperlink maxWidth="155.0" minWidth="115.0" onAction="#onnumberHyperlink" prefWidth="58.0" text="数量" HBox.hgrow="ALWAYS" HBox.margin="$x2" />
+                    <Hyperlink maxWidth="155.0" minWidth="115.0" onAction="#onrangeHyperlink" prefWidth="58.0" text="范围" HBox.hgrow="ALWAYS" HBox.margin="$x2" />
+                    <Hyperlink maxWidth="155.0" minWidth="115.0" onAction="#onlesionHyperlink" prefWidth="58.0" text="病变程度" HBox.hgrow="ALWAYS" HBox.margin="$x2" />
+                    <Hyperlink maxWidth="155.0" minWidth="115.0" onAction="#onSizeHyperlink" prefWidth="58.0" text="大小" HBox.hgrow="ALWAYS" HBox.margin="$x2" />
+                  </children>
+                  <padding>
+                    <Insets left="2.0" />
+                  </padding>
+                </HBox>
+                <HBox prefHeight="247.0" prefWidth="839.0000999999975" spacing="2.0" AnchorPane.bottomAnchor="235.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="91.0">
+                  <children>
+                    <VBox maxWidth="155.0" minWidth="125.0" prefHeight="288.0" prefWidth="133.0" HBox.hgrow="ALWAYS">
+                      <children>
+                        <TreeView fx:id="visceraTree" focusTraversable="false" maxWidth="155.0" minWidth="125.0" prefHeight="176.0" prefWidth="125.0" showRoot="false" VBox.vgrow="ALWAYS" />
+                        <Button fx:id="otherVisceraBtn" disable="true" mnemonicParsing="false" onAction="#onOtherVisceraBtnAction" prefHeight="26.0" prefWidth="72.0" text="其他脏器" VBox.vgrow="NEVER">
+                          <VBox.margin>
+                            <Insets bottom="6.0" left="10.0" top="5.0" />
+                          </VBox.margin>
+                        </Button>
+                      </children>
+                    </VBox>
+                    <VBox minWidth="448.0" prefHeight="236.0" prefWidth="448.0" spacing="5.0" HBox.hgrow="ALWAYS">
+                      <children>
+                        <HBox prefHeight="218.0" prefWidth="448.0" spacing="2.0" VBox.vgrow="ALWAYS">
+                          <children>
+                            <ListView fx:id="anatomyPosListView" maxWidth="155.0" prefHeight="218.0" prefWidth="105.0" HBox.hgrow="ALWAYS" />
+                            <ListView fx:id="anatomyFindingListView" maxWidth="155.0" prefHeight="218.0" prefWidth="105.0" HBox.hgrow="ALWAYS" />
+                            <ListView id="bodySuf" fx:id="bodySufacePosListView" maxWidth="155.0" prefHeight="218.0" prefWidth="105.0" HBox.hgrow="ALWAYS" />
+                            <ListView fx:id="posListView" maxWidth="155.0" prefHeight="218.0" prefWidth="105.0" HBox.hgrow="ALWAYS" />
+                          </children>
+                        </HBox>
+                        <AnchorPane maxHeight="25.0" maxWidth="626.0" minHeight="25.0" prefHeight="25.0" prefWidth="450.0" styleClass="border" VBox.vgrow="NEVER">
+                          <children>
+                            <Label layoutX="14.0" layoutY="5.0" prefWidth="67.99996948242188" text="解剖所见：" />
+                            <Label fx:id="anatomyFindingLabel" layoutY="5.0" prefWidth="360.0" text="" AnchorPane.leftAnchor="73.0" AnchorPane.rightAnchor="12.0" />
+                          </children>
+                          <VBox.margin>
+                            <Insets />
+                          </VBox.margin>
+                        </AnchorPane>
+                      </children>
+                      <padding>
+                        <Insets right="2.0" />
+                      </padding>
+                    </VBox>
+                    <AnchorPane maxWidth="320.0" minWidth="264.0" prefHeight="255.0" prefWidth="269.0" styleClass="border" HBox.hgrow="ALWAYS">
+                      <children>
+                        <TableView id="anatomyResultTalbe" fx:id="anatomyResultTable" prefHeight="210.0" prefWidth="268.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="-1.0">
+                          <columns>
+                            <TableColumn maxWidth="120.0" minWidth="50.0" prefWidth="66.0" sortable="false" text="脏器" fx:id="visceraNameCol" />
+                            <TableColumn maxWidth="300.0" minWidth="100.0" prefWidth="149.0" sortable="false" text="观察所见" fx:id="findingCol" />
+                            <TableColumn maxWidth="57.0" minWidth="30.0" prefWidth="45.0" resizable="true" sortable="false" text="操作" fx:id="operateCol" />
+                          </columns>
+                        </TableView>
+                        <Button fx:id="registerBtn" disable="true" mnemonicParsing="false" onAction="#onRegisterBtnAction" prefHeight="26.0" prefWidth="72.0" text="登记" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="6.0" />
+                        <Button fx:id="autolyzeBtn2" disable="true" mnemonicParsing="false" onAction="#onAutolyzeBtn2Action" prefHeight="26.0" prefWidth="72.0" text="自溶" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="83.0" />
+                        <Button id="otherNo" fx:id="otherNABtn" disable="true" mnemonicParsing="false" onAction="#onOtherNaBtn" prefHeight="26.0" prefWidth="92.0" text="其余未见异常" AnchorPane.bottomAnchor="7.0" AnchorPane.rightAnchor="5.0" />
+                      </children>
+                    </AnchorPane>
+                  </children>
+                </HBox>
+                <HBox prefHeight="25.000099999997474" prefWidth="839.0" spacing="2.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="69.0">
+                  <children>
+                    <Label maxWidth="155.0" minWidth="125.0" prefWidth="125.0" text="选择脏器" HBox.hgrow="ALWAYS" />
+                    <Hyperlink maxWidth="155.0" minWidth="105.0" onAction="#onanatomyPosHyperlink" prefWidth="105.0" text="解剖学所见部位" HBox.hgrow="ALWAYS" HBox.margin="$x2" />
+                    <HBox maxWidth="155.0" minWidth="105.0" prefHeight="100.0" prefWidth="105.0" HBox.hgrow="ALWAYS">
+                      <children>
+                        <Hyperlink alignment="CENTER_LEFT" contentDisplay="RIGHT" ellipsisString="" onAction="#onanatomyFindingHyperlink" prefWidth="65.0" text="解剖所见" textAlignment="RIGHT" HBox.margin="$x2" />
+                        <RadioButton id="ordinaryRadioButton" fx:id="tongyongRadioButton" ellipsisString="" maxWidth="48.0" minWidth="48.0" mnemonicParsing="false" prefWidth="48.0" selected="true" text="通用">
+                          <font>
+                            <Font size="12.0" fx:id="x1" />
+                          </font>
+                          <toggleGroup>
+                            <ToggleGroup fx:id="tg" />
+                          </toggleGroup>
+                        </RadioButton>
+                        <RadioButton id="specialRadioButton" fx:id="tesuRadioButton" ellipsisString="" font="$x1" maxWidth="48.0" minWidth="48.0" mnemonicParsing="false" prefWidth="48.0" text="特殊" toggleGroup="$tg" />
+                      </children>
+                    </HBox>
+                    <Hyperlink maxWidth="155.0" minWidth="105.0" onAction="#onbodySufaceHyperlink" prefWidth="105.0" text="体表部位" HBox.hgrow="ALWAYS" HBox.margin="$x2" />
+                    <Hyperlink maxWidth="155.0" minWidth="105.0" onAction="#onposHyperlink" prefWidth="105.0" text="位置" HBox.hgrow="ALWAYS" HBox.margin="$x2" />
+                    <Label maxWidth="320.0" minWidth="264.0" prefWidth="269.0" text="剖检结果" HBox.hgrow="ALWAYS" />
+                  </children>
+                </HBox>
+                <AnchorPane minWidth="850.0" prefHeight="60.0" prefWidth="853.0" styleClass="border-bottom" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <children>
+                    <Label layoutY="34.0" prefWidth="68.0" text="快速查找：" AnchorPane.leftAnchor="92.0" />
+                    <ComboBox id="serachComboBox" fx:id="searchComboBox" layoutY="31.0" prefHeight="19.0" prefWidth="120.0" AnchorPane.leftAnchor="150.0">
+                      <items>
+                        <FXCollections fx:factory="observableArrayList">
+                          <String fx:value="解剖学所见部位" />
+                          <String fx:value="解剖通用所见" />
+                          <String fx:value="解剖特殊所见" />
+                          <String fx:value="体表部位" />
+                          <String fx:value="位置" />
+                          <String fx:value="范围" />
+                          <String fx:value="数量" />
+                          <String fx:value="形状" />
+                          <String fx:value="颜色" />
+                          <String fx:value="硬度" />
+                          <String fx:value="大小" />
+                          <String fx:value="病变程度" />
+                        </FXCollections>
+                      </items>
+                    </ComboBox>
+                    <Label layoutY="34.0" prefWidth="92.0" text="字典排序方式：" AnchorPane.rightAnchor="123.0" />
+                    <ComboBox id="dictSort" fx:id="dictSortMethodComboBox" layoutY="31.0" prefHeight="20.0" prefWidth="120.0" AnchorPane.rightAnchor="17.0">
+                      <items>
+                        <FXCollections fx:factory="observableArrayList">
+                          <String fx:value="字典顺序排序" />
+                          <String fx:value="拼音顺序排序" />
+                          <String fx:value="使用频度排序" />
+                        </FXCollections>
+                      </items>
+                    </ComboBox>
+                    <Button disable="false" layoutY="31.0" mnemonicParsing="false" onAction="#symptomObservationBtnAction" prefHeight="26.0" text="症状观察结果" AnchorPane.rightAnchor="225.0" />
+                    <TextField id="serachTextField" fx:id="searchTextField" layoutX="276.0" layoutY="30.0" onKeyReleased="#OnSearchTextFieldKeyReleased" prefWidth="200.0" promptText="快速检索文本(拼音首字母)" />
+                    <ListView id="serachListView" fx:id="searchListView" layoutX="277.0" layoutY="49.0" prefHeight="153.0" prefWidth="198.0" visible="false" />
+                    <Label fx:id="animalCodeLabel_anatomy" font="$x5" layoutX="11.0" layoutY="12.0" prefWidth="82.0" text="" />
+                    <Label layoutX="93.0" layoutY="10.0" text="解剖者：" />
+                    <Label fx:id="anatomyOperatorLabel_anatomy" layoutX="140.0" layoutY="10.0" prefWidth="60.0" text="" />
+                    <Label layoutX="191.0" layoutY="10.0" text="解剖开始时间：" />
+                    <Label fx:id="anatomyBeginTimeLabel_anatomy" layoutX="271.0" layoutY="11.0" prefWidth="128.0" text="" />
+                    <Hyperlink layoutY="7.0" onAction="#onUpdateUserFrequentnessHyperlink" text="更新使用频度" AnchorPane.rightAnchor="17.0" />
+                  </children>
+                </AnchorPane>
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+        <Tab fx:id="weightTab" text="脏器称重">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="573.0" prefWidth="888.0" styleClass="border-bottom">
+              <children>
+                <AnchorPane fx:id="weighPane" prefHeight="573.0" prefWidth="888.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <children>
+                    <HBox prefHeight="14.0" prefWidth="824.0" spacing="0.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="22.0">
+                      <children>
+                        <Label maxWidth="800.0" minWidth="623.0" prefWidth="623.0" text="选择脏器" HBox.hgrow="ALWAYS" />
+                        <Label maxWidth="305.0" minWidth="182.0" prefWidth="182.0" text="脏器称重结果" HBox.hgrow="ALWAYS" />
+                      </children>
+                    </HBox>
+                    <HBox prefHeight="529.0" prefWidth="824.0" spacing="5.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="38.0">
+                      <children>
+                        <AnchorPane maxWidth="200.0" minWidth="156.0" prefHeight="486.0" prefWidth="175.0" HBox.hgrow="ALWAYS">
+                          <children>
+                            <TreeView fx:id="visceraTree_weight" maxWidth="200.0" minWidth="156.0" prefHeight="486.0" prefWidth="178.00009999999747" showRoot="false" AnchorPane.bottomAnchor="42.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="-1.0" />
+                            <Button id="fixedFinishBtn" fx:id="visceraMissingButton_weight" defaultButton="false" disable="false" mnemonicParsing="false" onAction="#onVisceraMissingButton" prefHeight="26.0" prefWidth="116.0" text="登记所选脏器缺失" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="0.0" />
+                          </children>
+                        </AnchorPane>
+                        <AnchorPane maxWidth="600.0" minWidth="449.0" prefHeight="489.0" prefWidth="452.0" HBox.hgrow="ALWAYS">
+                          <children>
+                            <VBox prefHeight="489.0" prefWidth="444.0" AnchorPane.bottomAnchor="43.0" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="0.0">
+                              <children>
+                                <AnchorPane prefHeight="122.0" prefWidth="438.0" styleClass="border-bottom" VBox.vgrow="NEVER">
+                                  <children>
+                                    <Hyperlink onAction="#onBalCalibration" text="天平校准" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" />
+                                    <TableView fx:id="balanceRrgeTbale" layoutX="0.0" layoutY="0.0" prefHeight="91.0" prefWidth="323.0">
+                                      <columns>
+                                        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="88.0" sortable="false" text="天平编号" fx:id="balCodeCol" />
+                                        <TableColumn editable="false" maxWidth="5000.0" minWidth="10.0" prefWidth="69.0" text="接入端口" fx:id="balStateCol" />
+                                        <TableColumn editable="false" maxWidth="5000.0" minWidth="10.0" prefWidth="163.0" text="状态" fx:id="baudComboCol" />
+                                      </columns>
+                                    </TableView>
+                                    <Label fx:id="weightLowerLabel" layoutX="363.0" layoutY="39.0" prefWidth="78.0" text="" />
+                                    <Label fx:id="weightUpperLabel" layoutX="363.0" layoutY="69.0" prefWidth="78.0" text="" />
+                                    <Hyperlink id="saveWeightUpperAndLowerLink" disable="false" onAction="#saveWeightUpperLabelAndLower" text="设置范围参数" visible="false" AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="322.0" AnchorPane.rightAnchor="36.0" />
+                                    <Label layoutX="331.0" layoutY="39.0" text="下限" />
+                                    <Label layoutX="331.0" layoutY="70.0" text="上限" />
+                                    <Label layoutX="328.0" layoutY="7.0" prefWidth="105.0" text="脏器称重报警范围" />
+                                    <Hyperlink layoutX="425.0" layoutY="7.0" minHeight="9.0" onAction="#updateUpperLabelAndLowerLabel" prefHeight="14.0" prefWidth="15.0" styleClass="refresh" text="" />
+                                  </children>
+                                </AnchorPane>
+                                <AnchorPane prefHeight="37.0" prefWidth="440.0" styleClass="border-bottom">
+                                  <children>
+                                    <CheckBox fx:id="isFixedCheckbox" layoutX="0.0" layoutY="7.0" mnemonicParsing="false" text="称重后立即固定">
+                                      <font>
+                                        <Font size="16.0" fx:id="x3" />
+                                      </font>
+                                    </CheckBox>
+                                    <Label fx:id="msgLabel" layoutX="155.0" layoutY="6.0" prefWidth="260.0" text="">
+                                      <font>
+                                        <Font name="STSong" size="16.0" fx:id="x6" />
+                                      </font>
+                                      <textFill>
+                                        <Color blue="0.200" green="0.392" red="1.000" fx:id="x7" />
+                                      </textFill>
+                                    </Label>
+                                  </children>
+                                </AnchorPane>
+                                <AnchorPane prefHeight="40.0" prefWidth="421.0" VBox.vgrow="ALWAYS">
+                                  <children>
+                                    <Label font="$x3" layoutX="0.0" layoutY="9.0" prefWidth="87.9998779296875" text="专题编号：" />
+                                    <Label fx:id="studyNoLabel" font="$x3" layoutX="78.0" layoutY="9.0" prefWidth="247.0" text="" />
+                                  </children>
+                                </AnchorPane>
+                                <AnchorPane prefHeight="40.0" prefWidth="421.0" VBox.vgrow="ALWAYS">
+                                  <children>
+                                    <Label font="$x3" layoutX="0.0" layoutY="10.0" prefWidth="85.0" text="动物编号：" />
+                                    <Label fx:id="animalCodeLabel" font="$x3" layoutX="80.0" layoutY="11.0" prefWidth="247.0" text="" />
+                                  </children>
+                                </AnchorPane>
+                                <HBox prefHeight="260.0" prefWidth="438.0" spacing="5.0" VBox.vgrow="ALWAYS">
+                                  <children>
+                                    <AnchorPane prefHeight="305.0" prefWidth="217.0" styleClass="anchorPane-colorFF0FFFF, border" HBox.hgrow="ALWAYS">
+                                      <children>
+                                        <Label fx:id="otherWeightLabel" font="$x3" layoutX="84.0" layoutY="93.0" prefWidth="136.0" text="" />
+                                        <Label font="$x3" layoutX="8.0" layoutY="93.0" prefWidth="85.0" text="同组平均：" />
+                                        <TableView fx:id="otherAnimalWeightTable" prefHeight="121.0" prefWidth="207.0" AnchorPane.bottomAnchor="13.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="132.0">
+                                          <columns>
+                                            <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="80.0" sortable="false" text="动物编号" fx:id="animalCodeCol_otherAnimalWeightTable" />
+                                            <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="125.0" resizable="true" sortable="false" text="脏器重量" fx:id="weightCol_otherAnimalWeightTable" />
+                                          </columns>
+                                        </TableView>
+                                        <Label font="$x3" layoutX="7.0" layoutY="15.0" prefWidth="86.0" text="待称脏器：" />
+                                        <Label fx:id="nextViscerNameLabel" alignment="CENTER" contentDisplay="LEFT" layoutX="10.0" layoutY="53.0" prefWidth="210.0" text="">
+                                          <font>
+                                            <Font name="System Bold" size="16.0" />
+                                          </font>
+                                        </Label>
+                                      </children>
+                                    </AnchorPane>
+                                    <AnchorPane minHeight="-1.0" minWidth="216.0" prefHeight="320.0" prefWidth="216.0" styleClass="anchorPane-colorFAFAD2, border" HBox.hgrow="ALWAYS">
+                                      <children>
+                                        <Label fx:id="preViscerNameLabel" layoutX="71.0" layoutY="15.0" prefWidth="138.0" text="">
+                                          <font>
+                                            <Font size="14.0" fx:id="x4" />
+                                          </font>
+                                        </Label>
+                                        <Label font="$x4" layoutX="7.0" layoutY="54.0" prefWidth="72.0" text="脏器重量：" />
+                                        <Label fx:id="weightLabel" font="$x4" layoutX="78.0" layoutY="54.0" prefWidth="124.0" text="" />
+                                        <Label font="$x4" layoutX="7.0" layoutY="15.0" prefWidth="72.00009999999747" text="已称脏器：" />
+                                        <Label id="nextViscerNameLabel" fx:id="fOtherWeightLabel" font="$x3" layoutX="80.0" layoutY="93.0" prefWidth="117.0" text="" />
+                                        <Label font="$x3" layoutX="7.0" layoutY="93.0" prefWidth="85.0" text="同组平均：" />
+                                        <TableView id="otherAnimalWeightTable" fx:id="fOtherAnimalWeightTable" prefHeight="120.0" prefWidth="205.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="132.0">
+                                          <columns>
+                                            <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="80.0" sortable="false" text="动物编号" fx:id="animalCodeCol_fOtherAnimalWeightTable" />
+                                            <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="123.0" resizable="true" sortable="false" text="脏器重量" fx:id="weightCol_fOtherAnimalWeightTable" />
+                                          </columns>
+                                        </TableView>
+                                      </children>
+                                    </AnchorPane>
+                                  </children>
+                                </HBox>
+                              </children>
+                            </VBox>
+                          </children>
+                        </AnchorPane>
+                        <AnchorPane maxWidth="350.0" minWidth="182.0" prefHeight="436.0" prefWidth="182.0" HBox.hgrow="ALWAYS">
+                          <children>
+                            <TableView fx:id="visceraWeightTable" prefHeight="394.0" prefWidth="192.0" AnchorPane.bottomAnchor="42.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="-1.0">
+                              <columns>
+                                <TableColumn maxWidth="135.0" minWidth="65.0" prefWidth="65.0" sortable="false" text="脏器" fx:id="viscerNameCol_visceraWeightTable" />
+                                <TableColumn maxWidth="100.0" minWidth="50.0" prefWidth="50.0" sortable="false" text="重量" fx:id="weightCol_visceraWeightTable" />
+                                <TableColumn editable="false" maxWidth="90.0" minWidth="45.0" prefWidth="45.0" resizable="true" sortable="false" text="操作" fx:id="operateCol_visceraWeightTable" />
+                              </columns>
+                            </TableView>
+                            <Button fx:id="weightFinishBtn" mnemonicParsing="false" onAction="#onWeightFinishBtn" prefHeight="26.0" prefWidth="72.0" text="称重完毕" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="14.0" />
+                          </children>
+                        </AnchorPane>
+                      </children>
+                    </HBox>
+                  </children>
+                </AnchorPane>
+                <VBox prefHeight="136.0" prefWidth="56.0" AnchorPane.bottomAnchor="398.0" AnchorPane.leftAnchor="525.0" AnchorPane.topAnchor="39.0">
+                  <children>
+                    <AnchorPane prefHeight="114.0" prefWidth="56.0" VBox.vgrow="NEVER">
+                      <children>
+                        <Hyperlink fx:id="saveWeightUpperAndLowerLink" onAction="#saveWeightUpperLabelAndLower" prefWidth="88.0" text="设置范围参数" AnchorPane.bottomAnchor="-4.0" AnchorPane.rightAnchor="-54.0" />
+                      </children>
+                    </AnchorPane>
+                  </children>
+                </VBox>
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+        <Tab fx:id="fixTab" text="脏器固定">
+          <content>
+            <AnchorPane id="Content" fx:id="fixedPane" minHeight="0.0" minWidth="0.0" prefHeight="573.0" prefWidth="929.0" styleClass="border-bottom">
+              <children>
+                <Label layoutX="14.0" layoutY="22.0" prefWidth="78.0" text="选择脏器" />
+                <Label layoutX="273.0" layoutY="22.0" prefWidth="78.0" text="脏器固定列表" />
+                <Button fx:id="fixedBtn" disable="true" focusTraversable="true" layoutX="208.0" layoutY="125.0" mnemonicParsing="false" onAction="#onFixedBtn" prefHeight="26.0" prefWidth="50.0" text="&gt;&gt;" visible="true" />
+                <Hyperlink alignment="CENTER" layoutX="7.0" onAction="#onSelectAllHyperlink" prefWidth="46.0" text="全选" textAlignment="CENTER" textOverrun="CLIP" AnchorPane.bottomAnchor="54.0" />
+                <ListView fx:id="visceraListView" prefHeight="453.0" prefWidth="186.0" AnchorPane.bottomAnchor="83.0" AnchorPane.leftAnchor="13.0" AnchorPane.topAnchor="37.0" />
+                <Hyperlink alignment="CENTER" layoutX="47.0" onAction="#onSelectNoOneHyperlink" prefWidth="46.0" text="全不选" textAlignment="CENTER" textOverrun="CLIP" AnchorPane.bottomAnchor="54.0" />
+                <AnchorPane layoutX="272.0" prefHeight="444.0" prefWidth="186.0" AnchorPane.bottomAnchor="56.0" AnchorPane.topAnchor="39.0">
+                  <children>
+                    <TableView fx:id="visceraFixedTable" layoutX="0.0" prefHeight="477.0" prefWidth="204.0" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+                      <columns>
+                        <TableColumn maxWidth="200.0" minWidth="100.0" prefWidth="131.0" sortable="false" text="脏器" fx:id="visceraNameCol_fixed" />
+                        <TableColumn maxWidth="60.0" minWidth="34.0" prefWidth="54.0" sortable="false" text="操作" fx:id="operateCol_fixed" />
+                      </columns>
+                    </TableView>
+                  </children>
+                </AnchorPane>
+                <Button fx:id="fixedFinishBtn" disable="true" layoutX="860.0" mnemonicParsing="false" onAction="#onFixedFinishBtn" prefHeight="26.0" text="固定完成" visible="true" AnchorPane.bottomAnchor="19.0" />
+                <Button id="fixedFinishBtn" fx:id="visceraMissingButton_fixed" disable="true" layoutX="16.0" mnemonicParsing="false" onAction="#onVisceraMissingButton" prefHeight="26.0" text="登记所选脏器缺失" AnchorPane.bottomAnchor="19.0" />
+                <AnchorPane fx:id="abnVisceraPane" layoutX="531.0" maxHeight="500.0" prefHeight="462.0" prefWidth="420.0" snapToPixel="true" visible="true" AnchorPane.bottomAnchor="56.0" AnchorPane.topAnchor="20.0">
+                  <children>
+                    <ListView fx:id="abnVisceraList" layoutX="2.0" prefHeight="452.0" prefWidth="186.0" visible="true" AnchorPane.bottomAnchor="24.0" AnchorPane.topAnchor="20.0" />
+                    <Button fx:id="abnFixedButton" disable="true" layoutX="196.0" layoutY="109.0" mnemonicParsing="false" onAction="#onAbnVisceraOkButton" prefHeight="26.0" prefWidth="50.0" text="&gt;&gt;" />
+                    <Label fx:id="abnVisceraLabel" layoutX="2.0" layoutY="3.0" prefWidth="95.0" text="非常规病变" underline="false" visible="true" />
+                    <Label layoutX="256.0" layoutY="3.0" text="非常规病变固定列表" />
+                    <TableView fx:id="abnVisceraTable" layoutX="256.0" prefHeight="427.0" prefWidth="204.0" AnchorPane.bottomAnchor="1.0" AnchorPane.topAnchor="18.0">
+                      <columns>
+                        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="131.0" sortable="false" text="非常规病变" fx:id="abnVisceraCol" />
+                        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="53.0" sortable="false" text="操作" fx:id="operateCol_AbnFixed" />
+                      </columns>
+                    </TableView>
+                    <CheckBox fx:id="showOtherAbnCheckBox" layoutX="2.0" mnemonicParsing="false" text="显示其他病变" AnchorPane.bottomAnchor="1.0" />
+                  </children>
+                </AnchorPane>
+                <Hyperlink layoutX="98.0" onAction="#onChooseSelectHyperlink" text="不需称重脏器" AnchorPane.bottomAnchor="55.0" />
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+      </tabs>
+    </TabPane>
+    <Button id="confirmBtn" mnemonicParsing="false" onAction="#onExitBtn" prefHeight="26.0" prefWidth="72.0" text="关闭" AnchorPane.bottomAnchor="13.0" AnchorPane.rightAnchor="14.0" />
+    <Label fx:id="msgLabel_fixed" font="$x6" prefWidth="607.0" text="" textFill="$x7" AnchorPane.leftAnchor="465.0" AnchorPane.topAnchor="5.0" />
+  </children>
+  <stylesheets>
+    <URL value="@../../../../image/centerPane.css" />
+  </stylesheets>
+</AnchorPane>

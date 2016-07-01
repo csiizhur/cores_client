@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="429.0" prefWidth="601.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.lanen.view.test.CreateTaskPage">
+  <!-- TODO Add Nodes -->
+  <children>
+    <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="50.0" prefWidth="572.9998779296875" styleClass="border">
+      <children>
+        <Button focusTraversable="false" layoutX="14.0" layoutY="11.0" mnemonicParsing="false" onAction="#onConfirmBtnAction" prefHeight="26.0" prefWidth="72.0" text="确定" />
+        <Button focusTraversable="false" layoutX="102.0" layoutY="11.0" mnemonicParsing="false" onAction="#onExitBtnAction" prefHeight="26.0" prefWidth="72.0" text="取消" />
+      </children>
+    </AnchorPane>
+    <AnchorPane layoutX="14.0" layoutY="78.0" prefHeight="337.0" prefWidth="573.0" styleClass="border">
+      <children>
+        <Label layoutX="14.0" layoutY="36.0" prefWidth="72.0" text="专题编号：" />
+        <Label layoutX="14.0" layoutY="86.0" prefWidth="72.0" text="解剖申请人：" />
+        <Label layoutX="14.0" layoutY="136.0" prefWidth="72.0" text="动物种类：" />
+        <Label layoutX="14.0" layoutY="236.0" prefWidth="130.0" text="解剖任务创建者：" />
+        <Label layoutX="299.0" layoutY="236.0" prefWidth="102.0" text="创建时间：" />
+        <Label fx:id="studyNoLabel" layoutX="72.0" layoutY="36.0" prefWidth="210.0" text="2015-001-01-01" />
+        <Label fx:id="authorLabel" layoutX="86.0" layoutY="86.0" prefWidth="72.0" text="张三丰" />
+        <Label fx:id="animalTypeLabel" layoutX="75.0" layoutY="136.0" prefWidth="72.0" text="大鼠" />
+        <Label fx:id="taskCreaterLabel" layoutX="112.0" layoutY="236.0" prefWidth="130.0" text="王二小" />
+        <Label fx:id="taskCreateTimeLabel" layoutX="357.0" layoutY="236.0" prefWidth="123.0" text="2015-01-08 15:26" />
+        <Label layoutX="195.0" layoutY="36.0" prefWidth="41.0" text="SD：" visible="false" />
+        <Label layoutX="299.0" layoutY="83.0" prefWidth="72.0" text="申请日期：" />
+        <Label layoutX="14.0" layoutY="186.0" prefWidth="72.0" text="动物数量：" />
+        <Label id="sdLabel" layoutX="222.0" layoutY="36.0" prefWidth="72.0" text="李四啊" visible="false" />
+        <Label fx:id="reqDateLabel" layoutX="359.0" layoutY="83.0" prefWidth="83.0" text="2015-01-08" />
+        <Label fx:id="animalNumLabel" layoutX="73.0" layoutY="186.0" prefWidth="72.0" text="100" />
+        <Label layoutX="299.0" layoutY="36.0" prefWidth="102.0" text="病理专题负责人：" />
+        <Label layoutX="299.0" layoutY="186.0" prefWidth="102.0" text="计划解剖日期：" />
+        <Label layoutX="299.0" layoutY="136.0" prefWidth="72.0" text="解剖原因：" />
+        <Label fx:id="pathDirectorLabel" layoutX="394.0" layoutY="36.0" prefWidth="72.0" text="李四啊" />
+        <Label fx:id="anatomyDateLabel" layoutX="381.0" layoutY="186.0" prefWidth="168.0" text="2015-01-08∽2015-01-09" />
+        <Label fx:id="anatomyRsnLabel" layoutX="358.0" layoutY="136.0" prefWidth="72.0" text="死亡解剖" />
+      </children>
+    </AnchorPane>
+  </children>
+  <stylesheets>
+    <URL value="@../../../../image/centerPane.css" />
+  </stylesheets>
+</AnchorPane>

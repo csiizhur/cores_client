@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane minHeight="462.0" prefHeight="462.0" prefWidth="596.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.lanen.view.tblsession.AniResiteFrame">
+  <!-- TODO Add Nodes -->
+  <children>
+    <HBox prefHeight="46.0" prefWidth="570.0" styleClass="underLinePanel" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="0.0">
+      <children>
+        <Button mnemonicParsing="false" onAction="#onSignButton" prefWidth="72.0" text="签字">
+          <HBox.margin>
+            <Insets left="15.0" fx:id="x1" />
+          </HBox.margin>
+        </Button>
+        <Button mnemonicParsing="false" onAction="#onCheckButton" prefWidth="72.0" text="复核" visible="false" HBox.margin="$x1" />
+        <Button mnemonicParsing="false" onAction="#onPrintButton" prefWidth="72.0" text="打印" visible="false" HBox.margin="$x1" />
+        <Button mnemonicParsing="false" onAction="#onExitButton" prefWidth="72.0" text="关闭">
+          <HBox.margin>
+            <Insets left="220.0" />
+          </HBox.margin>
+        </Button>
+      </children>
+      <padding>
+        <Insets top="15.0" />
+      </padding>
+    </HBox>
+    <AnchorPane prefHeight="46.0" prefWidth="570.0" styleClass="underLinePanel" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="46.0">
+      <children>
+        <Label layoutX="14.0" layoutY="16.0" prefWidth="59.0" text="创建人：" />
+        <Label fx:id="createrLabel" layoutX="69.0" layoutY="16.0" prefWidth="59.0" text="张三" />
+        <Label layoutX="160.0" layoutY="16.0" prefWidth="72.0" text="创建时间：" />
+        <Label fx:id="createTimeLabel" layoutX="224.0" layoutY="16.0" prefWidth="147.0" text="2014-02-02 10:20:33" />
+        <Label layoutX="383.0" layoutY="16.0" prefWidth="72.0" text="操作类型：" />
+        <Label fx:id="sessionTypeLabel" layoutX="455.0" layoutY="16.0" prefWidth="72.0" text="动物死亡" />
+      </children>
+    </AnchorPane>
+    <AnchorPane prefHeight="46.0" prefWidth="570.0" styleClass="underLinePanel" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="92.0">
+      <children>
+        <Label fx:id="studyNoLabel" layoutX="14.0" layoutY="16.0" prefWidth="182.0" text="课题编号：2014-123-01-01" />
+        <Label layoutX="184.0" layoutY="16.0" prefWidth="72.0" text="动物种类：" />
+        <Label fx:id="animalTypeLabel" layoutX="248.0" layoutY="16.0" prefWidth="147.0" text="大鼠" />
+      </children>
+    </AnchorPane>
+    <AnchorPane minHeight="246.0" prefHeight="293.0" prefWidth="255.0" styleClass="statePanel" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="22.0" AnchorPane.topAnchor="157.0">
+      <children>
+        <TableView id="tblBodyWeightTable" fx:id="animalTable" focusTraversable="false" prefHeight="265.0" prefWidth="245.0" styleClass="statePanel" AnchorPane.bottomAnchor="13.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="14.0">
+          <columns>
+            <TableColumn editable="false" maxWidth="40.0" minWidth="40.0" prefWidth="40.0" resizable="false" sortable="false" text="选择" fx:id="selectCol" />
+            <TableColumn maxWidth="80.0" minWidth="50.0" prefWidth="75.0" resizable="true" sortable="false" text="动物Id号" fx:id="animalIdCol" />
+            <TableColumn maxWidth="42.0" minWidth="25.0" prefWidth="42.0" resizable="true" sortable="false" text="性别" fx:id="genderCol" />
+            <TableColumn maxWidth="80.0" minWidth="50.0" prefWidth="71.0" text="原房间号" fx:id="roomCol" />
+          </columns>
+        </TableView>
+        <Label alignment="CENTER" layoutX="14.0" layoutY="-7.0" prefWidth="116.0" styleClass="whiteLabel" text="重新安置动物列表" textAlignment="CENTER" />
+      </children>
+    </AnchorPane>
+    <AnchorPane prefHeight="293.0" prefWidth="311.0" styleClass="statePanel" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="293.0" AnchorPane.rightAnchor="22.0" AnchorPane.topAnchor="157.0">
+      <children>
+        <TextArea fx:id="remarkText" focusTraversable="false" layoutX="19.0" layoutY="173.0" prefHeight="92.0" prefWidth="244.0" wrapText="true" />
+        <Label layoutX="29.0" layoutY="30.0" prefWidth="48.0" text="日期：" />
+        <HBox id="deadDatePane" fx:id="resiteDateHBox" layoutX="87.0" layoutY="28.0" prefHeight="19.0" prefWidth="90.0" />
+        <Label layoutX="29.0" layoutY="60.0" prefWidth="48.0" text="时间：" />
+        <ComboBox id="notifyTimeHComboBox" fx:id="resiteTimeHComboBox" layoutX="87.0" layoutY="58.0" minHeight="19.0" minWidth="32.0" prefHeight="19.0" prefWidth="48.0">
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="00" />
+              <String fx:value="01" />
+              <String fx:value="02" />
+              <String fx:value="03" />
+              <String fx:value="04" />
+              <String fx:value="05" />
+              <String fx:value="06" />
+              <String fx:value="07" />
+              <String fx:value="08" />
+              <String fx:value="09" />
+              <String fx:value="10" />
+              <String fx:value="11" />
+              <String fx:value="12" />
+              <String fx:value="13" />
+              <String fx:value="14" />
+              <String fx:value="15" />
+              <String fx:value="16" />
+              <String fx:value="17" />
+              <String fx:value="18" />
+              <String fx:value="19" />
+              <String fx:value="20" />
+              <String fx:value="21" />
+              <String fx:value="22" />
+              <String fx:value="23" />
+            </FXCollections>
+          </items>
+        </ComboBox>
+        <ComboBox id="notifyTimeMComboBox" fx:id="resiteTimeMComboBox" layoutX="166.0" layoutY="58.0" minHeight="19.0" minWidth="32.0" prefHeight="19.0" prefWidth="48.0001220703125">
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="00" />
+              <String fx:value="01" />
+              <String fx:value="02" />
+              <String fx:value="03" />
+              <String fx:value="04" />
+              <String fx:value="05" />
+              <String fx:value="06" />
+              <String fx:value="07" />
+              <String fx:value="08" />
+              <String fx:value="09" />
+              <String fx:value="10" />
+              <String fx:value="11" />
+              <String fx:value="12" />
+              <String fx:value="13" />
+              <String fx:value="14" />
+              <String fx:value="15" />
+              <String fx:value="16" />
+              <String fx:value="17" />
+              <String fx:value="18" />
+              <String fx:value="19" />
+              <String fx:value="20" />
+              <String fx:value="21" />
+              <String fx:value="22" />
+              <String fx:value="23" />
+              <String fx:value="24" />
+              <String fx:value="25" />
+              <String fx:value="26" />
+              <String fx:value="27" />
+              <String fx:value="28" />
+              <String fx:value="29" />
+              <String fx:value="30" />
+              <String fx:value="31" />
+              <String fx:value="32" />
+              <String fx:value="33" />
+              <String fx:value="34" />
+              <String fx:value="35" />
+              <String fx:value="36" />
+              <String fx:value="37" />
+              <String fx:value="38" />
+              <String fx:value="39" />
+              <String fx:value="40" />
+              <String fx:value="41" />
+              <String fx:value="42" />
+              <String fx:value="43" />
+              <String fx:value="44" />
+              <String fx:value="45" />
+              <String fx:value="46" />
+              <String fx:value="47" />
+              <String fx:value="48" />
+              <String fx:value="49" />
+              <String fx:value="50" />
+              <String fx:value="51" />
+              <String fx:value="52" />
+              <String fx:value="53" />
+              <String fx:value="54" />
+              <String fx:value="55" />
+              <String fx:value="56" />
+              <String fx:value="57" />
+              <String fx:value="58" />
+              <String fx:value="59" />
+            </FXCollections>
+          </items>
+        </ComboBox>
+        <Label id="animalTypeLabel" layoutX="143.0" layoutY="60.0" prefWidth="23.0" text="时" />
+        <Label id="animalTypeLabel" layoutX="223.0" layoutY="60.0" prefWidth="23.0" text="分" />
+        <Label layoutX="17.0" layoutY="90.0" prefWidth="72.0" text="新房间：" />
+        <ComboBox id="deadTypeComboBox" fx:id="roomComboBox" editable="false" layoutX="87.0" layoutY="88.0" maxHeight="19.0" minHeight="19.0" prefHeight="19.0" prefWidth="90.0">
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="项 1" />
+              <String fx:value="项 2" />
+              <String fx:value="项 3" />
+            </FXCollections>
+          </items>
+        </ComboBox>
+        <Label layoutX="29.0" layoutY="150.0" prefWidth="72.0" text="备注：" />
+        <Label layoutX="6.0" layoutY="121.0" prefWidth="72.0" text="安置原因：" />
+        <TextField fx:id="resiteRsnText" layoutX="87.0" layoutY="119.0" prefWidth="139.0" />
+      </children>
+    </AnchorPane>
+    <Label alignment="CENTER" layoutX="350.0" layoutY="150.0" prefWidth="90.0" styleClass="whiteLabel" text="重新安置信息" textAlignment="CENTER" />
+    <HBox fx:id="hbox" prefHeight="312.0" prefWidth="304.0" visible="false" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="277.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="138.0" />
+    <HBox fx:id="hbox1" layoutX="25.0" layoutY="169.0" prefHeight="293.0" prefWidth="59.0" visible="false" />
+  </children>
+  <stylesheets>
+    <URL value="@../../../../image/centerPane.css" />
+  </stylesheets>
+</AnchorPane>

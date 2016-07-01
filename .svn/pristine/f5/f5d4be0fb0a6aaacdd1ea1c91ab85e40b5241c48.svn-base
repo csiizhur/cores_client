@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-2.5.xsd
+           http://www.springframework.org/schema/aop
+           http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+           http://www.springframework.org/schema/tx 
+           http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+           
+     <!-- 加载外部的properties配置文件 -->
+	<context:property-placeholder location="classpath:service.properties"/>
+    <!--用户管理Service--> 
+    <bean id="UserService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean"> 
+       <property name="serviceUrl" value="rmi://${serviceIP}:6688/UserService"/> 
+       <property name="serviceInterface">
+          <value>com.lanen.service.UserService</value>
+       </property>
+   </bean>
+    <bean id="RoleService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean"> 
+       <property name="serviceUrl" value="rmi://${serviceIP}:6688/RoleService"/> 
+       <property name="serviceInterface">
+          <value>com.lanen.service.RoleService</value>
+       </property>
+   </bean>
+    <bean id="PrivilegeService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean"> 
+       <property name="serviceUrl" value="rmi://${serviceIP}:6688/PrivilegeService"/> 
+       <property name="serviceInterface">
+          <value>com.lanen.service.PrivilegeService</value>
+       </property>
+   </bean>
+    <bean id="SystemService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean"> 
+       <property name="serviceUrl" value="rmi://${serviceIP}:6688/SystemService"/> 
+       <property name="serviceInterface">
+          <value>com.lanen.service.SystemService</value>
+       </property>
+   </bean>
+    <bean id="DepartmentService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean"> 
+       <property name="serviceUrl" value="rmi://${serviceIP}:6688/DepartmentService"/> 
+       <property name="serviceInterface">
+          <value>com.lanen.service.DepartmentService</value>
+       </property>
+   </bean>
+   <bean id="UserRoleLogService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean"> 
+       <property name="serviceUrl" value="rmi://${serviceIP}:6688/UserRoleLogService"/> 
+       <property name="serviceInterface">
+          <value>com.lanen.service.UserRoleLogService</value>
+       </property>
+   </bean>
+   <bean id="RegulationService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean"> 
+       <property name="serviceUrl" value="rmi://${serviceIP}:6688/RegulationService"/> 
+       <property name="serviceInterface">
+          <value>com.lanen.service.RegulationService</value>
+       </property>
+   </bean>
+   <bean id="ModuleService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean"> 
+       <property name="serviceUrl" value="rmi://${serviceIP}:6688/ModuleService"/> 
+       <property name="serviceInterface">
+          <value>com.lanen.service.ModuleService</value>
+       </property>
+   </bean>
+   <bean id="TblLogService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean"> 
+       <property name="serviceUrl" value="rmi://${serviceIP}:6688/TblLogService"/> 
+       <property name="serviceInterface">
+          <value>com.lanen.service.clinicaltest.TblLogService</value>
+       </property>
+   </bean>
+    <bean id="TblTraceService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean"> 
+       <property name="serviceUrl" value="rmi://${serviceIP}:6688/TblTraceService"/> 
+       <property name="serviceInterface">
+          <value>com.lanen.service.clinicaltest.TblTraceService</value>
+       </property>
+   </bean>
+   <bean id="TblESLinkService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean"> 
+       <property name="serviceUrl" value="rmi://${serviceIP}:6688/TblESLinkService"/> 
+       <property name="serviceInterface">
+          <value>com.lanen.service.clinicaltest.TblESLinkService</value>
+       </property>
+   </bean>
+   <bean id="tblESService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean"> 
+       <property name="serviceUrl" value="rmi://${serviceIP}:6688/TblESService"/> 
+       <property name="serviceInterface">
+          <value>com.lanen.service.clinicaltest.TblESService</value>
+       </property>
+   </bean>
+   <!--用户管理Service  end  --> 
+   
+</beans>

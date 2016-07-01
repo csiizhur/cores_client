@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="anchorPane" minHeight="210.0" prefHeight="210.0" prefWidth="344.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.lanen.view.test.ConfirmAnatomy">
+  <!-- TODO Add Nodes -->
+  <children>
+    <AnchorPane minHeight="112.0" prefHeight="192.0" prefWidth="344.0" styleClass="border" AnchorPane.bottomAnchor="51.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="0.0">
+      <children>
+        <ListView fx:id="pListView" layoutX="148.0" layoutY="74.0" prefHeight="72.0" prefWidth="142.0" />
+        <Label layoutX="14.0" layoutY="10.0" prefWidth="352.0" text="标记‘其余未见异常’后将不可以修改，确定继续？">
+          <font>
+            <Font size="12.0" />
+          </font>
+        </Label>
+        <Label layoutX="148.0" layoutY="48.0" prefHeight="17.0" prefWidth="183.0" text="若继续，请确认解剖者" />
+        <Label layoutX="14.0" layoutY="49.0" prefWidth="72.0" text="动物编号" />
+        <Label fx:id="animalCodeLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="65.0" prefHeight="83.0" prefWidth="89.0" text="1101">
+          <font>
+            <Font size="20.0" />
+          </font>
+        </Label>
+        <AnchorPane layoutX="0.0" layoutY="23.0" prefHeight="14.0" prefWidth="344.0" styleClass="border-bottom" />
+      </children>
+    </AnchorPane>
+    <Button id="dataCollectBtn" focusTraversable="false" layoutX="154.0" layoutY="171.0" mnemonicParsing="false" onAction="#onConfirmBtnAction" prefHeight="26.0" prefWidth="72.0" text="确定" />
+    <Button focusTraversable="false" layoutX="246.0" layoutY="171.0" mnemonicParsing="false" onAction="#onExitBtnAction" prefHeight="26.0" prefWidth="72.0" text="取消" />
+  </children>
+  <stylesheets>
+    <URL value="@../../../../image/centerPane.css" />
+  </stylesheets>
+</AnchorPane>

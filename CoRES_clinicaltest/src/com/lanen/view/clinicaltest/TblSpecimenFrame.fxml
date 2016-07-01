@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="555.0" prefWidth="757.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.lanen.view.clinicaltest.TblSpecimenFrameController">
+  <!-- TODO Add Nodes -->
+  <children>
+    <TableView fx:id="specimenTable" focusTraversable="false" prefHeight="245.0" prefWidth="731.0" AnchorPane.bottomAnchor="298.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+      <columns>
+        <TableColumn maxWidth="300.0" minWidth="90.0" prefWidth="90.0" text="专题编号" fx:id="studyPlanNoCol" />
+        <TableColumn maxWidth="75.0" minWidth="53.0" prefWidth="53.0" sortable="false" text="申请编号" fx:id="reqNoCol" />
+        <TableColumn maxWidth="160.0" minWidth="60.0" sortable="false" text="动物ID" fx:id="animalIdCol_specimen" />
+        <TableColumn maxWidth="100.0" minWidth="53.0" prefWidth="53.0" sortable="false" text="动物编号" fx:id="animalCodeCol_specimen" />
+        <TableColumn maxWidth="150.0" minWidth="75.0" prefWidth="75.0" sortable="false" text="接收日期" fx:id="recDateCol" />
+        <TableColumn maxWidth="100.0" minWidth="53.0" prefWidth="53.0" sortable="false" text="接收时间" fx:id="recTimeCol" />
+        <TableColumn maxWidth="110.0" minWidth="53.0" prefWidth="53.0" text="检验项目" fx:id="testItemCol" />
+        <TableColumn maxWidth="150.0" minWidth="75.0" prefWidth="75.0" sortable="false" text="检验编号" fx:id="specimenCodeCol" />
+        <TableColumn maxWidth="120.0" minWidth="50.0" prefWidth="60.0" sortable="false" text="标本类型" fx:id="specimenKindCol" />
+        <TableColumn maxWidth="100.0" minWidth="40.0" prefWidth="40.0" sortable="false" text="送检人" fx:id="senderCol" />
+        <TableColumn maxWidth="100.0" minWidth="40.0" prefWidth="40.0" sortable="false" text="接收人" fx:id="receiverCol" />
+      </columns>
+    </TableView>
+    <TabPane fx:id="tabPane" prefHeight="271.0" prefWidth="727.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0">
+      <tabs>
+        <Tab text="标本接收">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="240.0" prefWidth="732.0" styleClass="statePanel">
+              <children>
+                <TextField fx:id="studyNoText" editable="false" focusTraversable="false" layoutX="86.0" layoutY="17.0" prefWidth="142.0" />
+                <Label layoutX="26.0" layoutY="48.0" text="申请编号：" />
+                <TextField fx:id="reqNoText" editable="false" focusTraversable="false" layoutX="86.0" layoutY="43.0" prefWidth="142.0" />
+                <Label layoutX="26.0" layoutY="22.0" text="课题编号：" />
+                <Label layoutX="26.0" layoutY="104.0" text="检测项目：" />
+                <TextField fx:id="recDateText" editable="false" focusTraversable="false" layoutX="86.0" layoutY="74.0" prefWidth="142.0" />
+                <TableView fx:id="animalTable" prefHeight="201.0" prefWidth="359.0" AnchorPane.bottomAnchor="29.0" AnchorPane.leftAnchor="336.0" AnchorPane.rightAnchor="31.0" AnchorPane.topAnchor="9.0">
+                  <columns>
+                    <TableColumn editable="false" id="" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" sortable="false" style="" text="请选择" fx:id="selectCol" />
+                    <TableColumn maxWidth="120.0" minWidth="120.0" prefWidth="120.0" sortable="false" text="动物ID号" fx:id="animalIdCol" />
+                    <TableColumn maxWidth="69.0" minWidth="69.0" prefWidth="69.0" resizable="true" sortable="false" text="性别" fx:id="sexCol" />
+                    <TableColumn editable="false" maxWidth="900.0" minWidth="10.0" prefWidth="99.0" resizable="true" sortable="false" style="" text="动物编号" fx:id="animalCodeCol" />
+                  </columns>
+                </TableView>
+                <Button layoutX="26.0" layoutY="212.0" mnemonicParsing="false" onAction="#onConfirmBtnAction" prefWidth="72.0" text="确定" />
+                <Label layoutX="26.0" layoutY="77.0" text="接收日期：" />
+                <Label prefWidth="33.0" text="共" AnchorPane.bottomAnchor="8.0" AnchorPane.rightAnchor="149.0" />
+                <Label fx:id="totalLabel" alignment="CENTER" contentDisplay="LEFT" prefWidth="33.0" text="0" AnchorPane.bottomAnchor="8.0" AnchorPane.rightAnchor="135.0" />
+                <Label prefWidth="11.0" text="只" AnchorPane.bottomAnchor="8.0" AnchorPane.rightAnchor="119.0" />
+                <CheckBox fx:id="bioChemCheckBox" layoutX="86.0" layoutY="105.0" mnemonicParsing="false" onAction="#onCheckBoxAction" text="生化检验" />
+                <CheckBox fx:id="hematCheckBox" layoutX="86.0" layoutY="130.0" mnemonicParsing="false" onAction="#onCheckBoxAction" text="血液检验" />
+                <CheckBox fx:id="bloodCoagCheckBox" layoutX="86.0" layoutY="153.0" mnemonicParsing="false" onAction="#onCheckBoxAction" text="血凝检验" />
+                <CheckBox fx:id="urineCheckBox" layoutX="86.0" layoutY="178.0" mnemonicParsing="false" onAction="#onCheckBoxAction" text="尿液检验" />
+                <Hyperlink layoutX="336.0" layoutY="216.0" onAction="#onSelectAll" text="全选" />
+                <Hyperlink layoutX="385.0" layoutY="216.0" onAction="#onSelectNone" text="全不选" />
+                <Label prefWidth="33.0" text="选中" AnchorPane.bottomAnchor="8.0" AnchorPane.rightAnchor="76.0" />
+                <Label id="totalLabel" fx:id="selectLabel" alignment="CENTER" contentDisplay="LEFT" prefWidth="33.0" text="0" AnchorPane.bottomAnchor="8.0" AnchorPane.rightAnchor="57.0" />
+                <Label prefWidth="11.0" text="只" AnchorPane.bottomAnchor="8.0" AnchorPane.rightAnchor="41.0" />
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+        <Tab text="查询&amp;打印">
+          <content>
+            <AnchorPane id="Content" fx:id="anchorPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="statePanel">
+              <children>
+                <Label layoutX="336.0" layoutY="34.0" text="专题编号：" />
+                <Label layoutX="71.0" layoutY="82.0" text="申请编号：" />
+                <Label layoutX="336.0" layoutY="82.0" text="动物Id号：" />
+                <Label layoutX="72.0" layoutY="135.0" text="检验项目：" />
+                <Label layoutX="336.0" layoutY="136.0" text="检验编号：" />
+                <Label layoutX="71.0" layoutY="34.0" text="接收日期：" />
+                <ComboBox fx:id="studyNoComboBox" editable="true" focusTraversable="false" layoutX="405.0" layoutY="31.0" prefHeight="19.0" prefWidth="115.0">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList">
+                      <String fx:value="项 1" />
+                      <String fx:value="项 2" />
+                      <String fx:value="项 3" />
+                    </FXCollections>
+                  </items>
+                </ComboBox>
+                <ComboBox fx:id="reqNoComboBox" disable="true" focusTraversable="false" layoutX="136.0" layoutY="79.0" prefHeight="19.0" prefWidth="115.0">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList">
+                      <String fx:value="项 1" />
+                      <String fx:value="项 2" />
+                      <String fx:value="项 3" />
+                    </FXCollections>
+                  </items>
+                </ComboBox>
+                <ComboBox fx:id="animalIdComboBox" disable="true" focusTraversable="false" layoutX="405.0" layoutY="79.0" prefHeight="19.0" prefWidth="115.0">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList">
+                      <String fx:value="项 1" />
+                      <String fx:value="项 2" />
+                      <String fx:value="项 3" />
+                    </FXCollections>
+                  </items>
+                </ComboBox>
+                <ComboBox fx:id="testItemComboBox_select" focusTraversable="false" layoutX="136.0" layoutY="132.0" prefHeight="19.0" prefWidth="115.0">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList">
+                      <String fx:value="" />
+                      <String fx:value="生化检验" />
+                      <String fx:value="血液检验" />
+                      <String fx:value="血凝检验" />
+                      <String fx:value="尿液检验" />
+                    </FXCollections>
+                  </items>
+                </ComboBox>
+                <TextField fx:id="specimenCodeText" focusTraversable="false" layoutX="405.0" layoutY="133.0" prefWidth="115.0" />
+                <TextField focusTraversable="false" layoutX="401.0" layoutY="133.0" prefWidth="115.0" visible="false" />
+                <Button fx:id="queryBtn" focusTraversable="false" layoutX="66.0" layoutY="183.0" mnemonicParsing="false" onAction="#onQueryBtnAction" prefWidth="72.0" text="查询" />
+                <HBox fx:id="recDateHBox" layoutX="136.0" layoutY="31.0" prefHeight="20.0" prefWidth="115.0" />
+                <CheckBox fx:id="recDateCheckBox" layoutX="269.0" layoutY="34.0" mnemonicParsing="false" onAction="#onRecDateCheckBox" visible="false" />
+                <Button id="queryBtn" fx:id="printButton" disable="true" focusTraversable="false" layoutX="192.0" layoutY="183.0" mnemonicParsing="false" onAction="#onPrintButton" prefWidth="72.0" text="打印" />
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+      </tabs>
+    </TabPane>
+  </children>
+  <stylesheets>
+    <URL value="@../../../../image/clinicaltest/style.css" />
+  </stylesheets>
+</AnchorPane>

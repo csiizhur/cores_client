@@ -1,0 +1,105 @@
+
+.titlePane{
+	-fx-background-color: rgba(0,0,0,0.08),
+        linear-gradient(#9a9a9a, #909090),
+        linear-gradient(white 0%, #e3e3e3 35%, #eaeaea 65%, #f2f2f2 100%);
+}
+.menuPane{
+	-fx-background-color: rgba(0,0,0,0.08),
+        linear-gradient(#9a9a9a, #909090),
+        linear-gradient(white 0%, #e3e3e3 35%, #eaeaea 65%, #f2f2f2 100%);
+}
+.centerPanel{
+	-fx-border-color:black ;
+	-fx-border-radius:5;
+	-fx-border-width:1;
+}
+
+.menu1{
+	-fx-background-image:url("menu11.png");
+	-fx-background-size:stretch;
+}
+.menu1:hover{
+	-fx-background-image:url("menu12.png");
+	-fx-background-size:stretch;
+}
+.menu1:visited{
+	-fx-background-image:url("menu12.png");
+	-fx-background-size:stretch;
+	-fx-background-insets: -1.4, 0, 1, 2;
+	-fx-border-width:0;
+}
+.menu2{
+	-fx-background-image:url("menu21.png");
+	-fx-background-size:stretch;
+}
+.menu2:hover{
+	-fx-background-image:url("menu22.png");
+	-fx-background-size:stretch;
+}
+.menu2:visited{
+	-fx-background-image:url("menu22.png");
+	-fx-background-size:stretch;
+	-fx-background-insets: -1.4, 0, 1, 2;
+	-fx-border-width:0;
+}
+.menu3{
+	-fx-background-image:url("menu31.png");
+	-fx-background-size:stretch;
+}
+.menu3:hover{
+	-fx-background-image:url("menu32.png");
+	-fx-background-size:stretch;
+}
+.menu3:visited{
+	-fx-background-image:url("menu32.png");
+	-fx-background-size:stretch;
+	-fx-background-insets: -1.4, 0, 1, 2;
+	-fx-border-width:0;
+}
+.menu4{
+	-fx-background-image:url("menu41.png");
+	-fx-background-size:stretch;
+}
+.menu4:hover{
+	-fx-background-image:url("menu42.png");
+	-fx-background-size:stretch;
+}
+.menu4:visited{
+	-fx-background-image:url("menu42.png");
+	-fx-background-size:stretch;
+	-fx-background-insets: -1.4, 0, 1, 2;
+	-fx-border-width:0;
+}
+.menu5{
+	-fx-background-image:url("menu51.png");
+	-fx-background-size:stretch;
+}
+.menu5:hover{
+	-fx-background-image:url("menu52.png");
+	-fx-background-size:stretch;
+}
+.menu5:visited{
+	-fx-background-image:url("menu52.png");
+	-fx-background-size:stretch;
+	-fx-background-insets: -1.4, 0, 1, 2;
+	-fx-border-width:0;
+}
+.menu6{
+	-fx-background-image:url("menu61.png");
+	-fx-background-size:stretch;
+}
+.menu6:hover{
+	-fx-background-image:url("menu62.png");
+	-fx-background-size:stretch;
+}
+.menu6:visited{
+	-fx-background-image:url("menu62.png");
+	-fx-background-size:stretch;
+	-fx-background-insets: -1.4, 0, 1, 2;
+	-fx-border-width:0;
+}
+
+.leftVbox{
+	-fx-background-color: #f2f2f2;
+}

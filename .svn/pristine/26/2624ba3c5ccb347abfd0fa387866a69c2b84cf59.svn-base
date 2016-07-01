@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="620.0" prefWidth="826.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.lanen.view.clinicaltest.TempTaskFrame">
+  <!-- TODO Add Nodes -->
+  <children>
+    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="559.0" stroke="#9f9f9f" strokeType="INSIDE" width="229.0" />
+    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1e90ff00" height="233.552734375" layoutX="240.0" layoutY="20.0" strokeType="INSIDE" width="238.0">
+      <stroke>
+        <Color blue="0.749" green="0.749" red="0.749" fx:id="x1" />
+      </stroke>
+    </Rectangle>
+    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="274.0" layoutX="240.0" layoutY="285.0" stroke="$x1" strokeType="INSIDE" width="238.0" />
+    <Label layoutX="250.0" layoutY="43.0" text="任务编号" />
+    <TextField id="taksNoText" fx:id="taskNoText" editable="false" layoutX="321.0" layoutY="39.0" prefWidth="133.0" />
+    <Label layoutX="250.0" layoutY="79.0" text="动物种类" />
+    <TextField fx:id="animalTypeText" editable="false" layoutX="321.0" layoutY="76.0" prefWidth="133.0" />
+    <Label layoutX="250.0" layoutY="115.0" text="临检负责人" />
+    <TextField fx:id="clinicalTestDirectorText" editable="false" layoutX="321.0" layoutY="112.0" prefWidth="133.0" />
+    <Label layoutX="250.0" layoutY="151.0" text="委托单位" />
+    <Button fx:id="saveButton" disable="true" layoutX="741.0" layoutY="538.0" mnemonicParsing="false" onAction="#onSaveBtnAction" prefWidth="72.0" text="保存" />
+    <ListView id="list" fx:id="listView" focusTraversable="false" layoutX="14.0" layoutY="49.0" prefHeight="449.0" prefWidth="200.0" />
+    <ComboBox fx:id="yearComboBox" layoutX="14.0" layoutY="19.0" prefHeight="19.0" prefWidth="200.0">
+      <items>
+        <FXCollections fx:factory="observableArrayList">
+          <String fx:value="项 1" />
+          <String fx:value="项 2" />
+          <String fx:value="项 3" />
+        </FXCollections>
+      </items>
+    </ComboBox>
+    <Button fx:id="addBtn" contentDisplay="CENTER" disable="true" layoutX="424.0" layoutY="519.0" minWidth="28.9998779296875" mnemonicParsing="false" onAction="#onAddAction" prefWidth="30.0" text="+" textAlignment="CENTER" />
+    <Button fx:id="delBtn" disable="true" layoutX="424.0" layoutY="465.0" mnemonicParsing="false" onAction="#onDelAction" prefWidth="30.0" text="-" />
+    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="32.0" layoutX="250.0" layoutY="270.0" stroke="WHITE" strokeType="INSIDE" width="48.000022888183594" />
+    <TabPane layoutX="492.0" layoutY="33.0" prefHeight="487.0" prefWidth="321.0" side="BOTTOM" tabClosingPolicy="UNAVAILABLE">
+      <tabs>
+        <Tab text="生化检验">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <children>
+                <TableView fx:id="table1" prefHeight="456.0" prefWidth="321.0">
+                  <columns>
+                    <TableColumn prefWidth="75.0" text="选择" fx:id="selectCol1" />
+                    <TableColumn prefWidth="120.0" sortable="false" text="指标" fx:id="testIndexCol1" />
+                    <TableColumn prefWidth="100.0" sortable="false" text="指标缩写" fx:id="testIndexAbbrCol1" />
+                  </columns>
+                </TableView>
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+        <Tab text="血液检验">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <children>
+                <TableView fx:id="table2" prefHeight="456.0" prefWidth="321.0">
+                  <columns>
+                    <TableColumn prefWidth="75.0" text="选择" fx:id="selectCol2" />
+                    <TableColumn prefWidth="120.0" sortable="false" text="指标" fx:id="testIndexCol2" />
+                    <TableColumn prefWidth="100.0" sortable="false" text="指标缩写" fx:id="testIndexAbbrCol2" />
+                  </columns>
+                </TableView>
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+        <Tab text="血凝检验">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <children>
+                <TableView fx:id="table3" prefHeight="456.0" prefWidth="321.0">
+                  <columns>
+                    <TableColumn prefWidth="75.0" text="选择" fx:id="selectCol3" />
+                    <TableColumn prefWidth="120.0" sortable="false" text="指标" fx:id="testIndexCol3" />
+                    <TableColumn prefWidth="100.0" sortable="false" text="指标缩写" fx:id="testIndexAbbrCol3" />
+                  </columns>
+                </TableView>
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+        <Tab text="尿液检验">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <children>
+                <TableView fx:id="table4" prefHeight="456.0" prefWidth="321.0">
+                  <columns>
+                    <TableColumn prefWidth="75.0" text="选择" fx:id="selectCol4" />
+                    <TableColumn prefWidth="120.0" sortable="false" text="指标" fx:id="testIndexCol4" />
+                    <TableColumn prefWidth="100.0" sortable="false" text="指标缩写" fx:id="testIndexAbbrCol4" />
+                  </columns>
+                </TableView>
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+      </tabs>
+    </TabPane>
+    <Button fx:id="newBuiltBtn" layoutX="142.0" layoutY="519.0" mnemonicParsing="false" onAction="#onNewBuiltBtnAction" prefWidth="72.0" text="新建" />
+    <ComboBox fx:id="clientComboBox" disable="true" editable="true" layoutX="321.0" layoutY="149.0" prefHeight="19.0" prefWidth="133.0">
+      <items>
+        <FXCollections fx:factory="observableArrayList">
+          <String fx:value="项 1" />
+          <String fx:value="项 2" />
+          <String fx:value="项 3" />
+        </FXCollections>
+      </items>
+    </ComboBox>
+    <Label layoutX="250.0" layoutY="187.0" text="创建时间" />
+    <TextField id="clinicalTestDirectorText" fx:id="createDateText" editable="false" focusTraversable="false" layoutX="321.0" layoutY="184.0" prefWidth="133.0" />
+    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="32.0" layoutX="250.0" layoutY="7.0" stroke="WHITE" strokeType="INSIDE" width="48.0" />
+    <Separator layoutY="571.0" prefWidth="824.0" />
+    <Button layoutX="741.0" layoutY="586.0" mnemonicParsing="false" onAction="#onExitBtnAction" prefWidth="72.0" text="关闭" />
+    <TextField id="passagewayText" fx:id="animalIdText" editable="false" layoutX="250.0" layoutY="519.0" onAction="#onAddAction" prefWidth="149.0" />
+    <ListView fx:id="animalListView" focusTraversable="false" layoutX="250.0" layoutY="304.0" prefHeight="180.0" prefWidth="149.0" />
+    <Label layoutX="250.0" layoutY="223.0" text="验证试验" />
+    <RadioButton fx:id="noRadioButton" disable="true" layoutX="321.0" layoutY="223.0" mnemonicParsing="false" selected="true" text="否">
+      <toggleGroup>
+        <ToggleGroup fx:id="toggleGroup" />
+      </toggleGroup>
+    </RadioButton>
+    <RadioButton fx:id="yesRadioButton" disable="true" layoutX="372.0" layoutY="223.0" mnemonicParsing="false" selected="false" text="是" toggleGroup="$toggleGroup" />
+    <Label layoutX="250.0" layoutY="14.0" text="基本信息" />
+    <Label fx:id="animalLabel" alignment="CENTER" layoutX="250.0" layoutY="279.0" prefWidth="60.000099999997474" styleClass="whiteLabel" text="动物Id号" />
+    <Label layoutX="492.0" layoutY="12.0" text="检验指标" />
+    <RadioButton fx:id="animalIdRadioButton" disable="true" layoutX="250.0" layoutY="495.0" mnemonicParsing="false" selected="true" text="动物ID号">
+      <toggleGroup>
+        <ToggleGroup fx:id="toggleGroup2" />
+      </toggleGroup>
+    </RadioButton>
+    <RadioButton fx:id="animalCodeRadioButton" disable="true" layoutX="335.0" layoutY="495.0" mnemonicParsing="false" text="动物编号" toggleGroup="$toggleGroup2" />
+    <HBox fx:id="tableHBox" prefHeight="456.0" prefWidth="321.0" visible="true" AnchorPane.bottomAnchor="130.0" AnchorPane.leftAnchor="478.0" AnchorPane.rightAnchor="27.0" AnchorPane.topAnchor="34.0" />
+  </children>
+  <stylesheets>
+    <URL value="@../../../../image/clinicaltest/style.css" />
+  </stylesheets>
+</AnchorPane>

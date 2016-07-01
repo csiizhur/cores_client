@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="139.0" prefWidth="241.00009999999747" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.lanen.view.clinicaltest.ChooseTempNoFrame">
+  <!-- TODO Add Nodes -->
+  <children>
+    <RadioButton fx:id="innerRadioButton" focusTraversable="false" layoutX="17.0" layoutY="33.0" mnemonicParsing="false" onAction="#onInnerButton" selected="true" text="专题临时任务">
+      <toggleGroup>
+        <ToggleGroup fx:id="toggleGroup" />
+      </toggleGroup>
+    </RadioButton>
+    <RadioButton fx:id="surfaceRadioButton" focusTraversable="false" layoutX="17.0" layoutY="80.0" mnemonicParsing="false" onAction="#onSurfaceButton" selected="false" text="其他临时任务" toggleGroup="$toggleGroup" />
+    <Label fx:id="studyNoLabel" layoutX="19.0" layoutY="55.0" text="专题编号：" visible="true" />
+    <TextField fx:id="studyNoText" layoutX="79.0" layoutY="52.0" onAction="#onConfirmButton" onMouseClicked="#onText" prefHeight="19.0" prefWidth="139.0" visible="true" />
+    <Button focusTraversable="false" layoutX="54.0" layoutY="105.0" mnemonicParsing="false" onAction="#onConfirmButton" prefWidth="72.0" text="确定" />
+    <Button focusTraversable="false" layoutX="145.0" layoutY="105.0" mnemonicParsing="false" onAction="#onCancelButton" prefWidth="72.0" text="取消" />
+    <Label fx:id="errorMsgLabel" layoutX="108.0" layoutY="36.0" prefWidth="108.0" text="" textFill="RED">
+      <font>
+        <Font size="10.0" />
+      </font>
+    </Label>
+    <Label layoutX="17.0" layoutY="10.0" prefWidth="211.0" text="请选择临时任务类型" textFill="BLACK" />
+  </children>
+  <stylesheets>
+    <URL value="@../../../../image/clinicaltest/style.css" />
+  </stylesheets>
+</AnchorPane>

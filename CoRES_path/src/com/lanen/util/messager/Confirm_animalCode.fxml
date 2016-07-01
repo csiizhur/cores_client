@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.*?>
+
+<StackPane prefHeight="124.0" prefWidth="350.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.lanen.util.messager.Confirm_animalCode">
+  <!-- TODO Add Nodes -->
+  <children>
+    <ImageView fitHeight="124.0" fitWidth="350.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@confirm.jpg" />
+      </image>
+    </ImageView>
+    <AnchorPane prefHeight="200.0" prefWidth="200.0">
+      <children>
+        <Button mnemonicParsing="false" onAction="#onCancelBtnAction" prefHeight="26.0" prefWidth="65.0" text="否(N)" AnchorPane.bottomAnchor="8.0" AnchorPane.rightAnchor="12.0" />
+        <Button focusTraversable="false" mnemonicParsing="false" onAction="#onOkBtnAction" prefHeight="26.0" prefWidth="65.0" text="是(Y)" AnchorPane.bottomAnchor="8.0" AnchorPane.rightAnchor="86.0" />
+        <Label fx:id="label1" layoutX="57.0" layoutY="14.0" prefWidth="104.0" text="请确认动物编号为" />
+        <Label fx:id="label2" layoutX="57.0" layoutY="37.0" prefWidth="284.0" text="中排除，是否继续？" />
+        <Label fx:id="animalCodeLabel" layoutX="161.0" layoutY="9.0" prefWidth="55.0" text="1101">
+          <font>
+            <Font size="20.0" />
+          </font>
+        </Label>
+        <Label id="label1" layoutX="221.0" layoutY="14.0" prefWidth="128.127685546875" text="的动物从解剖任务" />
+        <Label id="label2" fx:id="studyNoLabel" layoutX="53.0" layoutY="60.0" prefWidth="284.0" text="（专题编号：2015-123-09-09）" />
+      </children>
+    </AnchorPane>
+  </children>
+</StackPane>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="anchorPane" prefHeight="429.0" prefWidth="601.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.lanen.view.test.ReferFinding">
+  <!-- TODO Add Nodes -->
+  <children>
+    <AnchorPane layoutX="13.0" layoutY="14.0" prefHeight="50.0" prefWidth="575.0" styleClass="border">
+      <children>
+        <Button id="dataCollectBtn" focusTraversable="false" layoutX="14.0" layoutY="12.0" mnemonicParsing="false" onAction="#onConfirmBtnAction" prefHeight="26.0" prefWidth="72.0" text="确定" />
+        <Button focusTraversable="false" layoutX="101.0" layoutY="12.0" mnemonicParsing="false" onAction="#onExitBtnAction" prefHeight="26.0" prefWidth="72.0" text="取消" />
+      </children>
+    </AnchorPane>
+    <AnchorPane layoutX="14.0" layoutY="78.0" prefHeight="337.0" prefWidth="574.0" styleClass="border">
+      <children>
+        <TableView id="taskTable" fx:id="table" layoutX="14.0" layoutY="38.0" prefHeight="286.0" prefWidth="546.0">
+          <columns>
+            <TableColumn maxWidth="100.0" minWidth="50.0" prefWidth="75.0" text="动物编号" fx:id="animalCodeCol" />
+            <TableColumn maxWidth="150.0" minWidth="75.0" prefWidth="116.0" sortable="false" text="脏器或组织" fx:id="visceraOrTissueNameCol" />
+            <TableColumn maxWidth="250.0" minWidth="84.0" prefWidth="182.0" sortable="false" text="组织学所见" fx:id="checkResultCol" />
+            <TableColumn maxWidth="100.0" minWidth="50.0" prefWidth="75.0" text="性质 " fx:id="tumorFlagCol" />
+            <TableColumn maxWidth="100.0" minWidth="50.0" prefWidth="78.0" text="是否转移" fx:id="metastasisFlagCol" />
+          </columns>
+        </TableView>
+        <Label layoutX="14.0" layoutY="14.0" prefWidth="72.0" text="肿瘤数量：" />
+        <ComboBox fx:id="tumorNumComboBox" editable="true" focusTraversable="false" layoutX="71.0" layoutY="11.0" prefHeight="19.0" prefWidth="101.0">
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="1" />
+              <String fx:value="2" />
+              <String fx:value="3" />
+              <String fx:value="4" />
+              <String fx:value="5" />
+              <String fx:value="6" />
+              <String fx:value="7" />
+              <String fx:value="8" />
+              <String fx:value="9" />
+            </FXCollections>
+          </items>
+        </ComboBox>
+      </children>
+    </AnchorPane>
+  </children>
+  <stylesheets>
+    <URL value="@../../../../image/centerPane.css" />
+  </stylesheets>
+</AnchorPane>

@@ -1,0 +1,3 @@
+.backgournd{
+	-fx-background-image:url("alert.jpg");
+}

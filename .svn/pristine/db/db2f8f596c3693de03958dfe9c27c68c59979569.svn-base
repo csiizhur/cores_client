@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-2.5.xsd
+           http://www.springframework.org/schema/aop
+           http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+           http://www.springframework.org/schema/tx 
+           http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+           
+     <!-- 加载外部的properties配置文件 -->
+	<context:property-placeholder location="classpath:service.properties"/>
+    <!--客户端--> 
+    <bean id="UserService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean"> 
+       <property name="serviceUrl" value="rmi://${jdbcIP}:6688/UserService"/> 
+       <property name="serviceInterface">
+          <value>com.lanen.service.UserService</value>
+       </property>
+   </bean>
+    <bean id="RoleService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean"> 
+       <property name="serviceUrl" value="rmi://${jdbcIP}:6688/RoleService"/> 
+       <property name="serviceInterface">
+          <value>com.lanen.service.RoleService</value>
+       </property>
+   </bean>
+    <bean id="PrivilegeService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean"> 
+       <property name="serviceUrl" value="rmi://${jdbcIP}:6688/PrivilegeService"/> 
+       <property name="serviceInterface">
+          <value>com.lanen.service.PrivilegeService</value>
+       </property>
+   </bean>
+    <bean id="SystemService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean"> 
+       <property name="serviceUrl" value="rmi://${jdbcIP}:6688/SystemService"/> 
+       <property name="serviceInterface">
+          <value>com.lanen.service.SystemService</value>
+       </property>
+   </bean>
+    <bean id="DepartmentService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean"> 
+       <property name="serviceUrl" value="rmi://${jdbcIP}:6688/DepartmentService"/> 
+       <property name="serviceInterface">
+          <value>com.lanen.service.DepartmentService</value>
+       </property>
+   </bean>
+   <bean id="UserRoleLogService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean"> 
+       <property name="serviceUrl" value="rmi://${jdbcIP}:6688/UserRoleLogService"/> 
+       <property name="serviceInterface">
+          <value>com.lanen.service.UserRoleLogService</value>
+       </property>
+   </bean>
+   <bean id="RegulationService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean"> 
+       <property name="serviceUrl" value="rmi://${jdbcIP}:6688/RegulationService"/> 
+       <property name="serviceInterface">
+          <value>com.lanen.service.RegulationService</value>
+       </property>
+   </bean>
+   <bean id="ModuleService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean"> 
+       <property name="serviceUrl" value="rmi://${jdbcIP}:6688/ModuleService"/> 
+       <property name="serviceInterface">
+          <value>com.lanen.service.ModuleService</value>
+       </property>
+   </bean>
+   <bean id="DictInstrumentService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean"> 
+       <property name="serviceUrl" value="rmi://${jdbcIP}:6688/DictInstrumentService"/> 
+       <property name="serviceInterface">
+          <value>com.lanen.service.clinicaltest.DictInstrumentService</value>
+       </property>
+   </bean>
+   <bean id="TblInstrumentVerificationService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean"> 
+       <property name="serviceUrl" value="rmi://${jdbcIP}:6688/TblInstrumentVerificationService"/> 
+       <property name="serviceInterface">
+          <value>com.lanen.service.clinicaltest.TblInstrumentVerificationService</value>
+       </property>
+   </bean>
+   <bean id="TblStudyPlanService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean"> 
+       <property name="serviceUrl" value="rmi://${jdbcIP}:6688/TblStudyPlanService"/> 
+       <property name="serviceInterface">
+          <value>com.lanen.service.studyplan.TblStudyPlanService</value>
+       </property>
+   </bean>
+   <bean id="TblClinicalTestReqService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean"> 
+       <property name="serviceUrl" value="rmi://${jdbcIP}:6688/TblClinicalTestReqService"/> 
+       <property name="serviceInterface">
+          <value>com.lanen.service.studyplan.TblClinicalTestReqService</value>
+       </property>
+   </bean>
+   <bean id="DictHematService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean"> 
+       <property name="serviceUrl" value="rmi://${jdbcIP}:6688/DictHematService"/> 
+       <property name="serviceInterface">
+          <value>com.lanen.service.studyplan.DictHematService</value>
+       </property>
+   </bean>
+   <bean id="DictBioChemService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean"> 
+       <property name="serviceUrl" value="rmi://${jdbcIP}:6688/DictBioChemService"/> 
+       <property name="serviceInterface">
+          <value>com.lanen.service.studyplan.DictBioChemService</value>
+       </property>
+   </bean>
+   <bean id="DictBloodCoagService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean"> 
+       <property name="serviceUrl" value="rmi://${jdbcIP}:6688/DictBloodCoagService"/> 
+       <property name="serviceInterface">
+          <value>com.lanen.service.studyplan.DictBloodCoagService</value>
+       </property>
+   </bean>
+   <bean id="DictUrineService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean"> 
+       <property name="serviceUrl" value="rmi://${jdbcIP}:6688/DictUrineService"/> 
+       <property name="serviceInterface">
+          <value>com.lanen.service.studyplan.DictUrineService</value>
+       </property>
+   </bean>
+   <bean id="BillNoService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean"> 
+       <property name="serviceUrl" value="rmi://${jdbcIP}:6688/BillNoService"/> 
+       <property name="serviceInterface">
+          <value>com.lanen.service.clinicaltest.BillNoService</value>
+       </property>
+   </bean>
+   <bean id="TblSpecimenService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean"> 
+       <property name="serviceUrl" value="rmi://${jdbcIP}:6688/TblSpecimenService"/> 
+       <property name="serviceInterface">
+          <value>com.lanen.service.clinicaltest.TblSpecimenService</value>
+       </property>
+   </bean>
+   <bean id="PassagewayService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean"> 
+       <property name="serviceUrl" value="rmi://${jdbcIP}:6688/PassagewayService"/> 
+       <property name="serviceInterface">
+          <value>com.lanen.service.clinicaltest.PassagewayService</value>
+       </property>
+   </bean>
+   <bean id="TblClinicalTestDataService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean"> 
+       <property name="serviceUrl" value="rmi://${jdbcIP}:6688/TblClinicalTestDataService"/> 
+       <property name="serviceInterface">
+          <value>com.lanen.service.clinicaltest.TblClinicalTestDataService</value>
+       </property>
+   </bean>
+   <bean id="TblTraceService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean"> 
+       <property name="serviceUrl" value="rmi://${jdbcIP}:6688/TblTraceService"/> 
+       <property name="serviceInterface">
+          <value>com.lanen.service.clinicaltest.TblTraceService</value>
+       </property>
+   </bean>
+   <bean id="TblLogService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean"> 
+       <property name="serviceUrl" value="rmi://${jdbcIP}:6688/TblLogService"/> 
+       <property name="serviceInterface">
+          <value>com.lanen.service.clinicaltest.TblLogService</value>
+       </property>
+   </bean>
+   <bean id="VersionControlService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean"> 
+       <property name="serviceUrl" value="rmi://${jdbcIP}:6688/VersionControlService"/> 
+       <property name="serviceInterface">
+          <value>com.lanen.service.VersionControlService</value>
+       </property>
+   </bean>
+   <bean id="DictSpecimenService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean"> 
+       <property name="serviceUrl" value="rmi://${jdbcIP}:6688/DictSpecimenService"/> 
+       <property name="serviceInterface">
+          <value>com.lanen.service.clinicaltest.DictSpecimenService</value>
+       </property>
+   </bean>
+   <bean id="TblAnimalService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean"> 
+       <property name="serviceUrl" value="rmi://${jdbcIP}:6688/TblAnimalService"/> 
+       <property name="serviceInterface">
+          <value>com.lanen.service.studyplan.TblAnimalService</value>
+       </property>
+   </bean>
+   <bean id="TblTestIndexPlanService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean"> 
+       <property name="serviceUrl" value="rmi://${jdbcIP}:6688/TblTestIndexPlanService"/> 
+       <property name="serviceInterface">
+          <value>com.lanen.service.studyplan.TblTestIndexPlanService</value>
+       </property>
+   </bean>
+   <bean id="DictReportNumberService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean"> 
+       <property name="serviceUrl" value="rmi://${jdbcIP}:6688/DictReportNumberService"/> 
+       <property name="serviceInterface">
+          <value>com.lanen.service.studyplan.DictReportNumberService</value>
+       </property>
+   </bean>
+   <bean id="PoolSpecimenCodeService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean"> 
+       <property name="serviceUrl" value="rmi://${jdbcIP}:6688/PoolSpecimenCodeService"/> 
+       <property name="serviceInterface">
+          <value>com.lanen.service.clinicaltest.PoolSpecimenCodeService</value>
+       </property>
+   </bean>
+   <!-- 通知信息 -->
+   <bean id="TblNotificationService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean"> 
+       <property name="serviceUrl" value="rmi://${jdbcIP}:6688/TblNotificationService"/> 
+       <property name="serviceInterface">
+          <value>com.lanen.service.contract.TblNotificationService</value>
+       </property>
+   </bean>
+   <!-- 获取主键 -->
+   <bean id="GetIdService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean"> 
+       <property name="serviceUrl" value="rmi://${jdbcIP}:6688/GetIdService"/> 
+       <property name="serviceInterface">
+          <value>com.lanen.service.clinicaltest.GetIdService</value>
+       </property>
+   </bean>
+   <!-- 动物类别 -->
+   <bean id="DictAnimalTypeService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean"> 
+       <property name="serviceUrl" value="rmi://${jdbcIP}:6688/DictAnimalTypeService"/> 
+       <property name="serviceInterface">
+          <value>com.lanen.service.studyplan.DictAnimalTypeService</value>
+       </property>
+   </bean>
+</beans>

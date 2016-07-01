@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="anchorPane" prefHeight="650.0" prefWidth="940.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.lanen.view.test.EditAnatomy">
+  <!-- TODO Add Nodes -->
+  <children>
+    <AnchorPane layoutX="14.0" layoutY="15.0" prefHeight="42.0" prefWidth="912.0" styleClass="border">
+      <children>
+        <Button id="dataCollectBtn" fx:id="okButton" focusTraversable="false" layoutX="14.0" layoutY="10.0" mnemonicParsing="false" onAction="#onRegisterBtnAction" prefHeight="26.0" prefWidth="72.0" text="确定" />
+        <Button focusTraversable="false" layoutX="101.0" layoutY="10.0" mnemonicParsing="false" onAction="#onExitBtnAction" prefHeight="26.0" prefWidth="72.0" text="取消" />
+      </children>
+    </AnchorPane>
+    <AnchorPane layoutX="13.0" layoutY="67.0" prefHeight="34.0" prefWidth="912.0" styleClass="border">
+      <children>
+        <Label fx:id="anatomyFindingLabel" layoutX="85.0" layoutY="11.0" prefWidth="818.0" text="解剖所见：心房 栓塞" />
+        <Button id="selectAddVisceraButton" layoutX="14.0" layoutY="5.0" mnemonicParsing="false" prefHeight="26.0" text="选择动物" visible="false" />
+        <Hyperlink fx:id="selectAddVisceraButton" layoutX="18.0" layoutY="8.0" onAction="#on_selectAddVisceraButton" text="选择动物" />
+      </children>
+    </AnchorPane>
+    <AnchorPane layoutX="13.0" layoutY="110.0" prefHeight="530.0" prefWidth="912.0" styleClass="border">
+      <children>
+        <HBox layoutX="14.0" layoutY="6.0" prefHeight="19.0" prefWidth="889.0">
+          <children>
+            <Label prefWidth="151.0" text="解剖学所见部位" />
+            <RadioButton id="ordinaryRadioButton" fx:id="tongyongRadioButton" ellipsisString="" maxWidth="72.0" minWidth="50.0" mnemonicParsing="false" prefWidth="72.0" selected="true" text="通用所见">
+              <font>
+                <Font size="12.0" fx:id="x1" />
+              </font>
+              <toggleGroup>
+                <ToggleGroup fx:id="x2" />
+              </toggleGroup>
+            </RadioButton>
+            <RadioButton id="specialRadioButton" fx:id="tesuRadioButton" ellipsisString="" font="$x1" maxWidth="81.0" minWidth="50.0" mnemonicParsing="false" prefWidth="72.0" text="特殊所见" toggleGroup="$x2" />
+            <Label prefWidth="146.0" text="体表部位" />
+            <Label prefWidth="151.0" text="位置" />
+            <Label prefWidth="146.0" text="形状" />
+            <Label prefWidth="151.0" text="颜色" />
+          </children>
+        </HBox>
+        <HBox layoutX="15.0" layoutY="26.0" prefHeight="235.0" prefWidth="889.0" spacing="2.0">
+          <children>
+            <ListView fx:id="anatomyPosListView" maxWidth="155.0" prefHeight="229.0" prefWidth="146.0" />
+            <ListView fx:id="anatomyFindingListView" maxWidth="155.0" prefHeight="217.0" prefWidth="146.0" />
+            <ListView id="bodySuf" fx:id="bodySufacePosListView" maxWidth="155.0" prefHeight="217.0" prefWidth="146.0" />
+            <ListView fx:id="posListView" prefHeight="217.0" prefWidth="146.0" />
+            <ListView fx:id="shapeListView" prefHeight="217.0" prefWidth="146.0" />
+            <ListView fx:id="colorListView" prefHeight="247.0" prefWidth="146.0" />
+          </children>
+        </HBox>
+        <HBox layoutX="14.0" layoutY="265.0" prefHeight="19.0" prefWidth="889.0000999999975">
+          <children>
+            <Label prefWidth="146.0" text="硬度" />
+            <Label prefWidth="146.0" text="数量" />
+            <Label prefWidth="151.0" text="范围" />
+            <Label prefWidth="146.0" text="病变程度" />
+            <Label prefWidth="147.0" text="大小" />
+          </children>
+        </HBox>
+        <HBox layoutX="12.0" layoutY="281.0" prefHeight="235.0" prefWidth="889.0" spacing="2.0">
+          <children>
+            <ListView fx:id="textureListView" prefHeight="235.0" prefWidth="146.0" />
+            <ListView fx:id="numberListView" prefHeight="235.0" prefWidth="146.00009999999747" />
+            <ListView fx:id="rangeListView" prefHeight="235.0" prefWidth="146.0" />
+            <ListView fx:id="lesionDegreeListView" prefHeight="235.0" prefWidth="146.0" />
+            <VBox maxWidth="155.0" minWidth="115.0" prefHeight="235.00009999999747" prefWidth="155.0" HBox.hgrow="ALWAYS">
+              <children>
+                <ListView fx:id="sizeListView" maxWidth="155.0" minWidth="115.0" prefHeight="221.0" prefWidth="155.0" />
+                <TextField fx:id="sizeTextField" maxHeight="20.0" maxWidth="155.0" minHeight="20.0" prefHeight="20.0" prefWidth="115.0" />
+              </children>
+            </VBox>
+          </children>
+        </HBox>
+      </children>
+    </AnchorPane>
+  </children>
+  <stylesheets>
+    <URL value="@../../../../image/centerPane.css" />
+  </stylesheets>
+</AnchorPane>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="348.0" prefWidth="520.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.lanen.view.RegulationSetFrameController">
+  <!-- TODO Add Nodes -->
+  <children>
+    <TableView fx:id="table" layoutX="15.0" layoutY="41.0" prefHeight="254.0" prefWidth="490.0">
+      <columns>
+        <TableColumn editable="false" prefWidth="150.0" sortable="false" text="规则名称" fx:id="regulationNameCol" />
+        <TableColumn editable="false" prefWidth="75.0" resizable="false" sortable="false" text="类型" fx:id="typeCol" />
+        <TableColumn editable="false" prefWidth="130.0" sortable="false" text="缺省值" fx:id="defaultValueCol" />
+        <TableColumn prefWidth="133.0" sortable="false" text="设定值" fx:id="setValueCol" />
+        <TableColumn editable="false" prefWidth="10.0" sortable="false" text="id" visible="false" fx:id="idCol" />
+      </columns>
+    </TableView>
+    <Button layoutX="346.0" layoutY="313.0" mnemonicParsing="false" onAction="#onSaveBtnAction" prefWidth="72.0" text="确定" />
+    <Button layoutX="433.0" layoutY="313.0" mnemonicParsing="false" onAction="#onExitBtnAction" prefWidth="72.0" text="关闭" />
+    <Label layoutX="15.0" layoutY="15.0" text="友情提醒：仅有‘设定值’列可以修改，修改后点‘确定’保存。" />
+  </children>
+  <stylesheets>
+    <URL value="@../../../image/style.css" />
+  </stylesheets>
+</AnchorPane>

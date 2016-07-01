@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="anchorPane" prefHeight="322.0" prefWidth="499.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.lanen.view.test.DeathReasonRegister">
+  <!-- TODO Add Nodes -->
+  <children>
+    <AnchorPane prefHeight="50.0" prefWidth="575.0" styleClass="border" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+      <children>
+        <Button id="dataCollectBtn" focusTraversable="false" layoutX="14.0" layoutY="11.0" mnemonicParsing="false" onAction="#onConfirmBtnAction" prefHeight="26.0" prefWidth="72.0" text="确定" />
+        <Button focusTraversable="false" layoutX="101.0" layoutY="11.0" mnemonicParsing="false" onAction="#onExitBtnAction" prefHeight="26.0" prefWidth="72.0" text="取消" />
+      </children>
+    </AnchorPane>
+    <AnchorPane prefHeight="268.0" prefWidth="471.0" styleClass="border" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="78.0">
+      <children>
+        <Label layoutX="14.0" layoutY="24.0" text="动物编号：" />
+        <Label layoutX="14.0" layoutY="60.0" text="致死原因分类：" />
+        <Label layoutX="14.0" layoutY="101.0" text="致死原因：" />
+        <Label layoutX="14.0" layoutY="148.0" text="备注：" />
+        <Label fx:id="animalCodeLabel" layoutX="74.0" layoutY="16.0" text="1101">
+          <font>
+            <Font size="24.0" />
+          </font>
+        </Label>
+        <RadioButton fx:id="dictRadioButton" layoutX="101.0" layoutY="61.0" mnemonicParsing="false" text="来自字典">
+          <toggleGroup>
+            <ToggleGroup fx:id="tg" />
+          </toggleGroup>
+        </RadioButton>
+        <RadioButton fx:id="histopathRadioButton" layoutX="183.0" layoutY="61.0" mnemonicParsing="false" text="镜检结果" toggleGroup="$tg" />
+        <ComboBox fx:id="deathReasonComboBox" editable="true" layoutX="78.0" layoutY="98.0" prefHeight="19.0" prefWidth="148.0">
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="项 1" />
+              <String fx:value="项 2" />
+              <String fx:value="项 3" />
+            </FXCollections>
+          </items>
+        </ComboBox>
+        <TextArea fx:id="remarkText" layoutX="52.0" layoutY="148.0" prefHeight="66.0" prefWidth="386.0" wrapText="true" />
+      </children>
+    </AnchorPane>
+  </children>
+  <stylesheets>
+    <URL value="@../../../../image/centerPane.css" />
+  </stylesheets>
+</AnchorPane>

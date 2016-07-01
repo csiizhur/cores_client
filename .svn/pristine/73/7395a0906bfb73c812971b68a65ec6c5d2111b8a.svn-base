@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="75.99990000000253" prefWidth="254.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.lanen.view.main.About">
+  <!-- TODO Add Nodes -->
+  <children>
+    <Text fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="版权所有：苏州蓝恩信息科技有限公司" visible="false" AnchorPane.bottomAnchor="17.04" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="34.0" AnchorPane.topAnchor="45.0">
+      <fill>
+        <Color blue="1.000" green="0.200" red="0.263" fx:id="x1" />
+      </fill>
+    </Text>
+    <Text fill="$x1" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="CoRES毒性病理系统软件 v2.0" visible="true" AnchorPane.bottomAnchor="42.04" AnchorPane.leftAnchor="41.0" AnchorPane.rightAnchor="-8.21" AnchorPane.topAnchor="20.0" />
+  </children>
+</AnchorPane>

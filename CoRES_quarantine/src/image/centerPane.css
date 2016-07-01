@@ -1,0 +1,203 @@
+.centerPanel{
+	-fx-border-color:black ;
+	-fx-border-radius:5;
+	-fx-border-width:1;
+}
+.selectPanel{
+	-fx-border-color:black;
+	-fx-border-width:1 0 1 0;
+}
+.overLinePanel{
+	-fx-border-color:black;
+	-fx-border-width:1 0 0 0;
+}
+.underLinePanel{
+	-fx-border-color:black;
+	-fx-border-width:0 0 1 0;
+}
+.statePanel{
+	-fx-border-color:black;
+	-fx-border-width:1;
+}
+.whiteLabel{
+	-fx-background-color: white ;
+}
+/**TableView样式 start */
+/* .table-cell {
+	-fx-alignment: CENTER-RIGHT;
+}表格文字居右*/
+.table-view {
+    -fx-base: azure;
+}
+.column-header{
+	 -fx-border-color: azure;
+	 -fx-border-width: 0px 0.0 30px 0 ;
+}
+.column-header-background{
+	-fx-background-color:azure;
+}
+.column-header-background .column-header{
+	-fx-background-color:#b6b6b6;
+}
+.table-row-cell:empty{
+	-fx-background-color:#f2f2f2 ;
+}
+.table-row-cell:empty .table-cell{
+	-fx-border-width:0.0px ;
+}
+.table-row-cell:selected{
+	-fx-background-color:#0092DC;
+}
+/**TableView样式  end */
+
+/**TabPane 样式  start */
+.tab-header-background{
+	-fx-background-color:azure ;
+}
+
+/**TabPane 样式 end */
+
+/**ComboBox  样式start */
+.combo-box-base:editable .text-field, .combo-box-base .arrow-button, .combo-box .list-cell {
+    -fx-padding: 0px 6px 0px 6px;
+}
+.combo-box-base {
+    -fx-background-color:white ;
+    -fx-border-radius: 3px 3px 3px 3px;
+    -fx-border-color:#b6b6b6;
+	-fx-border-width:1;
+
+}
+
+.combo-box-base .arrow-button {
+   -fx-background-color:white ;
+    
+}
+.combo-box-base:editable {
+	-fx-border-width:0;
+}
+.combo-box-base:editable .arrow-button {
+   -fx-background-color:white ;
+   -fx-border-radius: 0px 3px 3px 0px;
+    -fx-border-color:#b6b6b6;
+	-fx-border-width: 1 1 1 0;
+}
+
+.combo-box-base .arrow-button:hover{
+	-fx-background-color:#dfdfdf;
+}
+/**ComboBox  样式end */
+
+/**HyperLink 样式 start */
+.hyperlink,.hyperlink:visited{
+	 -fx-border-width:0;
+	 -fx-text-fill: black ;
+	 -fx-underline: false ;
+	 -fx-font-size: 13px;
+}
+.hyperlink:hover{
+	  -fx-text-fill: red;
+	  -fx-underline: true ;
+}
+/**HyperLink 样式end */
+
+/**TreeView 样式start */
+.tree-cell .tree-disclosure-node .arrow {
+    -fx-scale-shape: false;
+
+    -fx-background-color: transparent; 
+    -fx-shape: "M 0 4 L 0 -4 L 5 0 z";
+    -fx-border-color: grey;
+    -fx-border-width: 0.083333em;   
+}
+
+.tree-cell:expanded .tree-disclosure-node .arrow {
+    -fx-scale-shape: false;
+   
+    -fx-background-color: -fx-mark-color;
+    -fx-rotate: 0; 
+    -fx-shape: "M 0 3 L 6 -3 L 6 3 z";
+    -fx-border-width: 0.083333em; 
+} 
+
+.tree-cell:filled:hover .tree-disclosure-node .arrow {
+    -fx-background-color: transparent;
+    -fx-border-color: cyan;
+} 
+
+.tree-cell:filled:selected .tree-disclosure-node .arrow {
+    -fx-border-color: cyan;
+}
+
+.tree-cell:filled:selected:hover .tree-disclosure-node .arrow {
+    -fx-border-color: cyan;
+}
+/**TreeView 样式end */
+
+
+/**ToggleButton样式start */
+.pill-left {
+    -fx-padding: 5;
+    -fx-border-image-source: url("left-btn.png");
+    -fx-border-image-slice: 4 4 4 4 fill;
+    -fx-border-image-width: 4 4 4 4;
+    -fx-border-image-insets: 0;
+    -fx-border-image-repeat: stretch;
+    -fx-background-color: null !important; 
+}
+.pill-left .label {
+    -fx-text-fill: #d3d3d3; 
+    -fx-effect: dropshadow( one-pass-box , rgba(0,0,0,0.75) , 0, 0.0 , 0 , -1 );
+}
+.pill-left:selected { -fx-border-image-source: url("left-btn-selected.png"); }
+.pill-left:hover { 
+	-fx-border-image-source: url("left-btn-hover.png");
+	-fx-text-fill: white;
+    -fx-effect: dropshadow( one-pass-box , white , 0, 0.0 , 0 , 1 );
+}
+.pill-left:selected .pill-left:hover{ -fx-border-image-source: url("left-btn-selected.png"); }
+.pill-center {
+    -fx-padding: 5;
+    -fx-border-image-source: url("center-btn.png");
+    -fx-border-image-slice: 4 4 4 4 fill;
+    -fx-border-image-width: 4 4 4 4;
+    -fx-border-image-insets: 0;
+    -fx-border-image-repeat: stretch;
+    -fx-background-color: null !important;
+    -fx-border-width: 0 1 0 0;
+    -fx-border-color:black;
+}
+.pill-center .label {
+    -fx-text-fill: #d3d3d3;
+    -fx-effect: dropshadow( one-pass-box , rgba(0,0,0,0.75) , 0, 0.0 , 0 , -1 );
+}
+.pill-center:selected { -fx-border-image-source: url("center-btn-selected.png"); }
+.pill-center:hover { 
+	-fx-border-image-source: url("center-btn-hover.png");
+	-fx-text-fill: white;
+    -fx-effect: dropshadow( one-pass-box , white , 0, 0.0 , 0 , 1 );
+}
+.pill-center:selected .pill-center:hover{ -fx-border-image-source: url("center-btn-selected.png"); }
+.pill-right {
+    -fx-padding: 5;
+    -fx-border-image-source: url("right-btn.png");
+    -fx-border-image-slice: 4 4 4 4 fill;
+    -fx-border-image-width: 4 4 4 4;
+    -fx-border-image-insets: 0;
+    -fx-border-image-repeat: stretch;
+    -fx-background-color: null !important;
+}
+.pill-right .label {
+    -fx-text-fill: #d3d3d3;
+    -fx-effect: dropshadow( one-pass-box , rgba(0,0,0,0.75) , 0, 0.0 , 0 , -1 );
+}
+.pill-right:selected { -fx-border-image-source: url("right-btn-selected.png"); }
+.pill-right:hover { 
+	-fx-border-image-source: url("right-btn-hover.png");
+	-fx-text-fill:white ;
+	-fx-effect: dropshadow( one-pass-box , white , 0, 0.0 , 0 , 1 );
+}
+.pill-right:selected .pill-right:hover{ -fx-border-image-source: url("right-btn-selected.png"); }
+
+
+/**ToggleButton样式end */

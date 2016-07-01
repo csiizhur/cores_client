@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane minHeight="362.0" prefHeight="362.0" prefWidth="474.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.lanen.view.privilege.UserManagePage">
+  <!-- TODO Add Nodes -->
+  <children>
+    <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="334.0" prefWidth="200.0" styleClass="border">
+      <children>
+        <ListView fx:id="userNameListView" focusTraversable="false" layoutX="14.0" layoutY="14.0" prefHeight="285.0" prefWidth="172.0" />
+        <CheckBox fx:id="editCheckBox" focusTraversable="false" layoutX="14.0" layoutY="309.0" mnemonicParsing="false" onAction="#onEditCheckBox" text="编辑选中项" />
+        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="-7.0" prefWidth="65.0" styleClass="whiteLabel" text="用户列表" textAlignment="LEFT" />
+      </children>
+    </AnchorPane>
+    <AnchorPane layoutX="235.0" layoutY="14.0" minHeight="309.0" prefHeight="309.0" prefWidth="225.0" styleClass="border">
+      <children>
+        <ListView fx:id="roleListView" focusTraversable="false" layoutX="14.0" layoutY="14.0" prefHeight="285.0" prefWidth="197.0" />
+        <Label alignment="CENTER" layoutX="14.0" layoutY="-7.0" prefWidth="65.0" styleClass="whiteLabel" text="用户权限" />
+      </children>
+    </AnchorPane>
+    <Button fx:id="saveButton" disable="true" focusTraversable="false" layoutX="374.0" layoutY="329.0" mnemonicParsing="false" onAction="#onSaveButton" prefHeight="26.0" prefWidth="72.0" text="保存" />
+  </children>
+  <stylesheets>
+    <URL value="@../../../../image/centerPane.css" />
+  </stylesheets>
+</AnchorPane>

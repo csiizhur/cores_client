@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="217.0" prefWidth="347.0" styleClass="background" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.lanen.view.main.LoginPageController">
+  <children>
+    <Label layoutX="52.0" layoutY="86.0" text="用户名" />
+    <Label layoutX="52.0" layoutY="128.0" text="密码" />
+    <ComboBox fx:id="userNameComboBox" disable="true" editable="true" layoutX="104.0" layoutY="84.0" prefWidth="203.0">
+      <items>
+        <FXCollections fx:factory="observableArrayList">
+          <String fx:value="项 1" />
+          <String fx:value="项 2" />
+          <String fx:value="项 3" />
+        </FXCollections>
+      </items>
+    </ComboBox>
+    <PasswordField fx:id="passwordText" disable="true" layoutX="104.0" layoutY="125.0" onAction="#onEnsureButtonAction" prefWidth="203.0" text="111111" />
+    <Button fx:id="okButton" disable="true" layoutX="148.0" layoutY="168.0" mnemonicParsing="false" onAction="#onEnsureButtonAction" prefWidth="72.0" text="确定" />
+    <Button fx:id="cancelButton" disable="true" layoutX="235.0" layoutY="168.0" mnemonicParsing="false" onAction="#onExitButtonAction" prefWidth="72.0" text="取消" />
+  </children>
+  <stylesheets>
+    <URL value="@../../../../image/LoginPage.css" />
+  </stylesheets>
+</AnchorPane>

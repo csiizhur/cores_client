@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="anchorPane" prefHeight="429.0" prefWidth="601.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.lanen.view.test.SelectTask">
+  <!-- TODO Add Nodes -->
+  <children>
+    <AnchorPane layoutX="13.0" layoutY="14.0" prefHeight="50.0" prefWidth="575.0" styleClass="border">
+      <children>
+        <Button id="dataCollectBtn" focusTraversable="false" layoutX="14.0" layoutY="12.0" mnemonicParsing="false" onAction="#onConfirmBtnAction" prefHeight="26.0" prefWidth="72.0" text="确定" />
+        <Button focusTraversable="false" layoutX="101.0" layoutY="12.0" mnemonicParsing="false" onAction="#onExitBtnAction" prefHeight="26.0" prefWidth="72.0" text="取消" />
+      </children>
+    </AnchorPane>
+    <AnchorPane layoutX="14.0" layoutY="78.0" prefHeight="337.0" prefWidth="574.0" styleClass="border">
+      <children>
+        <Label fx:id="label" layoutX="14.0" layoutY="14.0" prefWidth="546.0" text="专题编号：2015-098-12-09    SD：单提    动物种类：大鼠" />
+        <TableView fx:id="taskTable" layoutX="14.0" layoutY="37.0" prefHeight="286.0000999999975" prefWidth="546.0">
+          <columns>
+            <TableColumn maxWidth="100.0" minWidth="75.0" prefWidth="75.0" sortable="false" text="任务创建者" fx:id="creator" />
+            <TableColumn maxWidth="110.0" minWidth="84.0" prefWidth="95.0" sortable="false" text="任务创建日期" fx:id="creatDate" />
+            <TableColumn maxWidth="75.0" minWidth="75.0" prefWidth="75.0" sortable="false" text="解剖原因" fx:id="anatomyRsn" />
+            <TableColumn maxWidth="75.0" minWidth="75.0" prefWidth="75.0" sortable="false" text="动物数量" fx:id="animalNum" />
+            <TableColumn maxWidth="160.0" minWidth="107.0" prefWidth="107.0" sortable="false" text="计划解剖日期(始)" fx:id="beginDate" />
+            <TableColumn maxWidth="160.0" minWidth="107.0" prefWidth="107.0" sortable="false" text="计划解剖日期(末)" fx:id="endDate" />
+          </columns>
+        </TableView>
+      </children>
+    </AnchorPane>
+  </children>
+  <stylesheets>
+    <URL value="@../../../../image/centerPane.css" />
+  </stylesheets>
+</AnchorPane>

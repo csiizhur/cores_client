@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.StackPane?>
+
+<BorderPane blendMode="SRC_OVER" prefHeight="600.0" prefWidth="1024.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.lanen.zero.main.MainFrameController">
+  <top>
+    <BorderPane prefHeight="74.0" prefWidth="1024.0">
+      <center>
+        <ToolBar minHeight="30.0" prefHeight="56.0" prefWidth="1024.0">
+          <items>
+            <Button fx:id="userButton" cache="true" focusTraversable="false" maxWidth="98.0" minHeight="35.0" minWidth="61.0" mnemonicParsing="false" onAction="#onUserMenuAction" prefHeight="35.0" prefWidth="98.0">
+              <graphic>
+                <ImageView fitHeight="34.08695952878794" fitWidth="98.00000762939453" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                    <Image url="@../../../../image/用户管理-01.png" preserveRatio="false" smooth="false" />
+                  </image>
+                </ImageView>
+              </graphic>
+            </Button>
+            <Button fx:id="departmentButton" focusTraversable="false" minHeight="35.0" minWidth="98.0" mnemonicParsing="false" onAction="#onDepartmentMenuAction" prefHeight="35.0" prefWidth="98.0">
+              <graphic>
+                <ImageView fitHeight="34.086952863580485" fitWidth="97.99999237060547" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                    <Image url="@../../../../image/部门设置-01%20.png" preserveRatio="false" smooth="false" />
+                  </image>
+                </ImageView>
+              </graphic>
+            </Button>
+            <Button fx:id="regulationSetButton" focusTraversable="false" minHeight="35.0" minWidth="98.0" mnemonicParsing="false" onAction="#onRegulationSetMenuAction" prefHeight="35.0" prefWidth="98.0">
+              <graphic>
+                <ImageView fitHeight="27.60785675048828" fitWidth="100.07848379242039" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                    <Image url="@../../../../image/系统规则设置-01.png" preserveRatio="false" smooth="false" />
+                  </image>
+                </ImageView>
+              </graphic>
+            </Button>
+            <Button fx:id="userRoleLogButton" focusTraversable="false" minHeight="35.0" mnemonicParsing="false" onAction="#onUserRoleLogMenuAction" prefHeight="35.0" prefWidth="98.0">
+              <graphic>
+                <ImageView fitHeight="29.53889117804289" fitWidth="107.07848358154297" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                    <Image url="@../../../../image/授权变更日志-01.png" preserveRatio="false" smooth="false" />
+                  </image>
+                </ImageView>
+              </graphic>
+            </Button>
+            <Button focusTraversable="false" minHeight="35.000091552734375" minWidth="85.0" mnemonicParsing="false" onAction="#onExitMenuAction" prefHeight="35.000091552734375" prefWidth="85.0">
+              <graphic>
+                <ImageView fitHeight="32.31372569461558" fitWidth="68.66666793823242" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                    <Image url="@../../../../image/退出-01.png" preserveRatio="false" smooth="false" />
+                  </image>
+                </ImageView>
+              </graphic>
+            </Button>
+          </items>
+        </ToolBar>
+      </center>
+      <top>
+        <MenuBar prefHeight="29.000099999997474" prefWidth="1024.0">
+          <menus>
+            <Menu mnemonicParsing="false" text="系统管理">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#onDepartmentMenuAction" text="部门设置" fx:id="departmentMenu" />
+                <MenuItem mnemonicParsing="false" onAction="#onRegulationSetMenuAction" text="系统规则设置" fx:id="regulationSetMenu" />
+                <MenuItem mnemonicParsing="false" onAction="#onUserMenuAction" text="用户管理" fx:id="userMenu" />
+                <MenuItem mnemonicParsing="false" onAction="#onUserRoleLogMenuAction" text="授权变更日志" fx:id="userRoleLogMenu" />
+                <MenuItem mnemonicParsing="false" onAction="#onAlterPasswordAction" text="修改密码" fx:id="alterPasswordMenu" />
+                <SeparatorMenuItem mnemonicParsing="false" />
+                <MenuItem mnemonicParsing="false" onAction="#onExitMenuAction" text="退出" fx:id="exitMenu" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="系统设置">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#onRegulationMenuAction" text="系统规则登记" fx:id="regulationMenu" />
+                <MenuItem mnemonicParsing="false" onAction="#onSystemTableMenuAction" text="系统登记" fx:id="systemMenu" />
+                <MenuItem mnemonicParsing="false" onAction="#onPrivilegeMenuAction" text="权限登记" fx:id="privilegeMenu" />
+                <MenuItem mnemonicParsing="false" onAction="#onRoleMenuAction" text="角色设置" fx:id="roleMenu" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="帮助">
+              <items>
+                <MenuItem mnemonicParsing="false" text="帮助" fx:id="helpMenu" />
+                <MenuItem mnemonicParsing="false" text="关于" fx:id="aboutMenu" />
+              </items>
+            </Menu>
+          </menus>
+        </MenuBar>
+      </top>
+    </BorderPane>
+  </top>
+</BorderPane>

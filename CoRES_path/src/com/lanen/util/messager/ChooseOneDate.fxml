@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.StackPane?>
+
+<StackPane maxHeight="95.0" maxWidth="299.0" minHeight="95.0" minWidth="299.0" prefHeight="95.0" prefWidth="299.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.lanen.util.messager.ChooseOneDate">
+  <!-- TODO Add Nodes -->
+  <children>
+    <AnchorPane prefHeight="95.0" prefWidth="299.0">
+      <children>
+        <Button focusTraversable="false" layoutY="59.0" mnemonicParsing="false" onAction="#onOkBtnAction" prefHeight="26.0" prefWidth="65.0" text="确定" AnchorPane.leftAnchor="117.0" AnchorPane.rightAnchor="117.0" />
+        <HBox fx:id="chooseDateVbox" layoutX="100.0" layoutY="14.0" prefHeight="26.0" prefWidth="184.0" />
+        <Label layoutX="21.0" layoutY="14.0" prefHeight="26.0" prefWidth="72.0" text="选择日期：" />
+      </children>
+    </AnchorPane>
+  </children>
+</StackPane>

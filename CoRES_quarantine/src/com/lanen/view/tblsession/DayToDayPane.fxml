@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="576.0" prefWidth="930.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.lanen.view.tblsession.DayToDayController"
+AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+  <!-- AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">-->
+  <children>
+    <AnchorPane prefHeight="548.0" prefWidth="902.0" styleClass="centerPanel" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="9.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="10.0">
+      <children>
+        <HBox prefHeight="49.0" prefWidth="895.0" styleClass="underLinePanel" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="12.0">
+          <children>
+            <ToggleButton fx:id="toggleButton1" minWidth="80.0" mnemonicParsing="false" onAction="#onToggleButton1" prefWidth="100.0" selected="true" styleClass="pill-left" text="数据浏览" HBox.hgrow="ALWAYS" />
+            <ToggleButton fx:id="toggleButton2" minWidth="80.0" mnemonicParsing="false" onAction="#onToggleButton2" prefWidth="100.0" styleClass="pill-center" text="体重称重" HBox.hgrow="ALWAYS" />
+            <ToggleButton fx:id="toggleButton3" minWidth="80.0" mnemonicParsing="false" onAction="#onToggleButton3" prefWidth="100.0" styleClass="pill-center" text="一般观察" HBox.hgrow="ALWAYS" />
+            <ToggleButton fx:id="toggleButton4" minWidth="80.0" mnemonicParsing="false" onAction="#onToggleButton4" prefWidth="100.0" styleClass="pill-center" text="动物体检" HBox.hgrow="ALWAYS" />
+            <ToggleButton fx:id="toggleButton5" minWidth="80.0" mnemonicParsing="false" onAction="#onToggleButton5" prefWidth="100.0" styleClass="pill-center" text="检疫报告" HBox.hgrow="ALWAYS" />
+            <ToggleButton fx:id="toggleButton6" minWidth="80.0" mnemonicParsing="false" onAction="#onToggleButton6" prefWidth="100.0" styleClass="pill-center" text="动物驯化" HBox.hgrow="ALWAYS" />
+            <ToggleButton fx:id="toggleButton7" minWidth="80.0" mnemonicParsing="false" onAction="#onToggleButton7" prefWidth="100.0" styleClass="pill-center" text="异常处理" HBox.hgrow="ALWAYS" />
+            <ToggleButton fx:id="toggleButton8" minWidth="80.0" mnemonicParsing="false" onAction="#onToggleButton8" prefWidth="100.0" styleClass="pill-center" text="动物死亡" HBox.hgrow="ALWAYS" />
+            <ToggleButton fx:id="toggleButton9" minWidth="80.0" mnemonicParsing="false" onAction="#onToggleButton9" prefWidth="100.0" styleClass="pill-center" text="重新安置" HBox.hgrow="ALWAYS" />
+            <ToggleButton fx:id="toggleButton10" minWidth="80.0" mnemonicParsing="false" onAction="#onToggleButton10" prefWidth="100.0" styleClass="pill-right" text="动物移交" HBox.hgrow="ALWAYS">
+              <HBox.margin>
+                <Insets fx:id="x3" />
+              </HBox.margin>
+            </ToggleButton>
+            <Region prefHeight="43.0" prefWidth="78.0" HBox.hgrow="NEVER" />
+          </children>
+          <padding>
+            <Insets left="15.0" right="15.0" top="5.0" />
+          </padding>
+        </HBox>
+        <TabPane fx:id="tabPane" prefHeight="463.0" prefWidth="878.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="79.0">
+          <tabs>
+            <Tab text="动物列表">
+              <content>
+                <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="statePanel">
+                  <children>
+                    <AnchorPane prefHeight="43.0" prefWidth="874.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="1.0">
+                      <children>
+                        <Label layoutY="16.0" prefWidth="59.0" text="动物种类" AnchorPane.leftAnchor="15.0" />
+                        <ComboBox fx:id="animalTypeComboBox" layoutX="74.0" layoutY="13.0" prefHeight="19.0" prefWidth="86.0">
+                          <items>
+                            <FXCollections fx:factory="observableArrayList">
+                              <String fx:value="项 1" />
+                              <String fx:value="项 2" />
+                              <String fx:value="项 3" />
+                            </FXCollections>
+                          </items>
+                        </ComboBox>
+                        <Label layoutX="191.0" layoutY="16.0" prefWidth="59.0" text="接收单号" />
+                        <ComboBox fx:id="recIdComboBox" layoutX="250.0" layoutY="14.0" prefHeight="19.0" prefWidth="112.0">
+                          <items>
+                            <FXCollections fx:factory="observableArrayList">
+                              <String fx:value="项 1" />
+                              <String fx:value="项 2" />
+                              <String fx:value="项 3" />
+                            </FXCollections>
+                          </items>
+                        </ComboBox>
+                        <Label layoutX="399.0" layoutY="16.0" prefWidth="59.0" text="课题编号" />
+                        <ComboBox fx:id="studyNoComboBox" layoutX="458.0" layoutY="14.0" prefHeight="19.0" prefWidth="138.0">
+                          <items>
+                            <FXCollections fx:factory="observableArrayList">
+                              <String fx:value="项 1" />
+                              <String fx:value="项 2" />
+                              <String fx:value="项 3" />
+                            </FXCollections>
+                          </items>
+                        </ComboBox>
+                        <Button fx:id="newbuiltButton" mnemonicParsing="false" onAction="#onNewbuiltButton" prefWidth="72.0" text="新建" AnchorPane.rightAnchor="39.0" AnchorPane.topAnchor="13.0" />
+                      </children>
+                    </AnchorPane>
+                    <TableView fx:id="animalTable" focusTraversable="false" prefHeight="342.0" prefWidth="843.0" AnchorPane.bottomAnchor="43.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="44.0">
+                      <columns>
+                        <TableColumn maxWidth="40.0" minWidth="40.0" prefWidth="40.0" resizable="false" sortable="false" text="选择" visible="false" fx:id="selectCol" />
+                        <TableColumn maxWidth="100.0" minWidth="25.0" prefWidth="50.0" resizable="true" sortable="false" text="序号" fx:id="snCol" />
+                        <TableColumn maxWidth="240.0" minWidth="60.0" prefWidth="120.0" sortable="false" text="接收单号" fx:id="recIdCol" />
+                        <TableColumn maxWidth="140.0" minWidth="35.0" prefWidth="70.0" sortable="false" text="动物种类" fx:id="animalTypeCol" />
+                        <TableColumn maxWidth="140.0" minWidth="35.0" prefWidth="70.0" sortable="false" text="动物品系" fx:id="animalStrainCol" />
+                        <TableColumn maxWidth="140.0" minWidth="35.0" prefWidth="70.0" sortable="false" text="动物Id号" fx:id="animalIdCol" />
+                        <TableColumn maxWidth="100.0" minWidth="25.0" prefWidth="50.0" sortable="false" text="性别" fx:id="genderCol" />
+                        <TableColumn maxWidth="240.0" minWidth="60.0" prefWidth="120.0" sortable="false" text="所属课题" fx:id="planStudyNoCol" />
+                        <TableColumn maxWidth="140.0" minWidth="35.0" prefWidth="70.0" sortable="false" text="安置房间号" fx:id="roomCol" />
+                        <TableColumn maxWidth="120.0" minWidth="30.0" prefWidth="60.0" sortable="false" text="状态" visible="false" fx:id="stateCol" />
+                      </columns>
+                    </TableView>
+                    <Hyperlink fx:id="selectAllButton" disable="true" onAction="#onSelectAllButton" prefWidth="42.0" text="全选" underline="false" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="17.0">
+                      <font>
+                        <Font name="System Bold" size="12.0" />
+                      </font>
+                    </Hyperlink>
+                    <Hyperlink fx:id="selectNoneButton" disable="true" onAction="#onSelectNoneButton" prefWidth="50.0" text="全不选" underline="false" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="72.0" />
+                    <Hyperlink fx:id="selectInvertButton" disable="true" onAction="#onSelectInvertButton" prefWidth="42.0" text="反选" underline="false" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="143.0" />
+                    <Label fx:id="label1" prefWidth="35.0" text="选中" visible="false" AnchorPane.bottomAnchor="16.0" AnchorPane.rightAnchor="144.0" />
+                    <Label id="selectNumLabel_1" fx:id="selectNumLabel" prefWidth="34.9998779296875" text="0" textFill="#5200ff" visible="false" AnchorPane.bottomAnchor="16.0" AnchorPane.rightAnchor="119.0" />
+                    <Label fx:id="label2" prefWidth="42.0" text="条,   共" visible="false" AnchorPane.bottomAnchor="16.0" AnchorPane.rightAnchor="82.0" />
+                    <Label id="totalNumLabel_1" fx:id="totalNumLabel" prefWidth="34.999900000002526" text="0" textFill="#1400ff" visible="false" AnchorPane.bottomAnchor="16.0" AnchorPane.rightAnchor="43.0" />
+                    <Label fx:id="label3" minHeight="14.0" prefHeight="14.0" prefWidth="26.0" text="条" visible="false" AnchorPane.bottomAnchor="16.0" AnchorPane.rightAnchor="21.0" />
+                  </children>
+                </AnchorPane>
+              </content>
+            </Tab>
+            <Tab fx:id="tab2" text="动物xx记录">
+              <content>
+                <AnchorPane id="Content" fx:id="tab2Pane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="statePanel">
+                  <children>
+                    <HBox prefHeight="23.0" prefWidth="580.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="16.0">
+                      <children>
+                        <Button fx:id="openButton" mnemonicParsing="false" onAction="#onOpenButton" prefWidth="72.0" text="打开">
+                          <HBox.margin>
+                            <Insets right="15.0" fx:id="x1" />
+                          </HBox.margin>
+                        </Button>
+                        <Button fx:id="signButton" mnemonicParsing="false" onAction="#onSignButton" prefWidth="72.0" text="签字" HBox.margin="$x1" />
+                        <Button fx:id="checkButton" mnemonicParsing="false" onAction="#onCheckButton" prefWidth="72.0" text="复核" HBox.margin="$x1" />
+                        <Button fx:id="printButton" mnemonicParsing="false" onAction="#onPrintButton" prefWidth="72.0" text="打印" HBox.margin="$x1" />
+                      </children>
+                    </HBox>
+                    <HBox prefHeight="40.0" prefWidth="846.0" styleClass="selectPanel" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="46.0">
+                      <children>
+                        <HBox prefHeight="39.0" prefWidth="60.0">
+                          <children>
+                            <Label prefWidth="44.0" text="日期：" />
+                          </children>
+                          <padding>
+                            <Insets left="15.0" top="12.0" />
+                          </padding>
+                        </HBox>
+                        <HBox fx:id="startDateHBox" prefHeight="39.0" prefWidth="90.0">
+                          <padding>
+                            <Insets top="10.0" fx:id="x2" />
+                          </padding>
+                        </HBox>
+                        <HBox padding="$x2" prefHeight="39.0" prefWidth="24.0" HBox.margin="$x3">
+                          <children>
+                            <Label prefWidth="20.0" text="--">
+                              <HBox.margin>
+                                <Insets fx:id="x3" />
+                              </HBox.margin>
+                            </Label>
+                          </children>
+                        </HBox>
+                        <HBox id="xxxx" fx:id="endDateHBox" padding="$x2" prefHeight="39.0" prefWidth="90.0" />
+                        <HBox prefHeight="39.0" prefWidth="72.0">
+                          <children>
+                            <Label alignment="CENTER_RIGHT" ellipsisString="" prefWidth="65.0" text="动物种类：" HBox.margin="$x3" />
+                          </children>
+                          <padding>
+                            <Insets bottom="10.0" top="12.0" fx:id="x4" />
+                          </padding>
+                        </HBox>
+                        <HBox padding="$x2" prefHeight="39.0" prefWidth="114.0">
+                          <children>
+                            <ComboBox id="animalTypeComboBox" fx:id="animalTypeComboBox_2" prefHeight="19.0" prefWidth="86.0" HBox.margin="$x3">
+                              <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                  <String fx:value="项 1" />
+                                  <String fx:value="项 2" />
+                                  <String fx:value="项 3" />
+                                </FXCollections>
+                              </items>
+                            </ComboBox>
+                          </children>
+                        </HBox>
+                        <HBox padding="$x4" prefHeight="39.0" prefWidth="60.0">
+                          <children>
+                            <Label text="课题编号：" HBox.margin="$x3" />
+                          </children>
+                        </HBox>
+                        <HBox padding="$x2" prefHeight="39.0" prefWidth="145.0">
+                          <children>
+                            <ComboBox id="animalStrainComboBox" fx:id="studyNoComboBox_2" prefHeight="19.0" prefWidth="130.0" HBox.margin="$x3">
+                              <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                  <String fx:value="项 1" />
+                                  <String fx:value="项 2" />
+                                  <String fx:value="项 3" />
+                                </FXCollections>
+                              </items>
+                            </ComboBox>
+                          </children>
+                        </HBox>
+                        <HBox prefHeight="35.0" prefWidth="90.0" HBox.hgrow="NEVER">
+                          <children>
+                            <Button mnemonicParsing="false" onAction="#onSearchButton" prefWidth="72.0" text="查询">
+                              <HBox.margin>
+                                <Insets bottom="10.0" top="10.0" />
+                              </HBox.margin>
+                            </Button>
+                          </children>
+                        </HBox>
+                      </children>
+                      <padding>
+                        <Insets fx:id="x3" />
+                      </padding>
+                    </HBox>
+                    <TableView fx:id="tblSessionTable" prefHeight="316.0" prefWidth="842.0" styleClass="statePanel" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="100.0">
+                      <columns>
+                        <TableColumn maxWidth="150.0" minWidth="80.0" prefWidth="95.0" sortable="false" text="会话ID" fx:id="sessionIdCol" />
+                        <TableColumn maxWidth="70.0" minWidth="50.0" prefWidth="52.0" sortable="false" text="创建人" fx:id="createrCol" />
+                        <TableColumn maxWidth="110.0" minWidth="90.0" prefWidth="90.0" sortable="false" text="创建时间" fx:id="createTimeCol" />
+                        <TableColumn maxWidth="120.0" minWidth="95.0" prefWidth="95.0" resizable="true" sortable="false" text="接收单号" fx:id="recIdCol_2" />
+                        <TableColumn maxWidth="150.0" minWidth="110.0" prefWidth="115.0" sortable="false" text="课题编号" fx:id="studyNoCol" />
+                        <TableColumn maxWidth="110.0" minWidth="50.0" prefWidth="70.0" sortable="false" text="记录类型" fx:id="sessionTypeCol" />
+                        <TableColumn maxWidth="110.0" minWidth="50.0" prefWidth="70.0" sortable="false" text="开始时间" fx:id="beginTimeCol" />
+                        <TableColumn maxWidth="100.0" minWidth="50.0" prefWidth="70.0" sortable="false" text="完成时间" fx:id="endTimeCol" />
+                        <TableColumn maxWidth="100.0" minWidth="50.0" prefWidth="60.0" sortable="false" text="动物种类" fx:id="animalTypeCol_2" />
+                        <TableColumn maxWidth="90.0" minWidth="50.0" prefWidth="52.0" sortable="false" text="签字" fx:id="signerCol" />
+                        <TableColumn maxWidth="90.0" minWidth="50.0" prefWidth="52.0" sortable="false" text="复核" fx:id="checkerCol" />
+                      </columns>
+                    </TableView>
+                  </children>
+                </AnchorPane>
+              </content>
+            </Tab>
+          </tabs>
+        </TabPane>
+      </children>
+    </AnchorPane>
+  </children>
+  <stylesheets>
+    <URL value="@../../../../image/centerPane.css" />
+  </stylesheets>
+</AnchorPane>

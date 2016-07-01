@@ -1,0 +1,14 @@
+#Fat Jar Configuration File
+#Mon Dec 08 15:57:53 CST 2014
+onejar.license.required=true
+manifest.classpath=jdk
+manifest.removesigners=true
+onejar.checkbox=false
+jarname=lims_client_fat(245).jar
+manifest.mergeall=true
+manifest.mainclass=com.lanen.zero.main.Main
+manifest.file=<createnew>
+jarname.isextern=false
+onejar.expand=
+excludes=
+includes=

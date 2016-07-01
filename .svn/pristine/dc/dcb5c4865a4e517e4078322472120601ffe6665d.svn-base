@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="anchorPane" prefHeight="600.0" prefWidth="1024.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.lanen.view.test.HistopathCheckEdit">
+  <!-- TODO Add Nodes -->
+  <children>
+    <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="572.0" prefWidth="996.0" styleClass="border-notop" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <children>
+        <Label fx:id="animalCodeVisceraNameLabel" prefWidth="626.0" text="动物编号：1001      所选脏器：心脏" AnchorPane.leftAnchor="16.0" AnchorPane.topAnchor="14.0" />
+        <HBox minHeight="325.0" prefHeight="487.0" prefWidth="989.0" spacing="10.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="80.0">
+          <children>
+            <VBox maxWidth="800.0" minWidth="400.0" prefHeight="200.0" prefWidth="400.0" HBox.hgrow="ALWAYS">
+              <children>
+                <HBox prefHeight="30.0" prefWidth="533.0" spacing="2.0" VBox.vgrow="NEVER">
+                  <children>
+                    <Label alignment="BOTTOM_LEFT" maxWidth="250.0" minWidth="150.0" prefHeight="17.0" prefWidth="150.0" text="异常类型" HBox.hgrow="ALWAYS" />
+                    <Hyperlink maxWidth="400.0" minWidth="180.0" onAction="#onHistoposHyperlink" prefHeight="20.0" prefWidth="180.0" text="组织学用语" HBox.hgrow="ALWAYS" />
+                    <Hyperlink maxWidth="400.0" minWidth="180.0" onAction="#onLesionHyperlink" prefWidth="180.0" text="病变描述" HBox.hgrow="ALWAYS" />
+                  </children>
+                  <padding>
+                    <Insets left="5.0" top="10.0" />
+                  </padding>
+                  <VBox.margin>
+                    <Insets fx:id="x2" />
+                  </VBox.margin>
+                </HBox>
+                <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0" VBox.vgrow="ALWAYS">
+                  <children>
+                    <AnchorPane maxWidth="250.0" minWidth="150.0" prefHeight="200.0" prefWidth="150.0" styleClass="border" HBox.hgrow="ALWAYS">
+                      <children>
+                        <RadioButton fx:id="noAbnormalRadio" layoutX="14.0" layoutY="19.0" mnemonicParsing="false" prefWidth="111.0" selected="true" text="未见异常">
+                          <toggleGroup>
+                            <ToggleGroup fx:id="tg1" />
+                          </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="abnormalRadio" layoutX="14.0" layoutY="45.0" mnemonicParsing="false" prefWidth="111.0" text="异常" toggleGroup="$tg1" />
+                        <RadioButton fx:id="noTumorRadio" layoutX="27.0" layoutY="70.0" mnemonicParsing="false" prefWidth="111.0" selected="true" text="非肿瘤">
+                          <toggleGroup>
+                            <ToggleGroup fx:id="tg2" />
+                          </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="exTumorRadio" layoutX="27.0" layoutY="126.0" mnemonicParsing="false" prefWidth="111.0" text="恶性肿瘤" toggleGroup="$tg2" />
+                        <RadioButton fx:id="noMetastasisRadio" layoutX="50.0" layoutY="152.0" mnemonicParsing="false" prefWidth="111.0" selected="true" text="原发">
+                          <toggleGroup>
+                            <ToggleGroup fx:id="tg3" />
+                          </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="metastasisRadio" layoutX="50.0" layoutY="204.0" mnemonicParsing="false" prefWidth="111.0" text="转移" toggleGroup="$tg3" />
+                        <Hyperlink fx:id="primaryViscerHyperlink" layoutX="49.0" layoutY="228.0" onAction="#onPrimaryVisceraHyperlink" prefWidth="92.0" text="原发脏器/肿瘤" />
+                        <RadioButton fx:id="lxTumorRadio" layoutX="27.0" layoutY="98.0" mnemonicParsing="false" prefWidth="111.0" text="良性肿瘤" toggleGroup="$tg2" />
+                        <AnchorPane fx:id="tumorPosPane" layoutY="256.0" prefHeight="60.0" prefWidth="170.0" visible="false" AnchorPane.leftAnchor="13.0" AnchorPane.rightAnchor="-27.0">
+                          <children>
+                            <Label layoutX="0.0" layoutY="5.0" text="肿瘤位置：" />
+                            <RadioButton id="tumorPos1" fx:id="tumorPosRadio1" layoutX="21.0" layoutY="30.0" mnemonicParsing="false" text="浅表">
+                              <toggleGroup>
+                                <ToggleGroup fx:id="x4" />
+                              </toggleGroup>
+                            </RadioButton>
+                            <RadioButton id="tumorPos2" fx:id="tumorPosRadio2" layoutX="85.0" layoutY="30.0" mnemonicParsing="false" text="深部" toggleGroup="$x4" />
+                          </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="tumorCharacterPane" layoutY="316.0" prefHeight="60.0" prefWidth="170.0" visible="false" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="-28.0">
+                          <children>
+                            <RadioButton fx:id="tumorCharacterRadio1" layoutX="10.0" layoutY="24.0" mnemonicParsing="false" text="偶发">
+                              <toggleGroup>
+                                <ToggleGroup fx:id="x3" />
+                              </toggleGroup>
+                            </RadioButton>
+                            <RadioButton fx:id="tumorCharacterRadio2" layoutX="63.0" layoutY="24.0" mnemonicParsing="false" text="致死" toggleGroup="$x3" />
+                            <RadioButton fx:id="tumorCharacterRadio3" layoutX="114.0" layoutY="24.0" mnemonicParsing="false" text="不明确" toggleGroup="$x3" />
+                            <Label layoutX="0.0" layoutY="0.0" text="肿瘤特性：" />
+                          </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="tumorOccurPane" layoutY="316.0" prefHeight="60.0" prefWidth="170.0" visible="false" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="-29.0">
+                          <children>
+                            <Label layoutX="0.0" layoutY="0.0" prefWidth="-1.0" text="肿瘤发生日期：" />
+                            <HBox fx:id="tumorOccurDateHbox" layoutX="8.0" layoutY="26.0" prefHeight="20.0" prefWidth="104.0" />
+                            <Hyperlink layoutX="117.0" layoutY="26.0" onAction="#onTumorOccurDateHyperlink" text="观察日期" />
+                          </children>
+                        </AnchorPane>
+                        <RadioButton fx:id="qinxiRadio" layoutX="50.0" layoutY="178.0" mnemonicParsing="false" text="侵袭" toggleGroup="$tg3" />
+                      </children>
+                    </AnchorPane>
+                    <ListView fx:id="histoPoListView" maxWidth="400.0" minWidth="180.0" prefHeight="200.0" prefWidth="180.0" HBox.hgrow="ALWAYS" />
+                    <ListView fx:id="lesionFindingListView" maxWidth="400.0" minWidth="180.0" prefHeight="200.0" prefWidth="180.0" HBox.hgrow="ALWAYS" />
+                  </children>
+                </HBox>
+                <AnchorPane prefHeight="60.0" prefWidth="533.0" styleClass="border">
+                  <children>
+                    <HBox fx:id="hbox" alignment="CENTER_LEFT" maxWidth="499.0" minWidth="143.0" prefHeight="20.0" prefWidth="512.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="11.0">
+                      <children>
+                        <Label fx:id="tumorNumberLabel" maxWidth="60.0" minWidth="60.0" prefWidth="60.0" text="肿瘤数量：" HBox.hgrow="ALWAYS" />
+                        <ComboBox id="tumorComboBox" fx:id="tumorNumberComboBox" editable="true" minWidth="47.0" prefHeight="19.0" prefWidth="47.0" HBox.hgrow="ALWAYS">
+                          <items>
+                            <FXCollections fx:factory="observableArrayList">
+                              <String fx:value="1" />
+                              <String fx:value="2" />
+                              <String fx:value="3" />
+                              <String fx:value="4" />
+                              <String fx:value="5" />
+                              <String fx:value="6" />
+                              <String fx:value="7" />
+                              <String fx:value="8" />
+                              <String fx:value="9" />
+                              <String fx:value="10" />
+                            </FXCollections>
+                          </items>
+                          <HBox.margin>
+                            <Insets right="10.0" fx:id="x1" />
+                          </HBox.margin>
+                        </ComboBox>
+                        <Label fx:id="levelLabel" maxWidth="36.0" minWidth="36.0" prefWidth="36.0" text="程度：" visible="true" HBox.hgrow="ALWAYS">
+                          <HBox.margin>
+                            <Insets fx:id="x2" />
+                          </HBox.margin>
+                        </Label>
+                        <ComboBox fx:id="levelComboBox" maxWidth="68.0" minWidth="68.0" prefHeight="19.0" prefWidth="68.0" visible="true" HBox.hgrow="ALWAYS" HBox.margin="$x1">
+                          <items>
+                            <FXCollections fx:factory="observableArrayList">
+                              <String fx:value="" />
+                              <String fx:value="±" />
+                              <String fx:value="+" />
+                              <String fx:value="++" />
+                              <String fx:value="+++" />
+                            </FXCollections>
+                          </items>
+                        </ComboBox>
+                        <Label maxWidth="36.0" minWidth="36.0" prefWidth="36.0" text="备注：" HBox.hgrow="ALWAYS" HBox.margin="$x2" />
+                        <TextField fx:id="remarkText" maxWidth="350.0" prefColumnCount="226" prefWidth="226.0" HBox.hgrow="ALWAYS" HBox.margin="$x2" />
+                      </children>
+                    </HBox>
+                    <Label fx:id="histopathCheckLabel" prefHeight="20.0" prefWidth="393.0" text="组织学所见：" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" />
+                  </children>
+                  <VBox.margin>
+                    <Insets top="5.0" />
+                  </VBox.margin>
+                </AnchorPane>
+              </children>
+            </VBox>
+            <AnchorPane maxWidth="800.0" minWidth="300.0" prefHeight="200.0" prefWidth="300.0" HBox.hgrow="ALWAYS">
+              <children>
+                <TableView fx:id="histopathResultTable" prefHeight="352.0" prefWidth="427.0" AnchorPane.bottomAnchor="38.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+                  <columns>
+                    <TableColumn maxWidth="70.0" minWidth="50.0" prefWidth="60.0" sortable="false" text="性质" fx:id="tumorFlagCol" />
+                    <TableColumn maxWidth="65.0" minWidth="30.0" prefWidth="55.0" sortable="false" text="是否转移" fx:id="metastasisFlagCol" />
+                    <TableColumn maxWidth="500.0" minWidth="100.0" prefWidth="212.0" sortable="false" text="检查结果" fx:id="checkResultCol_1" />
+                    <TableColumn maxWidth="500.0" minWidth="80.0" prefWidth="100.0" sortable="false" text="原发脏器/肿瘤" fx:id="primaryVisceraTumorCol" />
+                    <TableColumn maxWidth="50.0" minWidth="30.0" prefWidth="40.0" text="状态" fx:id="stateCol" />
+                    <TableColumn maxWidth="70.0" minWidth="50.0" prefWidth="51.0" sortable="false" text="操作" fx:id="operateCol" />
+                    <TableColumn maxWidth="54.0" minWidth="54.0" prefWidth="54.0" sortable="false" text="病变程度" fx:id="levelCol_1" />
+                    <TableColumn maxWidth="54.0" minWidth="54.0" prefWidth="54.0" sortable="false" text="肿瘤数量" fx:id="tumorNumCol_1" />
+                    <TableColumn maxWidth="54.0" minWidth="54.0" prefWidth="54.0" sortable="false" text="肿瘤位置" fx:id="tumorPosCol_1" />
+                    <TableColumn maxWidth="84.0" minWidth="84.0" prefWidth="84.0" sortable="false" text="肿瘤发生日期" fx:id="tumorOccurDateCol_1" />
+                    <TableColumn maxWidth="54.0" minWidth="54.0" prefWidth="54.0" sortable="false" text="肿瘤特性" fx:id="tumorCharacterCol_1" />
+                    <TableColumn maxWidth="100.0" minWidth="54.0" prefWidth="54.0" sortable="false" text="备注" fx:id="remarkCol_1" />
+                  </columns>
+                </TableView>
+                <Button fx:id="registerResultBtn_1" mnemonicParsing="false" onAction="#onRegisterResultBtn_1" prefHeight="26.0" prefWidth="104.0" text="登记检查结果" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="1.0" />
+                <Button fx:id="referToBtn" mnemonicParsing="false" onAction="#onReferBtn" prefHeight="26.0" prefWidth="82.0" text="参照所见" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="115.0" />
+                <Button fx:id="checkFinishBtn" mnemonicParsing="false" onAction="#onCheckFinishBtn" prefHeight="26.0" prefWidth="82.0" text="修改完成" AnchorPane.bottomAnchor="2.0" AnchorPane.rightAnchor="-1.0" />
+                <Label layoutX="3.0" layoutY="12.0" text="组织学所见" />
+                <Hyperlink layoutY="7.0" onAction="#onIndividualDataHyperlink" text="个体数据" AnchorPane.rightAnchor="17.0" />
+              </children>
+            </AnchorPane>
+          </children>
+        </HBox>
+        <AnchorPane prefHeight="42.0" prefWidth="995.0" styleClass="border" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="38.0">
+          <children>
+            <Label layoutX="14.0" layoutY="14.0" prefWidth="68.0" text="快速查找：" />
+            <ComboBox id="serachComboBox" fx:id="searchComboBox" layoutX="72.0" layoutY="11.0" prefHeight="19.0" prefWidth="120.0">
+              <items>
+                <FXCollections fx:factory="observableArrayList">
+                  <String fx:value="组织学用语" />
+                  <String fx:value="病变描述" />
+                </FXCollections>
+              </items>
+            </ComboBox>
+            <TextField id="serachTextField" fx:id="searchTextField" layoutX="198.0" layoutY="11.0" onKeyReleased="#OnSearchTextFieldKeyReleased" prefWidth="200.0" promptText="快速检索文本(拼音首字母)" />
+            <Label prefWidth="92.0" text="字典排序方式：" AnchorPane.rightAnchor="219.0" AnchorPane.topAnchor="14.0" />
+            <ComboBox id="dictSort" fx:id="dictSortMethodComboBox" prefHeight="19.0" prefWidth="120.0" AnchorPane.rightAnchor="109.0" AnchorPane.topAnchor="11.0">
+              <items>
+                <FXCollections fx:factory="observableArrayList">
+                  <String fx:value="字典顺序排序" />
+                  <String fx:value="拼音顺序排序" />
+                  <String fx:value="使用频度排序" />
+                </FXCollections>
+              </items>
+            </ComboBox>
+            <Hyperlink onAction="#onUpdateUserFrequentnessHyperlink" text="更新使用频度" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="11.0" />
+            <ListView fx:id="searchListView" layoutX="199.0" layoutY="30.0" prefHeight="160.0" prefWidth="198.0" visible="false" />
+          </children>
+        </AnchorPane>
+      </children>
+    </AnchorPane>
+  </children>
+  <stylesheets>
+    <URL value="@../../../../image/centerPane.css" />
+  </stylesheets>
+</AnchorPane>

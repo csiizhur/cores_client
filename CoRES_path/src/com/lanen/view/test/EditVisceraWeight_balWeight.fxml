@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="anchorPane" prefHeight="290.0" prefWidth="406.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.lanen.view.test.EditVisceraWeight_balWeight">
+  <!-- TODO Add Nodes -->
+  <children>
+    <AnchorPane layoutX="7.0" layoutY="0.0" prefHeight="283.0" prefWidth="399.0">
+      <children>
+        <AnchorPane layoutX="0.0" layoutY="5.0" prefHeight="31.0" prefWidth="391.0" styleClass="border">
+          <children>
+            <Button fx:id="cancelButton" focusTraversable="false" layoutX="14.0" layoutY="3.0" mnemonicParsing="false" onAction="#onExitBtnAction" prefHeight="26.0" prefWidth="72.0" text="关闭" />
+          </children>
+        </AnchorPane>
+        <AnchorPane layoutX="0.0" layoutY="43.0" prefHeight="148.0" prefWidth="391.0" styleClass="border">
+          <children>
+            <TableView fx:id="balanceRrgeTbale" layoutX="14.0" layoutY="14.0" prefHeight="103.0" prefWidth="357.0">
+              <columns>
+                <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="95.0" sortable="false" text="天平编号" fx:id="balCodeCol" />
+                <TableColumn editable="false" maxWidth="5000.0" minWidth="10.0" prefWidth="60.0" text="接入端口" fx:id="balStateCol" />
+                <TableColumn editable="false" maxWidth="5000.0" minWidth="10.0" prefWidth="198.0" text="状态" fx:id="baudComboCol" />
+              </columns>
+            </TableView>
+            <Hyperlink layoutX="281.0" layoutY="117.0" onAction="#onBalCalibration" text="天平校准" />
+          </children>
+        </AnchorPane>
+        <AnchorPane layoutX="0.0" layoutY="197.0" prefHeight="85.0" prefWidth="391.0" styleClass="border">
+          <children>
+            <Label fx:id="studyNoLabel" layoutX="94.0" layoutY="14.0" prefWidth="277.0" text="">
+              <font>
+                <Font size="16.0" fx:id="x1" />
+              </font>
+            </Label>
+            <Label fx:id="animalCodeLabel" font="$x1" layoutX="94.0" layoutY="49.0" prefWidth="56.0" text="" />
+            <Label font="$x1" layoutX="13.0" layoutY="14.0" prefWidth="87.9998779296875" text="专题编号：" />
+            <Label font="$x1" layoutX="13.0" layoutY="49.0" prefWidth="85.0" text="动物编号：" />
+            <Label font="$x1" layoutX="168.0" layoutY="49.0" prefWidth="85.0" text="待称脏器：" />
+            <Label id="animalCodeLabel" fx:id="visceraNameLabel" font="$x1" layoutX="241.0" layoutY="49.0" prefWidth="130.0" text="" />
+          </children>
+        </AnchorPane>
+      </children>
+    </AnchorPane>
+  </children>
+  <stylesheets>
+    <URL value="@../../../../image/centerPane.css" />
+  </stylesheets>
+</AnchorPane>

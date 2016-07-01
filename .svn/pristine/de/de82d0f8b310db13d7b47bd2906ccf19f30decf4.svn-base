@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="429.0" prefWidth="601.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.lanen.view.test.AnimalChipSelectPage">
+  <!-- TODO Add Nodes -->
+  <children>
+    <AnchorPane prefHeight="50.0" prefWidth="573.0" styleClass="border" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+      <children>
+        <Button layoutX="14.0" layoutY="13.0" mnemonicParsing="false" onAction="#onConfirmBtnAction" prefHeight="26.0" text="创建临时任务" />
+        <Button layoutX="116.0" layoutY="13.0" mnemonicParsing="false" onAction="#onExitBtnAction" prefHeight="26.0" prefWidth="72.0" text="关闭" />
+        <Label fx:id="msgLabel" alignment="CENTER_RIGHT" layoutX="263.0" layoutY="22.0" prefWidth="296.0" text="芯片阅读器连接中……" />
+      </children>
+    </AnchorPane>
+    <AnchorPane prefHeight="342.0" prefWidth="573.0" styleClass="border" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="73.0">
+      <children>
+        <TableView fx:id="itable" layoutX="14.0" layoutY="14.0" prefHeight="314.0" prefWidth="545.0">
+          <columns>
+            <TableColumn maxWidth="100.0" minWidth="30.0" prefWidth="55.0" text="选择" fx:id="selectCol" />
+            <TableColumn maxWidth="300.0" minWidth="100.0" prefWidth="200.0" text="芯片编号" fx:id="chipCodeCol" />
+            <TableColumn maxWidth="300.0" minWidth="100.0" prefWidth="196.0" text="专题编号" fx:id="studyNoCol" />
+            <TableColumn maxWidth="150.0" minWidth="50.0" prefWidth="91.0" text="动物编号" fx:id="animalCodeCol" />
+          </columns>
+        </TableView>
+      </children>
+    </AnchorPane>
+  </children>
+  <stylesheets>
+    <URL value="@../../../../image/centerPane.css" />
+  </stylesheets>
+</AnchorPane>

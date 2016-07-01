@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="anchorPane" prefHeight="500.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.lanen.view.test.IndividualData">
+  <!-- TODO Add Nodes -->
+  <children>
+    <AnchorPane prefHeight="50.0" prefWidth="772.0" styleClass="border" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+      <children>
+        <Label fx:id="label0" cache="true" cacheHint="DEFAULT" depthTest="INHERIT" disable="false" ellipsisString="" maxWidth="744.0" opacity="1.0" prefHeight="35.0" prefWidth="687.0" text="未见异常" textOverrun="ELLIPSIS" underline="false" wrapText="false" AnchorPane.leftAnchor="71.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="6.0">
+          <font>
+            <Font name="SimSun" size="12.0" />
+          </font>
+        </Label>
+        <Label id="label1" cache="true" cacheHint="DEFAULT" depthTest="INHERIT" disable="false" ellipsisString="" layoutX="15.0" layoutY="14.0" maxWidth="744.0" opacity="1.0" prefHeight="19.0" prefWidth="63.0" text="解剖所见：" textOverrun="ELLIPSIS" underline="false" wrapText="false" />
+      </children>
+    </AnchorPane>
+    <TabPane prefHeight="409.0" prefWidth="772.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="77.0">
+      <tabs>
+        <Tab text="临床检验">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="border">
+              <children>
+                <HBox prefHeight="208.0" prefWidth="772.0" spacing="5.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="15.0">
+                  <children>
+                    <AnchorPane maxWidth="350.0" minWidth="150.0" prefHeight="408.0" prefWidth="203.0" styleClass="border" HBox.hgrow="ALWAYS">
+                      <children>
+                        <TableView id="taskTable" fx:id="table_1" prefHeight="356.0" prefWidth="176.0" AnchorPane.bottomAnchor="13.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="38.0">
+                          <columns>
+                            <TableColumn maxWidth="152.0" minWidth="50.0" prefWidth="60.0" sortable="false" text="检验指标" fx:id="testIndex_1" />
+                            <TableColumn maxWidth="80.0" minWidth="31.0" prefWidth="35.0" sortable="false" text="缩写" fx:id="testIndexAbbr_1" />
+                            <TableColumn maxWidth="80.0" minWidth="35.0" prefWidth="40.0" sortable="false" text="数据" fx:id="testData_1" />
+                            <TableColumn maxWidth="80.0" minWidth="31.0" prefWidth="35.0" sortable="false" text="单位" fx:id="testIndexUnit_1" />
+                          </columns>
+                        </TableView>
+                        <Label layoutX="14.0" layoutY="14.0" prefWidth="72.0" text="检验日期：" />
+                        <ComboBox id="tumorNumComboBox" fx:id="testDateComboBox_1" editable="false" focusTraversable="false" layoutX="71.0" layoutY="11.0" prefHeight="19.0" prefWidth="108.0">
+                          <items>
+                            <FXCollections fx:factory="observableArrayList">
+                              <String fx:value="1" />
+                              <String fx:value="2" />
+                              <String fx:value="3" />
+                            </FXCollections>
+                          </items>
+                        </ComboBox>
+                        <Label alignment="CENTER" layoutX="11.0" layoutY="-8.0" prefWidth="65.0" styleClass="whiteLabel" text="生化检验" textAlignment="LEFT" />
+                      </children>
+                    </AnchorPane>
+                    <AnchorPane maxWidth="350.0" minWidth="150.0" prefHeight="408.0" prefWidth="203.0" styleClass="border" HBox.hgrow="ALWAYS">
+                      <children>
+                        <TableView id="taskTable" fx:id="table_2" prefHeight="356.0" prefWidth="176.0" AnchorPane.bottomAnchor="13.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="38.0">
+                          <columns>
+                            <TableColumn maxWidth="152.0" minWidth="50.0" prefWidth="60.0" sortable="false" text="检验指标" fx:id="testIndex_2" />
+                            <TableColumn maxWidth="80.0" minWidth="31.0" prefWidth="35.0" sortable="false" text="缩写" fx:id="testIndexAbbr_2" />
+                            <TableColumn maxWidth="80.0" minWidth="35.0" prefWidth="40.0" sortable="false" text="数据" fx:id="testData_2" />
+                            <TableColumn maxWidth="80.0" minWidth="31.0" prefWidth="35.0" sortable="false" text="单位" fx:id="testIndexUnit_2" />
+                          </columns>
+                        </TableView>
+                        <Label layoutX="14.0" layoutY="14.0" prefWidth="72.0" text="检验日期：" />
+                        <ComboBox id="tumorNumComboBox" fx:id="testDateComboBox_2" editable="false" focusTraversable="false" layoutX="71.0" layoutY="11.0" prefHeight="19.0" prefWidth="108.0">
+                          <items>
+                            <FXCollections fx:factory="observableArrayList">
+                              <String fx:value="1" />
+                              <String fx:value="2" />
+                              <String fx:value="3" />
+                            </FXCollections>
+                          </items>
+                        </ComboBox>
+                        <Label alignment="CENTER" layoutX="11.0" layoutY="-8.0" prefWidth="65.0" styleClass="whiteLabel" text="血液检验" textAlignment="LEFT" />
+                      </children>
+                    </AnchorPane>
+                    <AnchorPane maxWidth="350.0" minWidth="150.0" prefHeight="408.0" prefWidth="203.0" styleClass="border" HBox.hgrow="ALWAYS">
+                      <children>
+                        <TableView id="taskTable" fx:id="table_3" prefHeight="356.0" prefWidth="176.0" AnchorPane.bottomAnchor="13.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="38.0">
+                          <columns>
+                            <TableColumn maxWidth="152.0" minWidth="50.0" prefWidth="60.0" sortable="false" text="检验指标" fx:id="testIndex_3" />
+                            <TableColumn maxWidth="80.0" minWidth="31.0" prefWidth="35.0" sortable="false" text="缩写" fx:id="testIndexAbbr_3" />
+                            <TableColumn maxWidth="80.0" minWidth="35.0" prefWidth="40.0" sortable="false" text="数据" fx:id="testData_3" />
+                            <TableColumn maxWidth="80.0" minWidth="31.0" prefWidth="35.0" sortable="false" text="单位" fx:id="testIndexUnit_3" />
+                          </columns>
+                        </TableView>
+                        <Label layoutX="14.0" layoutY="14.0" prefWidth="72.0" text="检验日期：" />
+                        <ComboBox id="tumorNumComboBox" fx:id="testDateComboBox_3" editable="false" focusTraversable="false" layoutX="71.0" layoutY="11.0" prefHeight="19.0" prefWidth="108.0">
+                          <items>
+                            <FXCollections fx:factory="observableArrayList">
+                              <String fx:value="1" />
+                              <String fx:value="2" />
+                              <String fx:value="3" />
+                            </FXCollections>
+                          </items>
+                        </ComboBox>
+                        <Label alignment="CENTER" layoutX="11.0" layoutY="-8.0" prefWidth="65.0" styleClass="whiteLabel" text="血凝检验" textAlignment="LEFT" />
+                      </children>
+                    </AnchorPane>
+                    <AnchorPane maxWidth="350.0" minWidth="150.0" prefHeight="408.0" prefWidth="203.0" styleClass="border" HBox.hgrow="ALWAYS">
+                      <children>
+                        <TableView id="taskTable" fx:id="table_4" prefHeight="356.0" prefWidth="176.0" AnchorPane.bottomAnchor="13.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="38.0">
+                          <columns>
+                            <TableColumn maxWidth="152.0" minWidth="50.0" prefWidth="60.0" sortable="false" text="检验指标" fx:id="testIndex_4" />
+                            <TableColumn maxWidth="80.0" minWidth="31.0" prefWidth="35.0" sortable="false" text="缩写" fx:id="testIndexAbbr_4" />
+                            <TableColumn maxWidth="80.0" minWidth="35.0" prefWidth="40.0" sortable="false" text="数据" fx:id="testData_4" />
+                            <TableColumn maxWidth="80.0" minWidth="31.0" prefWidth="35.0" sortable="false" text="单位" fx:id="testIndexUnit_4" />
+                          </columns>
+                        </TableView>
+                        <Label layoutX="14.0" layoutY="14.0" prefWidth="72.0" text="检验日期：" />
+                        <ComboBox id="tumorNumComboBox" fx:id="testDateComboBox_4" editable="false" focusTraversable="false" layoutX="71.0" layoutY="11.0" prefHeight="19.0" prefWidth="108.0">
+                          <items>
+                            <FXCollections fx:factory="observableArrayList">
+                              <String fx:value="1" />
+                              <String fx:value="2" />
+                              <String fx:value="3" />
+                            </FXCollections>
+                          </items>
+                        </ComboBox>
+                        <Label alignment="CENTER" layoutX="11.0" layoutY="-8.0" prefWidth="65.0" styleClass="whiteLabel" text="尿液检验" textAlignment="LEFT" />
+                      </children>
+                    </AnchorPane>
+                  </children>
+                </HBox>
+              </children>
+              <padding>
+                <Insets top="-1.0" fx:id="x1" />
+              </padding>
+            </AnchorPane>
+          </content>
+        </Tab>
+        <Tab text="症状观察">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" padding="$x1" prefHeight="180.0" prefWidth="200.0" styleClass="border">
+              <children>
+                <TableView fx:id="tbwatchlistTbale" prefHeight="285.0" prefWidth="815.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+                  <columns>
+                    <TableColumn maxWidth="200.0" minWidth="10.0" prefWidth="98.0" sortable="false" text="症状描述" fx:id="A06Col" />
+                    <TableColumn maxWidth="140.0" minWidth="10.0" prefWidth="72.0" sortable="false" text="部位" fx:id="FPOSCol" />
+                    <TableColumn maxWidth="140.0" minWidth="10.0" prefWidth="69.0" sortable="false" text="程度" fx:id="FDEGREECol" />
+                    <TableColumn maxWidth="120.0" minWidth="10.0" prefWidth="59.0" sortable="false" text="硬度" fx:id="FQOMCol" />
+                    <TableColumn maxWidth="130.0" minWidth="10.0" prefWidth="67.0" sortable="false" text="长" fx:id="FLENCol" />
+                    <TableColumn maxWidth="130.0" minWidth="10.0" prefWidth="66.0" sortable="false" text="宽" fx:id="FWIDTHCol" />
+                    <TableColumn maxWidth="130.0" minWidth="10.0" prefWidth="64.0" sortable="false" text="数量" fx:id="FNUMCol" />
+                    <TableColumn maxWidth="120.0" minWidth="10.0" prefWidth="61.0" sortable="false" text="颜色" fx:id="FCOLORCol" />
+                    <TableColumn maxWidth="60.0" minWidth="10.0" prefWidth="53.0" sortable="false" text="症状是&#10;否消失" fx:id="SYMPTOMDISAPPEARCol" />
+                    <TableColumn maxWidth="320.0" minWidth="10.0" prefWidth="158.0" resizable="false" sortable="false" text="观察时间" fx:id="A04Col" />
+                  </columns>
+                </TableView>
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+      </tabs>
+    </TabPane>
+  </children>
+  <stylesheets>
+    <URL value="@../../../../image/centerPane.css" />
+  </stylesheets>
+</AnchorPane>
