@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="350.0" prefWidth="757.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.lanen.view.AnimalsInfoFrameController">
+  <!-- TODO Add Nodes -->
+  <children>
+    <HBox prefHeight="48.0" prefWidth="727.0" styleClass="statePanel" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="21.0">
+      <children>
+        <Label text="扫描设备">
+          <HBox.margin>
+            <Insets right="15.0" top="3.0" />
+          </HBox.margin>
+        </Label>
+        <ComboBox id="instrumentComboBox" fx:id="instrumentComboBox2" disable="false" prefHeight="19.0" prefWidth="97.0">
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="项 1" />
+              <String fx:value="项 2" />
+              <String fx:value="项 3" />
+            </FXCollections>
+          </items>
+          <HBox.margin>
+            <Insets right="25.0" fx:id="x1" />
+          </HBox.margin>
+        </ComboBox>
+        <HBox id="hBox" fx:id="hBox2" prefHeight="20.0" prefWidth="27.0">
+          <padding>
+            <Insets />
+          </padding>
+          <HBox.margin>
+            <Insets right="15.0" />
+          </HBox.margin>
+        </HBox>
+        <Button id="acceptBtn" fx:id="acceptBtn2" disable="false" maxWidth="72.0" minWidth="72.0" mnemonicParsing="false" onAction="#onAcceptBtnAction" prefWidth="72.0" text="开始接收" />
+      </children>
+      <padding>
+        <Insets top="15.0" />
+      </padding>
+    </HBox>
+    <AnchorPane maxHeight="160.0" prefHeight="160.0" prefWidth="727.0" styleClass="statePanel" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="102.0">
+      <children>
+        <HBox alignment="CENTER_LEFT" layoutX="0.0" prefHeight="28.0" prefWidth="726.0" AnchorPane.bottomAnchor="147.0" AnchorPane.topAnchor="14.0">
+          <children>
+            <Label contentDisplay="CENTER" text="动物编号" />
+            <TextField id="receiveMonkeyId" fx:id="receiveMonkeyId2" prefWidth="114.0" />
+            <Region prefHeight="28.0" prefWidth="55.0" />
+            <Label prefWidth="27.0" text="种类" />
+            <TextField fx:id="monkeyType" prefWidth="72.0" />
+            <Region prefHeight="28.0" prefWidth="62.0" />
+            <Label text="房舍" />
+            <TextField fx:id="areaName" prefWidth="114.0" />
+            <Region prefHeight="28.0" prefWidth="59.0" />
+            <Label text="性别" />
+            <TextField fx:id="sex" prefWidth="122.0" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER_LEFT" prefHeight="28.0" prefWidth="726.0" AnchorPane.bottomAnchor="120.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="45.0">
+          <children>
+            <Label contentDisplay="CENTER" text="年龄阶段" />
+            <TextField id="receiveMonkeyId" fx:id="ageType" prefWidth="114.0" />
+            <Region prefHeight="28.0" prefWidth="55.0" />
+            <Label prefWidth="27.0" text="体重" />
+            <TextField fx:id="weight" prefWidth="72.0" />
+            <Region prefHeight="28.0" prefWidth="38.0" />
+            <Label text="称重日期" />
+            <TextField fx:id="weightDate" prefWidth="114.0" />
+            <Region prefHeight="28.0" prefWidth="47.0" />
+            <Label text="饲养员" />
+            <TextField fx:id="keeperName" prefWidth="122.0" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER_LEFT" layoutX="0.0" prefHeight="28.0" prefWidth="726.0" AnchorPane.bottomAnchor="90.0" AnchorPane.topAnchor="70.0">
+          <children>
+            <Label contentDisplay="CENTER" text="出生日期" />
+            <TextField id="receiveMonkeyId" fx:id="birthday" prefWidth="114.0" />
+            <Region prefHeight="28.0" prefWidth="27.0" />
+            <Label prefWidth="55.0" text="出生体重" />
+            <TextField fx:id="birthdayWeight" prefWidth="72.0" />
+            <Region prefHeight="28.0" prefWidth="38.0" />
+            <Label prefWidth="48.0" text="离乳日期" />
+            <TextField id="leaver" fx:id="leavebreastDate" prefWidth="114.0" />
+            <Region prefHeight="28.0" prefWidth="35.0" />
+            <Label prefWidth="48.0" text="离乳体重" />
+            <TextField fx:id="leavebreastWeight" prefWidth="97.0" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER_LEFT" prefHeight="28.0" prefWidth="726.0" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="100.0">
+          <children>
+            <Label contentDisplay="CENTER" text="父亲编号" />
+            <TextField id="receiveMonkeyId" fx:id="fatherId" prefWidth="114.0" />
+            <Region prefHeight="28.0" prefWidth="27.0" />
+            <Label prefWidth="55.0" text="母亲编号" />
+            <TextField fx:id="motherId" prefWidth="72.0" />
+            <Region prefHeight="28.0" prefWidth="50.0" />
+            <Label text="引进地" />
+            <TextField fx:id="yjAddress" prefWidth="114.0" />
+            <Region prefHeight="28.0" prefWidth="59.0" />
+            <Label text="芯片" />
+            <TextField id="remarks" fx:id="chipid" prefWidth="97.0" />
+          </children>
+        </HBox>
+        <HBox prefHeight="52.0" prefWidth="720.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="135.0">
+          <children>
+            <Region maxHeight="50.0" prefHeight="60.0" prefWidth="24.0" />
+            <Label alignment="CENTER" prefHeight="60.0" text="备注" />
+            <TextArea fx:id="remarks" maxHeight="60.0" prefHeight="60.0" prefWidth="648.0" wrapText="true" />
+          </children>
+        </HBox>
+      </children>
+    </AnchorPane>
+    <Hyperlink id="hyperlink" fx:id="hyperlink2" onAction="#onHyperlinkAction" prefWidth="110.0" text="提示信息（100）" visible="true" AnchorPane.rightAnchor="47.0" AnchorPane.topAnchor="37.0" />
+    <Label alignment="CENTER" layoutX="31.0" layoutY="13.0" prefWidth="55.0" styleClass="whiteLabel" text="基本信息" />
+    <AnchorPane prefHeight="14.0" prefWidth="727.0" styleClass="overLinePanel" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" />
+    <Button mnemonicParsing="false" onAction="#onExitBtnAction" prefWidth="72.0" text="关闭" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="16.0" />
+    <Label alignment="CENTER" layoutX="31.0" layoutY="93.0" prefHeight="15.0" prefWidth="55.0" styleClass="whiteLabel" text="动物信息" />
+  </children>
+  <stylesheets>
+    <URL value="@../../../css/style.css" />
+  </stylesheets>
+</AnchorPane>

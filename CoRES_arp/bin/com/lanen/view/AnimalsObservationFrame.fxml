@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="525.0" prefWidth="757.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.lanen.view.AnimalsObservationFrameController">
+  <!-- TODO Add Nodes -->
+  <children>
+    <HBox prefHeight="48.0" prefWidth="727.0" styleClass="statePanel" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="19.0">
+      <children>
+        <Label text="扫描设备">
+          <HBox.margin>
+            <Insets right="15.0" top="3.0" />
+          </HBox.margin>
+        </Label>
+        <ComboBox id="instrumentComboBox" fx:id="instrumentComboBox1" disable="false" prefHeight="19.0" prefWidth="97.0">
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="项 1" />
+              <String fx:value="项 2" />
+              <String fx:value="项 3" />
+            </FXCollections>
+          </items>
+          <HBox.margin>
+            <Insets right="25.0" fx:id="x1" />
+          </HBox.margin>
+        </ComboBox>
+        <HBox id="hBox" fx:id="hBox1" prefHeight="20.0" prefWidth="27.0">
+          <padding>
+            <Insets />
+          </padding>
+          <HBox.margin>
+            <Insets right="15.0" />
+          </HBox.margin>
+        </HBox>
+        <Button id="acceptBtn" fx:id="acceptBtn1" disable="true" maxWidth="72.0" minWidth="72.0" mnemonicParsing="false" onAction="#onAcceptBtnAction" prefWidth="72.0" text="开始接收" />
+      </children>
+      <padding>
+        <Insets top="15.0" />
+      </padding>
+    </HBox>
+    <VBox maxWidth="160.0" prefHeight="374.0" prefWidth="160.0" styleClass="blackStatePanel" AnchorPane.bottomAnchor="62.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="590.0" AnchorPane.topAnchor="89.0">
+      <children>
+        <Label prefWidth="72.0" text="动物编号">
+          <VBox.margin>
+            <Insets top="20.0" />
+          </VBox.margin>
+        </Label>
+        <TextField id="receiveMonkeyId" fx:id="receiveMonkeyId1" prefHeight="23.0" prefWidth="169.0" />
+        <Label prefWidth="48.0" text="观察内容" />
+        <TextArea fx:id="observationContent" prefWidth="200.0" wrapText="true" />
+        <Label prefHeight="16.0" prefWidth="48.0" text="观察人" />
+        <ComboBox id="weightRecorderName" fx:id="observerRecorderName" prefHeight="23.0" prefWidth="169.0">
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="项 1" />
+              <String fx:value="项 2" />
+              <String fx:value="项 3" />
+            </FXCollections>
+          </items>
+        </ComboBox>
+        <Label prefWidth="55.0" text="观察日期" />
+        <HBox id="testHBox" fx:id="textHBox1" prefHeight="23.0" prefWidth="169.0" />
+      </children>
+    </VBox>
+    <TableView id="table" fx:id="table1" focusTraversable="false" prefHeight="379.0" prefWidth="541.0" AnchorPane.bottomAnchor="62.0" AnchorPane.leftAnchor="201.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="89.0">
+      <columns>
+        <TableColumn prefWidth="70.0" sortable="false" text="动物编号" fx:id="monkeyIdCol4" />
+        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="82.0" text="区域" fx:id="areaNameCol4" />
+        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="45.0" sortable="false" text="性别" fx:id="animalSexCol4" />
+        <TableColumn maxWidth="5000.0" minWidth="30.0" prefWidth="130.0" sortable="false" text="观察内容" fx:id="observationContentCol4" />
+        <TableColumn maxWidth="5000.0" minWidth="30.0" prefWidth="60.0" sortable="false" text="观察者" fx:id="observationRecorderCol4" />
+        <TableColumn maxWidth="5000.0" minWidth="30.0" prefWidth="80.0" sortable="false" text="观察日期" fx:id="observationDateCol4" />
+        <TableColumn prefWidth="65.0" text="观察时间" fx:id="observationTimeCol4" />
+      </columns>
+    </TableView>
+    <Button mnemonicParsing="false" onAction="#onExitBtnAction" prefWidth="72.0" text="关闭" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="16.0" />
+    <Label alignment="CENTER" layoutX="31.0" layoutY="13.0" prefWidth="55.0" styleClass="whiteLabel" text="基本信息" />
+    <AnchorPane prefHeight="14.0" prefWidth="727.0" styleClass="overLinePanel" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" />
+    <Hyperlink id="hyperlink" fx:id="hyperlink1" onAction="#onHyperlinkAction" prefWidth="110.0" text="提示信息（100）" visible="true" AnchorPane.rightAnchor="47.0" AnchorPane.topAnchor="37.0" />
+    <Button fx:id="observationAddButton" disable="true" mnemonicParsing="false" onAction="#onAddObservationAction" text="数据录入" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="97.0" />
+    <Label alignment="CENTER" layoutX="32.0" layoutY="81.0" prefHeight="16.0" prefWidth="55.0" styleClass="whiteLabel" text="观察信息" />
+    <Button fx:id="dataSubmitButton" mnemonicParsing="false" onAction="#onDataSubmitBtnAction" text="数据确认" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="14.0" />
+  </children>
+  <stylesheets>
+    <URL value="@../../../css/style.css" />
+  </stylesheets>
+</AnchorPane>

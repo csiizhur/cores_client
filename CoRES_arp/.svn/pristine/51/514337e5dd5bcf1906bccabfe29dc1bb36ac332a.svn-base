@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-2.5.xsd
+           http://www.springframework.org/schema/aop
+           http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+           http://www.springframework.org/schema/tx 
+           http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+           
+     <!-- 加载外部的properties配置文件 -->
+	<context:property-placeholder location="classpath:service.properties"/>
+
+    <bean id="UserService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean"> 
+       <property name="serviceUrl" value="rmi://${serviceIP}:6688/UserService"/> 
+       <property name="serviceInterface">
+          <value>com.lanen.service.UserService</value>
+       </property>
+   </bean>
+    
+  <bean id="AreaService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+  	<property name="serviceUrl" value="rmi://${serviceIP}:6688/AreaService"></property>
+  	<property name="serviceInterface">
+  		<value>com.lanen.service.AreaService</value>
+  	</property>
+  </bean>
+    
+   <bean id="IploginService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean"> 
+       <property name="serviceUrl" value="rmi://${serviceIP}:6688/IploginService"/> 
+       <property name="serviceInterface">
+          <value>com.lanen.service.IploginService</value>
+       </property>
+   </bean>
+   
+   <bean id="IndividualService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean"> 
+       <property name="serviceUrl" value="rmi://${serviceIP}:6688/IndividualService"/> 
+       <property name="serviceInterface">
+          <value>com.lanen.service.IndividualService</value>
+       </property>
+   </bean>
+   
+   <bean id="LeavebreastService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean"> 
+       <property name="serviceUrl" value="rmi://${serviceIP}:6688/LeavebreastService"/> 
+       <property name="serviceInterface">
+          <value>com.lanen.service.LeavebreastService</value>
+       </property>
+   </bean>
+   
+   <bean id="ChangeroomService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+   		<property name="serviceUrl" value="rmi://${serviceIP}:6688/ChangeroomService"></property>
+   		<property name="serviceInterface">
+   			<value>com.lanen.service.ChangeroomService</value>
+   		</property>
+   </bean>
+   
+   <bean id="DeathService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+   		<property name="serviceUrl" value="rmi://${serviceIP}:6688/DeathService"></property>
+   		<property name="serviceInterface">
+   			<value>com.lanen.service.DeathService</value>
+   		</property>
+   </bean>
+   
+   <bean id="ChildbirthService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+   		<property name="serviceUrl" value="rmi://${serviceIP}:6688/ChildbirthService"></property>
+   		<property name="serviceInterface">
+   			<value>com.lanen.service.ChildbirthService</value>
+   		</property>
+   </bean>
+   
+   <bean id="GestationService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+   		<property name="serviceUrl" value="rmi://${serviceIP}:6688/GestationService"></property>
+   		<property name="serviceInterface">
+   			<value>com.lanen.service.GestationService</value>
+   		</property>
+   </bean>
+   
+   <bean id="VaccineService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+   		<property name="serviceUrl" value="rmi://${serviceIP}:6688/VaccineService"></property>
+   		<property name="serviceInterface">
+   			<value>com.lanen.service.VaccineService</value>
+   		</property>
+   </bean>
+   
+   <bean id="XcgService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+   		<property name="serviceUrl" value="rmi://${serviceIP}:6688/XcgService"></property>
+   		<property name="serviceInterface">
+   			<value>com.lanen.service.XcgService</value>
+   		</property>
+   </bean>
+   
+   <bean id="XyshService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+   		<property name="serviceUrl" value="rmi://${serviceIP}:6688/XyshService"></property>
+   		<property name="serviceInterface">
+   			<value>com.lanen.service.XyshService</value>
+   		</property>
+   </bean>
+   
+   <bean id="VirusService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+   		<property name="serviceUrl" value="rmi://${serviceIP}:6688/VirusService"></property>
+   		<property name="serviceInterface">
+   			<value>com.lanen.service.VirusService</value>
+   		</property>
+   </bean>
+   <bean id="NormalService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+   		<property name="serviceUrl" value="rmi://${serviceIP}:6688/NormalService"></property>
+   		<property name="serviceInterface">
+   			<value>com.lanen.service.NormalService</value>
+   		</property>
+   </bean>
+   
+   <bean id="QuarantineService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+   		<property name="serviceUrl" value="rmi://${serviceIP}:6688/QuarantineService"></property>
+   		<property name="serviceInterface">
+   			<value>com.lanen.service.QuarantineService</value>
+   		</property>
+   </bean>
+   
+   <bean id="ObservationService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+   		<property name="serviceUrl" value="rmi://${serviceIP}:6688/ObservationService"></property>
+   		<property name="serviceInterface">
+   			<value>com.lanen.service.ObservationService</value>
+   		</property>
+   </bean>
+   
+   <bean id="WeightService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+   		<property name="serviceUrl" value="rmi://${serviceIP}:6688/WeightService"></property>
+   		<property name="serviceInterface">
+   			<value>com.lanen.service.WeightService</value>
+   		</property>
+   </bean>
+   
+   <bean id="OestrusService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+   		<property name="serviceUrl" value="rmi://${serviceIP}:6688/OestrusService"></property>
+   		<property name="serviceInterface">
+   			<value>com.lanen.service.OestrusService</value>
+   		</property>
+   </bean> 
+   
+   <bean id="MiscarriageService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+   		<property name="serviceUrl" value="rmi://${serviceIP}:6688/MiscarriageService"></property>
+   		<property name="serviceInterface">
+   			<value>com.lanen.service.MiscarriageService</value>
+   		</property>
+   </bean>   
+</beans>
