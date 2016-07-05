@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<updateDescriptor baseUrl="">
-  <entry targetMediaFileId="26" updatableVersionMin="" updatableVersionMax="" fileName="SystemSet_windows_1_0_21.exe" newVersion="1.0.21" newMediaFileId="26" fileSize="49318912" bundledJre="windows-x86-1.7.0_21_jre" archive="false">
-    <comment language="zh_CN" />
-  </entry>
-</updateDescriptor>
-
